@@ -1,0 +1,4 @@
+<resources>
+    <string name="_app_name">SDK Demo</string>
+    <string name="action_settings">Settings</string>
+</resources>

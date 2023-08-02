@@ -1,0 +1,60 @@
+rootProject.ext {
+    buildMavenConfig = this.&buildMavenConfig
+    isBuildSdkSource = this.&isBuildSdkSource
+    isBuildSdkEmbed = this.&isBuildSdkEmbed
+    isBuildSnapshot = this.&isBuildSnapshot
+}
+
+def isBuildSdkSource(Project project) {
+    if (!project.hasProperty('BUILD_SDK_SOURCE')) {
+        return true
+    }
+    return BUILD_SDK_SOURCE == null || BUILD_SDK_SOURCE.toLowerCase() == "true"
+}
+
+def isBuildSdkEmbed(Project project) {
+    if (!project.hasProperty('BUILD_SDK_EMBED')) {
+        return false
+    }
+    return BUILD_SDK_EMBED != null && BUILD_SDK_EMBED.toLowerCase() == "true"
+}
+
+def isBuildSnapshot(Project project) {
+    if (!project.hasProperty('BUILD_SNAPSHOT_VERSION')) {
+        return false
+    }
+    return BUILD_SNAPSHOT_VERSION != null && BUILD_SNAPSHOT_VERSION.toLowerCase() == "true"
+}
+
+def buildMavenConfig(String _groupId, String _artifactId, String _version) {
+    publishing {
+        // 配置maven-publishing插件的输出物
+        publications {
+            release(MavenPublication){
+                groupId = _groupId
+                artifactId = _artifactId
+                version = _version
+                afterEvaluate {
+                    artifact(tasks.getByName("bundleReleaseAar")) // 打aar包
+                }
+                // artifact generateSourcesJar // 打jar包
+            }
+        }
+        repositories {
+            // 发布到远程
+            maven {
+                // url '../repo/' // 本地测试用
+                name = _artifactId
+                if (_version.endsWith('-SNAPSHOT')) {
+                    url = SNAPSHOT_REPO_URL
+                } else {
+                    url = RELEASES_REPO_URL
+                }
+                credentials {
+                    username = USERNAME
+                    password = PASSWORD
+                }
+            }
+        }
+    }
+}

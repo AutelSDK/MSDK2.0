@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="debug_index_arrays">
+        <item>左边或主要</item>
+        <item>右</item>
+        <item>向上</item>
+        <item>未知</item>
+    </string-array>
+    <string-array name="debug_vision_image_arrays">
+        <item>关闭</item>
+        <item>前后视矫正</item>
+        <item>上下视矫正</item>
+        <item>原始未矫正</item>
+        <item>左右视矫正</item>
+    </string-array>
+</resources>

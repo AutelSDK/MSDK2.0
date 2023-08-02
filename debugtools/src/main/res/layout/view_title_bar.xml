@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/title_bar_content"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="#444444">
+
+    <ImageButton
+        android:id="@+id/return_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:paddingVertical="@dimen/debug_dimen_dp_8"
+        android:paddingStart="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/debug_back_arrow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/return_btn"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/msdk_info_text_main"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:autoSizeMaxTextSize="14dp"
+            android:autoSizeMinTextSize="12dp"
+            android:autoSizeTextType="uniform"
+            android:fadeScrollbars="true"
+            android:gravity="center_vertical"
+            android:scrollbars="horizontal"
+            android:singleLine="true"
+            tools:text="Main"
+            android:textColor="@color/debug_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/return_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/msdk_info_text_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="10dp"
+            android:autoSizeTextType="uniform"
+            android:fadeScrollbars="true"
+            android:gravity="start|top"
+            android:scrollbars="horizontal"
+            android:singleLine="true"
+            tools:text="Second"
+            android:visibility="gone"
+            android:textColor="@color/debug_white" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:autoSizeMaxTextSize="20dp"
+        android:autoSizeMinTextSize="14dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/debug_testing_tools"
+        android:textColor="@color/debug_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.autel.sdk.debugtools.view.spinnerview.DebugSpinnerView
+        android:id="@+id/csv_language_setting"
+        android:layout_width="@dimen/debug_dimen_dp_150"
+        android:layout_height="35dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

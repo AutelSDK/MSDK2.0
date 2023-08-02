@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/debug_black">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/button_list"
+        android:layout_width="238dp"
+        android:layout_height="0dp"
+        android:background="@color/debug_light_gray2"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintVertical_bias="0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/debug_light_gray2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/enableLDM_btn"
+                style="@style/main_fragment_text"
+                android:elevation="10dp"
+                android:foreground="?selectableItemBackground"
+                android:text="@string/debug_btn_enable_ldm"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/init_msdk_btn"
+                style="@style/main_fragment_text"
+                android:elevation="10dp"
+                android:enabled="false"
+                android:foreground="?selectableItemBackground"
+                android:text="@string/debug_btn_init_msdk"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/enableLDM_btn" />
+
+            <TextView
+                android:id="@+id/register_app_btn"
+                style="@style/main_fragment_text"
+                android:elevation="10dp"
+                android:enabled="false"
+                android:foreground="?selectableItemBackground"
+                android:text="@string/debug_btn_register_app"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/init_msdk_btn" />
+
+            <TextView
+                android:id="@+id/tv_current_ip"
+                style="@style/main_fragment_text"
+                android:layout_height="wrap_content"
+                tools:text="当前IP：127.0.0.1 "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_app_btn" />
+
+            <TextView
+                android:id="@+id/tv_connect_remote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/debug_sdk_solid_color_green_radius_4_5"
+                android:padding="5dp"
+                android:text="@string/debug_connect_real_machine_ip_restart"
+                android:textColor="@color/debug_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_current_ip" />
+
+            <EditText
+                android:id="@+id/ip_et"
+                style="@style/main_fragment_text"
+                android:layout_width="0dp"
+                android:layout_marginTop="18dp"
+                android:background="@color/debug_white"
+                android:foreground="?selectableItemBackground"
+                android:hint="10.250.13.120"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:imeOptions="actionDone|flagNoExtractUi"
+                android:text="10.250.13.120"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_connect_remote"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/net_work_check_btn"
+                style="@style/main_fragment_text"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="0dp"
+                android:background="@drawable/debug_sdk_shape_solid_color_green_radius_4_5"
+                android:elevation="10dp"
+                android:foreground="?selectableItemBackground"
+                android:text="@string/debug_ping_ip"
+                android:textColor="@color/debug_white"
+                app:layout_constraintEnd_toStartOf="@id/update_ip"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ip_et" />
+
+            <TextView
+                android:id="@+id/update_ip"
+                style="@style/main_fragment_text"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/debug_sdk_shape_solid_color_green_radius_4_5"
+                android:foreground="?selectableItemBackground"
+                android:text="@string/debug_connect_server_ip_restart_effect"
+                android:textColor="@color/debug_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/net_work_check_btn"
+                app:layout_constraintTop_toTopOf="@id/net_work_check_btn" />
+
+            <TextView
+                android:id="@+id/tv_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingHorizontal="8dp"
+                android:text="@string/debug_inputbox_change_ip"
+                android:textColor="#FF0000"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/update_ip" />
+
+            <EditText
+                android:id="@+id/port_et"
+                style="@style/main_fragment_text"
+                android:background="@color/debug_white"
+                android:foreground="?selectableItemBackground"
+                android:hint="@string/debug_please_input_port"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tips"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/is_mock_device"
+                style="@style/main_fragment_text"
+                android:elevation="10dp"
+                android:foreground="?selectableItemBackground"
+                android:text="@string/debug_no_mock_device"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/port_et" />
+
+            <TextView
+                android:id="@+id/change_mock_device"
+                style="@style/main_fragment_text"
+                android:elevation="10dp"
+                android:foreground="?selectableItemBackground"
+                android:text="@string/debug_mock_plane"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/is_mock_device" />
+
+            <RadioGroup
+                android:id="@+id/use_debug_for_app_rg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/debug_white"
+                android:elevation="10dp"
+                android:foreground="?selectableItemBackground"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/change_mock_device">
+
+                <RadioButton
+                    android:id="@+id/use_real_data_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/debug_real_data"
+                    android:textColor="@color/debug_black" />
+
+                <RadioButton
+                    android:id="@+id/use_test_data_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/debug_test_data"
+                    android:textColor="@color/debug_black" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_tips1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingHorizontal="8dp"
+                android:text="@string/debug_real_data_mock_app"
+                android:textColor="#FF0000"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/use_debug_for_app_rg" />
+
+            <TextView
+                android:id="@+id/unInit_msdk_btn"
+                style="@style/main_fragment_text"
+                android:elevation="10dp"
+                android:foreground="?selectableItemBackground"
+                android:text="@string/debug_btn_unInit_msdk"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/change_mock_device" />
+
+            <TextView
+                android:id="@+id/disableLDM_btn"
+                style="@style/main_fragment_text"
+                android:elevation="10dp"
+                android:foreground="?selectableItemBackground"
+                android:text="@string/debug_btn_disable_ldm"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/unInit_msdk_btn" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/view_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/button_list"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

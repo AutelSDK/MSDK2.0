@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/debug_sdk_shape_rect_solid_color_ff_radius_14">
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:minHeight="82dp"
+            android:paddingVertical="20dp"
+            android:textColor="#120F0F"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="dd这里是双行正文，这里是是双行正文，这里是双行正文，这里是双双行正文，这里是双行正文" />
+
+        <View
+            android:id="@+id/horizontal_line"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="#CDCDCD"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_msg" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/sdk_text_cancel"
+            android:textColor="#120F0F"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toStartOf="@id/divide_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_line" />
+
+        <View
+            android:id="@+id/divide_line"
+            android:layout_width="0.5dp"
+            android:layout_height="50dp"
+            android:background="#CDCDCD"
+            app:layout_constraintEnd_toStartOf="@id/tv_confirm"
+            app:layout_constraintStart_toEndOf="@id/tv_cancel"
+            app:layout_constraintTop_toTopOf="@id/tv_cancel" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/debug_confirm"
+            android:textColor="#007aff"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/divide_line"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_line" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

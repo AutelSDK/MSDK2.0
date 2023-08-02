@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_rtk_enable"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:text="@string/debug_text_rtk_is_enable"
+                android:drawablePadding="15dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/tv_re_autor"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="重新授权"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toEndOf="@id/switch_rtk_enable"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingRight="@dimen/debug_dimen_dp_15"
+                android:paddingLeft="@dimen/debug_dimen_dp_15"
+                />
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_net_rtk"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginEnd="30dp"
+                android:drawablePadding="15dp"
+                android:text="@string/debug_text_rtk_is_native"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ll_report_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/switch_net_rtk"
+                >
+                <TextView
+                    android:id="@+id/tv_report_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/debug_white"/>
+
+            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_report_data">
+
+                <TextView
+                    android:id="@+id/rtk_tv_service_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/debug_text_rtk_type"
+                    android:textColor="@color/debug_white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.autel.sdk.debugtools.view.spinnerview.DebugSpinnerView
+                    android:id="@+id/rtk_tv_service"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintBottom_toBottomOf="@id/rtk_tv_service_title"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/rtk_tv_service_title" />
+
+                <View
+                    android:id="@+id/rtk_line_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/debug_gray_light"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rtk_tv_service" />
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_location_title"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="30dp"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:text="@string/debug_text_rtk_coordinate_type"-->
+<!--                    android:textColor="@color/debug_white"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/rtk_line_1" />-->
+
+<!--                <com.autel.sdk.debugtools.view.spinnerview.DebugSpinnerView-->
+<!--                    android:id="@+id/tv_csv_location"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_marginRight="15dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/tv_location_title"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/tv_location_title" />-->
+
+
+                <TextView
+                    android:id="@+id/rtk_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textColor="@color/debug_white"
+                    android:text=""
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rtk_line_1" />
+                <TextView
+                    android:id="@+id/rtk_report_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="100dp"
+                    android:gravity="left"
+                    android:scrollbars="vertical"
+                    android:text="@string/debug_results_will_be_printed_here"
+                    android:textColor="@color/debug_white"
+                    android:textIsSelectable="true"
+                    android:textSize="10sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rtk_status" />
+
+                <LinearLayout
+                    android:id="@+id/nest_rtk_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rtk_report_info">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/et_lat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="latitude"
+                            android:inputType="numberDecimal"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/debug_white"
+                            android:textColorHint="@color/debug_gray_light"
+                            android:singleLine="true" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/et_lng"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="longtitute"
+                            android:inputType="numberDecimal"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/debug_white"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:textColorHint="@color/debug_gray_light"
+                            android:singleLine="true" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/et_attitude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="attitude"
+                            android:inputType="numberDecimal"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/debug_white"
+                            android:textColorHint="@color/debug_gray_light"
+                            android:singleLine="true" />
+
+                        <Button
+                            android:id="@+id/btn_calibration_mode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/debug_text_rtk_calibration_mode" />
+
+                        <Button
+                            android:id="@+id/btn_self_positioning_mode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/debug_text_rtk_self_positioning_mode" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/rtk_nest_report_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginBottom="100dp"
+                        android:gravity="left"
+                        android:scrollbars="vertical"
+                        android:text="@string/debug_results_will_be_printed_here"
+                        android:textColor="@color/debug_white"
+                        android:textIsSelectable="true"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btn_clearlog"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:background="@drawable/debug_btn_bg_stroke_common_with_color"
+        android:text="@string/debug_clear_all"
+        android:textAllCaps="false"
+        android:textColor="@color/debug_white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

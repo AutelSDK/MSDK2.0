@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.autel.drone.demo">
+
+    <uses-feature
+        android:name="android.hardware.usb.accessory"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.autel.drone.demo.DemoApplicationEx"
+        android:allowBackup="true"
+        tools:replace="android:allowBackup"
+        android:icon="@mipmap/aircraft"
+        android:label="@string/_app_name"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/Theme.AutelEnterprise.NoActionBar"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name="com.autel.sdk.debugtools.activity.ExternalDebugToolsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="true"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

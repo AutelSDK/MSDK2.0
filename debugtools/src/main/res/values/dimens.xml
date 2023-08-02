@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="debug_gen_corner_radius">4dp</dimen>
+    <dimen name="debug_keyvalue_list_spinner_width">110dp</dimen>
+    <dimen name="debug_dimen_dp_8">8dp</dimen>
+    <dimen name="debug_dimen_dp_12">12dp</dimen>
+    <dimen name="debug_dimen_dp_6">6dp</dimen>
+    <dimen name="debug_dimen_dp_15">15dp</dimen>
+    <dimen name="debug_dimen_dp_100">100dp</dimen>
+    <dimen name="debug_dimen_dp_150">150dp</dimen>
+    <dimen name="debug_dimen_dp_250">250dp</dimen>
+    <dimen name="debug_dimen_dp_350">350dp</dimen>
+    <dimen name="debug_text_size_sp_20">20sp</dimen>
+    <dimen name="debug_text_size_sp_24">24sp</dimen>
+    <dimen name="debug_dimen_dp_3">3dp</dimen>
+    <dimen name="debug_dimen_dp_32">32dp</dimen>
+    <dimen name="debug_variety_size_radar_margin_top">80dp</dimen><!--雷达上边距-->
+    <!--上方雷达宽度-->
+    <!--上方雷达高度-->
+    <dimen name="debug_variety_size_radar_panel_width">145dp</dimen><!--雷达片段宽度-->
+    <dimen name="debug_variety_size_radar_panel_height">50dp</dimen><!--雷达片段宽度-->
+</resources>

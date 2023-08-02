@@ -1,0 +1,105 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
+}
+
+apply from: '../dependencies.gradle'
+apply from: '../mavenConfig.gradle'
+
+android {
+    compileSdkVersion rootProject.ext.versions.compileSdk
+
+    defaultConfig {
+        minSdk rootProject.ext.versions.minSdk
+        targetSdk rootProject.ext.versions.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "proguard-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.versions.javaCompatibility
+        targetCompatibility rootProject.ext.versions.javaCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = rootProject.ext.versions.javaCompatibility
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+def isBuildSnapshot = isBuildSnapshot(project)
+configurations.all {
+    if (isBuildSnapshot) {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+
+}
+
+dependencies {
+
+    //implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+    //implementation fileTree("libs\\expose-release.aar")
+    def libsDir = file('libs')
+    def aarFiles = libsDir.listFiles({ File dir, String name -> name.endsWith('.aar') } as FilenameFilter)
+
+    // 根据aar文件名中的版本号进行排序
+    def sortedAarFiles = aarFiles.sort { File file1, File file2 ->
+        compareVersions(getVersionFromAarFileName(file1.name), getVersionFromAarFileName(file2.name))
+    }
+
+    // 只添加最大版本的aar文件作为依赖
+    implementation files(sortedAarFiles.last())
+
+    implementation 'com.google.protobuf:protobuf-java:3.21.5'
+    implementation rootProject.ext.deps.external.android.core_ktx
+    implementation rootProject.ext.deps.external.android.appcompat
+    implementation rootProject.ext.deps.external.android.design
+    implementation rootProject.ext.deps.external.android.navi_fragment_ktx
+    implementation rootProject.ext.deps.external.android.fragment_ktx
+    implementation rootProject.ext.deps.external.protobuf_java
+    implementation 'com.github.Petterpx:FloatingX:1.0.4'
+    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+    implementation rootProject.ext.deps.external.gson
+    implementation rootProject.ext.deps.external.okhttp.core
+    //room数据库
+    implementation(rootProject.ext.deps.external.database.room_ktx)
+    //kapt(rootProject.ext.deps.external.database.room_compiler)
+
+    // FOR TEST
+    testImplementation rootProject.ext.deps.external.test.junit
+    androidTestImplementation rootProject.ext.deps.external.test.ext_junit
+    androidTestImplementation rootProject.ext.deps.external.test.espresso
+    implementation('com.tencent:mmkv-static:1.2.8')
+}
+
+def getVersionFromAarFileName(fileName) {
+    def matcher = (fileName =~ /.*_V([\d.]+)\.aar/)
+    if (matcher.matches()) {
+        def versionString = matcher[0][1]
+        return versionString.split('\\.').collect { it.toInteger() }
+    }
+    return []
+}
+
+def compareVersions(version1, version2) {
+    for (int i = 0; i < Math.max(version1.size(), version2.size()); i++) {
+        def v1 = i < version1.size() ? version1[i] : 0
+        def v2 = i < version2.size() ? version2[i] : 0
+
+        if (v1 != v2) {
+            return v1 <=> v2
+        }
+    }
+    return 0
+}
+

@@ -1,0 +1,96 @@
+rootProject.ext {
+    sdkVersion =[
+            'msdkVersion': "2.0.32"
+    ]
+    versions = [
+            'versionCode'      : 10011,
+            'versionName'      : '1.0.11',
+            'ndk'              : '20.1.5948944',
+            'compileSdk'       : 32,
+            'minSdk'           : 21,
+            'targetSdk'        : 32,
+            'javaCompatibility': JavaVersion.VERSION_11,
+
+    ]
+
+    deps = [
+            'external': [
+                    'kotlin'      : [
+                            'stdlib'           : "org.jetbrains.kotlin:kotlin-stdlib:1.4.10",
+                            'reflect'          : "org.jetbrains.kotlin:kotlin-reflect:1.4.10",
+                            'coroutines'       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9",
+                            'coroutinesandroid': "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9",
+                            'coroutinestest'   : "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9"
+                    ],
+                    'android'     : [
+                            'appcompat'         : 'androidx.appcompat:appcompat:1.4.2',
+                            'activity_ktx'      : 'androidx.activity:activity-ktx:1.5.0',
+                            'fragment_ktx'      : 'androidx.fragment:fragment-ktx:1.5.0',
+                            'navi_fragment_ktx' : 'androidx.navigation:navigation-fragment-ktx:2.5.3',
+                            'design'            : 'com.google.android.material:material:1.6.1',
+                            'recyclerview'      : 'androidx.recyclerview:recyclerview:1.2.1',
+                            'constraint'        : 'androidx.constraintlayout:constraintlayout:2.1.4',
+                            'swiperefreshlayout': 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0',
+                            'multidex'          : 'androidx.multidex:multidex:2.0.1',
+                            'core_ktx'          : 'androidx.core:core-ktx:1.8.0',
+                            'viewpager2'        : 'androidx.viewpager2:viewpager2:1.0.0',
+                            'work'              : 'androidx.work:work-runtime:2.7.1',
+                            "annotation"        : 'androidx.annotation:annotation:1.2.0'
+                    ],
+                    'rx'          : [
+                            'rxjava'   : 'io.reactivex.rxjava2:rxjava:2.2.12',
+                            'rxandroid': 'io.reactivex.rxjava2:rxandroid:2.1.1'
+                    ],
+                    'test'        : [
+                            'junit'         : 'junit:junit:4.13.2',
+                            'ext_junit'     : 'androidx.test.ext:junit:1.1.3',
+                            'espresso'      : 'androidx.test.espresso:espresso-core:3.4.0',
+                            'power_junit'   : 'org.powermock:powermock-module-junit4:1.6.5'
+                    ],
+                    'lifecycle'   : [
+                            'viewmodel' : 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0',
+                            'livedata'  : 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0',
+                            'runtime'   : 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.0',
+                            'savedstate': 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0'
+                    ],
+                    'okhttp'      : [
+                            'core'         : "com.squareup.okhttp3:okhttp:4.10.0",
+                            'mockwebserver': "com.squareup.okhttp3:mockwebserver:4.10.0"
+                    ],
+                    'retrofit'    : [
+                            'core'  : "com.squareup.retrofit2:retrofit:2.9.0",
+                            'rxjava': "com.squareup.retrofit2:adapter-rxjava3:2.9.0",
+                            'gson'  : "com.squareup.retrofit2:converter-gson:2.9.0"
+                    ],
+                    'gson'        : "com.google.code.gson:gson:2.8.8",
+                    'arouter'     : [
+                            'api'     : "com.alibaba:arouter-api:1.5.2",
+                            'compiler': "com.alibaba:arouter-compiler:1.5.2",
+                    ],
+                    'glide'       : [
+                            'glide'   : "com.github.bumptech.glide:glide:4.13.2",
+                            'compiler': "com.github.bumptech.glide:compiler:4.13.2"
+                    ],
+                    "disklrucache": "com.jakewharton:disklrucache:2.0.2",
+                    'database'    : [
+                            'sqlite'        : "androidx.sqlite:sqlite:2.2.0",
+                            'room_common'   : "androidx.room:room-runtime:2.4.2",
+                            'room_runtime'  : "androidx.room:room-runtime:2.4.2",
+                            'room_compiler' : "androidx.room:room-compiler:2.4.2",
+                            'room_ktx'      : "androidx.room:room-ktx:2.4.2"
+                    ],
+                    'firebase'    : [
+                            'googleServicesPlugin'   : "com.google.gms:google-services:4.3.13",
+                            'googleCrashlyticsPlugin': "com.google.firebase:firebase-crashlytics-gradle:2.9.1",
+                            'analytics'              : "com.google.firebase:firebase-analytics:21.0.0",
+                            'crashlytics'            : "com.google.firebase:firebase-crashlytics:18.2.11"
+                    ],
+                    'leakcanary'    : "com.squareup.leakcanary:leakcanary-android:2.9.1",
+                    'multitype'     : "com.drakeet.multitype:multitype:4.3.0",
+                    'exoplayer'     : "com.google.android.exoplayer:exoplayer:2.18.1",
+                    'debugdb'       : 'com.amitshekhar.android:debug-db:1.0.6',
+                    'swipelayout'   : "com.daimajia.swipelayout:library:1.2.0@aar",
+                    'protobuf_java' : "com.google.protobuf:protobuf-java:3.21.5",
+            ],
+    ]
+}

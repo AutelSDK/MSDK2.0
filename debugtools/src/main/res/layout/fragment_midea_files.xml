@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/debug_light_gray2">
+
+    <LinearLayout
+        android:id="@+id/ll_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/debug_dimen_dp_15"
+            android:gravity="start"
+            android:text="@string/debug_upload_mission_file"
+            android:textColor="@color/debug_white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/debug_dimen_dp_15"
+            android:gravity="start"
+            android:text="@string/debug_download_mission_file"
+            android:textColor="@color/debug_white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_query"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/debug_dimen_dp_15"
+            android:gravity="start"
+            android:text="@string/debug_query_mission_file"
+            android:textColor="@color/debug_white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/debug_dimen_dp_15"
+            android:gravity="start"
+            android:text="@string/debug_delete_mission_file"
+            android:textColor="@color/debug_white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_get_media_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/debug_dimen_dp_15"
+            android:gravity="start"
+            android:text="@string/debug_get_media_list"
+            android:textColor="@color/debug_white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_get_album_folder_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/debug_dimen_dp_15"
+            android:gravity="start"
+            android:text="@string/debug_get_media_folder_list"
+            android:textColor="@color/debug_white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_album_file_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/debug_dimen_dp_15"
+            android:gravity="start"
+            android:text="@string/debug_delete_media_file"
+            android:textColor="@color/debug_white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_album_file_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/debug_dimen_dp_15"
+            android:gravity="start"
+            android:text="@string/debug_download_media_file"
+            android:textColor="@color/debug_white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_album_file_cancel_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/debug_dimen_dp_15"
+            android:gravity="start"
+            android:text="@string/debug_cancel_download_file"
+            android:textColor="@color/debug_white"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_health_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/debug_dimen_dp_15"
+            android:gravity="start"
+            android:text="@string/debug_health_check"
+            android:textColor="@color/debug_white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/debug_dimen_dp_15"
+        android:layout_marginTop="@dimen/debug_dimen_dp_15"
+        android:padding="5dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/debug_white"
+        android:textSize="16sp"
+        android:scrollbars="vertical"
+        android:background="@drawable/debug_sdk_bg_stroke_common"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_clearlog"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintStart_toEndOf="@id/ll_request"
+        app:layout_constraintTop_toTopOf="@id/ll_request" />
+
+    <Button
+        android:id="@+id/btn_clearlog"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/debug_btn_bg_stroke_common_with_color"
+        android:text="@string/debug_clear_all"
+        android:textAllCaps="false"
+        android:textColor="@color/debug_white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

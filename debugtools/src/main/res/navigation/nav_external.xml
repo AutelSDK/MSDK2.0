@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_common"
+    app:startDestination="@id/key_value_page">
+
+    <fragment
+        android:id="@+id/key_value_page"
+        android:name="com.autel.sdk.debugtools.fragment.KeyValueFragment"
+        android:label="key_value_page" />
+
+    <fragment
+        android:id="@+id/media_page"
+        android:name="com.autel.sdk.debugtools.fragment.MediaFilesFragment"
+        android:label="media_page" />
+
+    <fragment
+        android:id="@+id/multi_video_decoding_page"
+        android:name="com.autel.sdk.debugtools.fragment.MuiltCodecFragment"
+        android:label="multi_video_decoding_page" />
+
+    <fragment
+        android:id="@+id/livestream_page"
+        android:name="com.autel.sdk.debugtools.fragment.LiveStreamFragment"
+        android:label="livestream_page" />
+
+
+    <fragment
+        android:id="@+id/scenerio_testing_page"
+        android:name="com.autel.sdk.debugtools.fragment.ScenerioTestFragment"
+        android:label="scenerio_testing_page" />
+
+
+    <fragment
+        android:id="@+id/device_log"
+        android:name="com.autel.sdk.debugtools.fragment.DroneLogFragment"
+        android:label="device_log" />
+
+
+    <fragment
+        android:id="@+id/rtk_page"
+        android:name="com.autel.sdk.debugtools.fragment.RtkFragment"
+        android:label="rtk_page" />
+    <fragment
+        android:id="@+id/mqtt_page"
+        android:name="com.autel.sdk.debugtools.fragment.MqttFragment"
+        android:label="mqtt_page" />
+
+</navigation>

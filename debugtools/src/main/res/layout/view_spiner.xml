@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_container"
+    android:layout_width="match_parent"
+    android:layout_height="28dp"
+    android:background="@drawable/shape_coordinate_spinner_bg"
+    tools:ignore="ResourceName">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/common_constraintlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.autel.sdk.debugtools.view.spinnerview.ScrollTextView
+            android:id="@+id/tv_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:ellipsize="marquee"
+            android:gravity="start"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            tools:text="@string/debug_text_english_tag"
+            android:textColor="@color/debug_color_white"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/debug_ic_outlined_arrow_down_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

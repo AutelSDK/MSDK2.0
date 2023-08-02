@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/debug_light_gray2"
+    android:orientation="horizontal"
+    android:padding="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/debug_sdk_bg_stroke_common">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/debug_scenerios"
+                android:textColor="@color/debug_white"
+                android:textStyle="bold" />
+
+            <include layout="@layout/layout_deliver_horizontal_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:paddingLeft="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <include layout="@layout/layout_deliver_vertical_line" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ll_channel_filter_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/tv_operate_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="7dp"
+                    android:drawablePadding="5dp"
+                    android:text="@string/debug_remote_controller_pairing"
+                    android:textColor="@color/debug_white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <include layout="@layout/layout_deliver_horizontal_line" />
+
+            <LinearLayout
+                android:id="@+id/msg_test_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/bt_start"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:padding="0dp"
+                    android:text="@string/debug_start_pairing"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/bt_exit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/debug_exit_pairing"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/bt_listen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/debug_listen"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/bt_action"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/debug_action"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/bt_unlistenall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/debug_unlistenall"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+
+                <Button
+                    android:id="@+id/bt_gpscoord"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/debug_startgpstest"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragmentContainerView"
+                    android:name="com.autel.sdk.debugtools.fragment.ImuAndCompassCalibrationScenarioTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    tools:layout="@layout/fragment_imu_calibration_scenario_test" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/resultRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--            <TextView-->
+<!--                android:id="@+id/tv_result"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="left"-->
+<!--                android:scrollbars="vertical"-->
+<!--                android:text="Results will be printed here."-->
+<!--                android:textColor="@color/debug_white"-->
+<!--                android:textIsSelectable="true"-->
+<!--                android:textSize="10sp"-->
+<!--                android:visibility="gone"/>-->
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+

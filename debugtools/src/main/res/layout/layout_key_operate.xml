@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/debug_white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="Key name" />
+
+        <Button
+            android:id="@+id/bt_add_command"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/debug_add_as_command"
+            android:textAllCaps="false"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <include
+        layout="@layout/layout_deliver_horizontal_line"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/msg_test_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/bt_get"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:text="@string/debug_get"
+            android:textSize="15sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/bt_set"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="@string/debug_set"
+            android:textSize="15sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/bt_listen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="@string/debug_listen"
+            android:textSize="15sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/bt_action"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/debug_action"
+            android:textSize="15sp"
+            android:visibility="visible" />
+
+
+        <Button
+            android:id="@+id/bt_frequency_report"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/debug_report"
+            android:textSize="15sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/bt_unlistenall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="@string/debug_unlistenall"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/bt_gpscoord"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/debug_startgpstest"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/msg_batch_test_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/bt_set_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="@string/debug_set_all"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/bt_get_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="@string/debug_get_all"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/bt_action_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:text="@string/debug_action_all"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/bt_set_get_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:text="@string/debug_set_get_all"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/param_test"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:text="@string/debug_param_test"
+            android:textSize="15sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/bt_listen_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:text="@string/debug_listen_all"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_deliver_horizontal_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/debug_component_index"
+                android:textColor="@color/debug_white" />
+
+            <Spinner
+                android:id="@+id/sp_index"
+                android:layout_width="@dimen/debug_keyvalue_list_spinner_width"
+                android:layout_height="wrap_content"
+                android:dropDownWidth="@dimen/debug_keyvalue_list_spinner_width"
+                android:entries="@array/debug_index_arrays"
+                android:textColor="@color/debug_white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_subtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/debug_subtype"
+                android:textColor="@color/debug_white" />
+
+            <Spinner
+                android:id="@+id/sp_subtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:dropDownWidth="@dimen/debug_keyvalue_list_spinner_width"
+
+                android:entries="@array/debug_sub_type_arrays"
+                android:textColor="@color/debug_white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/debug_subindex"
+                android:textColor="@color/debug_white" />
+
+            <Spinner
+                android:id="@+id/sp_subindex"
+                android:layout_width="@dimen/debug_keyvalue_list_spinner_width"
+                android:layout_height="wrap_content"
+                android:dropDownWidth="@dimen/debug_keyvalue_list_spinner_width"
+                android:entries="@array/debug_sub_index_arrays"
+                android:textColor="@color/debug_white" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_deliver_horizontal_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5">
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:scrollbars="vertical"
+            android:text="@string/debug_results_will_be_printed_here"
+            android:textColor="@color/debug_white"
+            android:textIsSelectable="true"
+            android:textSize="10sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tv_video_record_time"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:text="@string/debug_operate_listen_record_tips"
+                android:textColor="@color/debug_white"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btn_clearlog"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/debug_btn_bg_stroke_common_with_color"
+                android:text="@string/debug_clear_all"
+                android:textAllCaps="false"
+                android:textColor="@color/debug_white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="debug_activity_background">#FF000000</color>
+    <color name="debug_white">#FFFFFFFF</color>
+    <color name="debug_black">#FF000000</color>
+    <color name="debug_color_red">#FF0000</color>
+    <color name="debug_color_secondary_ffda00">#FFDA00</color>
+
+    <color name="debug_light_gray2">#444444</color>
+    <color name="debug_gray_light">#ffbfbfbf</color>
+    <color name="debug_gray">#ff5e5e5e</color>
+    <color name="debug_white_half">#77ffffff</color>
+
+    <color name="debug_honeydew">#F0FFF0</color>
+    <color name="debug_common_color_0061CB">#0061CB</color>
+    <color name="debug_common_color_white_50">#88FFFFFF</color>
+    <color name="debug_color_2A83FB">#2A83FB</color>
+    <color name="debug_color_4CAF50">#4CAF50</color>
+    <color name="debug_color_FF0000">#FF0000</color>
+    <color name="debug_color_97_97_97">#979797</color>
+
+    <color name="debug_color_white">#FFFFFF</color>
+    <color name="debug_color_7f_ff">#7fFFFFFF</color>
+    <color name="debug_color_white_40">#66FFFFFF</color>
+    <color name="debug_color_4f">#4F4F4F</color>
+    <color name="debug_color_transparent">#00ffffff</color>
+</resources>

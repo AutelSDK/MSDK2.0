@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/debug_sdk_shape_rect_solid_color_ff_radius_14">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="#120F0F"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="这里是标题" />
+
+        <TextView
+            android:id="@+id/tv_host"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="域名："
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <EditText
+            android:id="@+id/et_host"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/debug_shape_bg_gray_white"
+            android:gravity="center"
+            android:hint="@string/debug_parameter_settings"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:textColor="#120F0F"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_host"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_post"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="端口："
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_host" />
+
+        <EditText
+            android:id="@+id/et_post"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/debug_shape_bg_gray_white"
+            android:gravity="center"
+            android:hint="@string/debug_parameter_settings"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:textColor="#120F0F"
+            android:textSize="15sp"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_post"
+            app:layout_constraintTop_toBottomOf="@+id/et_host" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="账号："
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_post" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/debug_shape_bg_gray_white"
+            android:gravity="center"
+            android:hint="@string/debug_parameter_settings"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:textColor="#120F0F"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_post" />
+
+        <TextView
+            android:id="@+id/tv_psw"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="密码："
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+        <EditText
+            android:id="@+id/et_psw"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/debug_shape_bg_gray_white"
+            android:gravity="center"
+            android:hint="@string/debug_parameter_settings"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:textColor="#120F0F"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_psw"
+            app:layout_constraintTop_toBottomOf="@+id/et_name" />
+        <TextView
+            android:id="@+id/tv_mount"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="挂载点："
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_psw" />
+
+        <EditText
+            android:id="@+id/et_mount"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/debug_shape_bg_gray_white"
+            android:gravity="center"
+            android:hint="@string/debug_parameter_settings"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:textColor="#120F0F"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_mount"
+            app:layout_constraintTop_toBottomOf="@+id/et_psw" />
+
+
+        <View
+            android:id="@+id/horizontal_line"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="15dp"
+            android:background="#CDCDCD"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_mount" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/sdk_text_cancel"
+            android:textColor="#120F0F"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toStartOf="@id/divide_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_line" />
+
+        <View
+            android:id="@+id/divide_line"
+            android:layout_width="0.5dp"
+            android:layout_height="50dp"
+            android:background="#CDCDCD"
+            app:layout_constraintEnd_toStartOf="@id/tv_confirm"
+            app:layout_constraintStart_toEndOf="@id/tv_cancel"
+            app:layout_constraintTop_toTopOf="@id/tv_cancel" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/debug_confirm"
+            android:textColor="#007aff"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/divide_line"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_line" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
