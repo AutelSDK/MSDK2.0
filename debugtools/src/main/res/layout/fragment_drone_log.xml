@@ -45,5 +45,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <Button
+        android:id="@+id/realTime"
+        android:layout_width="110dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp"
+        android:text="@string/debug_device_log_real_time"
+        app:layout_constraintStart_toEndOf="@id/cancel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -125,7 +125,7 @@ class ExternalMSDKInfoFragment : AutelFragment() {
                         SDKManager.get().getSDKVersion()
                     )
 
-                val key = KeyTools.createKey(CommonKey.keyGetSystemInitData)
+                val key = KeyTools.createKey(CommonKey.KeyGetSystemInitData)
                 getKeyManager()?.performAction(
                     key,
                     null,

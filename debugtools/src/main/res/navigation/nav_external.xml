@@ -24,7 +24,6 @@
         android:name="com.autel.sdk.debugtools.fragment.LiveStreamFragment"
         android:label="livestream_page" />
 
-
     <fragment
         android:id="@+id/scenerio_testing_page"
         android:name="com.autel.sdk.debugtools.fragment.ScenerioTestFragment"
@@ -41,9 +40,10 @@
         android:id="@+id/rtk_page"
         android:name="com.autel.sdk.debugtools.fragment.RtkFragment"
         android:label="rtk_page" />
+
     <fragment
-        android:id="@+id/mqtt_page"
-        android:name="com.autel.sdk.debugtools.fragment.MqttFragment"
-        android:label="mqtt_page" />
+        android:id="@+id/ota_page"
+        android:name="com.autel.sdk.debugtools.fragment.OTAFirmwareUpgradeFragment"
+        android:label="ota_page" />
 
 </navigation>

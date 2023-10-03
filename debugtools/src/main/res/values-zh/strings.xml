@@ -136,7 +136,7 @@
     <string name="debug_single_test">单项测试</string>
     <string name="debug_batch_test">批量测试</string>
     <string name="debug_autonomy">autonomy</string>
-
+    <string name="debug_wifi">Wifi</string>
     <string name="debug_login_input_content_not_empty">输入的用户名或密码不能为空</string>
     <string name="debug_login_pls_connect_network">请先检查网络连接</string>
     <string name="debug_remote_controller">仅遥控器</string>
@@ -630,6 +630,42 @@
      <string name="debug_key_list_camerapreviewresolution">照片预览图尺寸</string>
      <string name="debug_key_list_camerapasswordwrongtimes">解密连续输错次数</string>
      <string name="debug_key_list_cameraircutswitch">变焦IRCut切换</string>
+    <string name="debug_key_list_cameraequivalentfocallength">35mm等效焦距</string>
+
+    <string name="debug_key_list_cameramissionrecordenable">任务录制开关</string>
+    <string name="debug_key_list_cameramissionrecordpicturestorageset">任务录制照片存储开关设置</string>
+    <string name="debug_key_list_cameramissionrecordpicturestorageget">任务录制照片存储开关查询</string>
+
+     <!--普通参数-->
+    <string name="debug_key_list_heartbeatphone">飞机保活心跳</string>
+    <string name="debug_key_list_heartbeatapp">APP保活心跳</string>
+    <string name="debug_key_list_setsystemdatatime">设置系统时间</string>
+    <string name="debug_key_list_droneruntimentfy">飞机运行时间统计消息上报</string>
+    <string name="debug_key_list_dronehfntfy">飞机端飞控关键参数高频上报</string>
+    <string name="debug_key_list_dronelfntfy">飞机端飞控关键参数低频上报</string>
+    <string name="debug_key_list_getsysteminitdata">获取系统初始化数据</string>
+    <string name="debug_key_list_getdronedevicesinfo">获取飞机设备信息</string>
+    <string name="debug_key_list_droneworkstatusinforeport">飞机工作状态信息上报</string>
+    <string name="debug_key_list_DroneWarningMFNtfy">飞机告警上报</string>
+    <string name="debug_key_list_controlled">控制单个飞机led灯</string>
+    <string name="debug_key_list_queryledstatus">查询飞机所有led灯状态</string>
+
+    <string name="debug_key_list_dronecalibrationcommand">通用校准指令</string>
+    <string name="debug_key_list_dronecalibrationeventntfy">校准事件通知</string>
+    <string name="debug_key_list_dronecalibrationschedulentfy">校准进度通知</string>
+    <string name="debug_key_list_dronesystemstatushfntfy">飞机通用参数上报（5hz）</string>
+    <string name="debug_key_list_dronesystemstatuslfntfy">飞机通用参数上报（2hz）</string>
+    <string name="debug_key_list_dronecontrolnightnavigationled">控制led夜航灯</string>
+    <string name="debug_key_list_droneversionntfy">飞机设备信息通知</string>
+    <string name="debug_key_list_droneeventntfy">飞机事件通知</string>
+    <string name="debug_key_list_dronetempconnectntfy">设备临时连接上报 飞机未连接时可以收到</string>
+    <string name="debug_key_list_droneutctimesyncntfy">飞机gps utc时间同步</string>
+    <string name="debug_key_list_dronesetcountrycode">设置飞机国家码</string>
+    <string name="debug_key_list_dronecleannoflyzone">清除禁飞区文件</string>
+    <string name="debug_key_list_dronewarning">飞机告警通知</string>
+    <string name="debug_key_list_droneruntimewarning">飞机实时告警通知</string>
+    <string name="debug_key_list_dronedebuginfo">飞机调试信息通知</string>
+    <string name="debug_key_list_fileupload">文件上传</string>
 
     <string name="debug_vision_track_background">背景</string>
     <string name="debug_vision_track_animal">动物</string>
@@ -686,11 +722,12 @@
     <string name="debug_channel_type_systemmanager">系统管理器</string>
     <string name="debug_channel_type_missionmanager">任务管理器</string>
     <string name="debug_channel_type_accessoriesproxy">配件代理</string>
-    <string name="debug_channel_type_commonupload">普通上传</string>
+    <string name="debug_channel_type_commonupload">普通参数</string>
     <string name="debug_channel_type_autonomy">autonomy</string>
     <string name="debug_channel_type_accurateretake">精准复拍管理器</string>
     <string name="debug_channel_type_rtmp">RTMP管理器</string>
     <string name="debug_channel_type_commandcenter">指挥中心管理器</string>
+    <string name="debug_channel_type_wifi">Wifi管理器</string>
 
     <string name="debug_parameter">参数</string>
     <string name="debug_take_over">接收</string>
@@ -704,6 +741,9 @@
     <string name="debug_text_rtk_self_net_tag">机巢RTK</string>
     <string name="debug_text_rtk_mobile_tag">4G/5G移动网络RTK</string>
     <string name="debug_text_rtk_is_native">网络RTK是否千寻原生</string>
+    <string name="debug_text_rtk_mode">RTK信号模式</string>
+    <string name="debug_text_rtk_all_signal_mode">全信号模式</string>
+    <string name="debug_text_rtk_bds_signal_mode">北斗信号模式</string>
     <string name="debug_text_rtk_type">RTK类型</string>
     <string name="debug_text_rtk_coordinate_type">RTK坐标</string>
     <string name="debug_text_rtk_is_enable">是否启用RTK</string>
@@ -719,5 +759,9 @@
     <string name="debug_device_log_delete">日志删除</string>
     <string name="debug_mqtt_title_description">Mqtt 登录测试页面</string>
     <string name="debug_accurate_retake">精准复拍</string>
+    <string name="debug_device_ota">设备OTA</string>
+    <string name="debug_device_ota_description">演示如何OTA升级</string>
     <string name="debug_rtmp">RTMP</string>
+    <string name="debug_command_center">指挥中心</string>
+    <string name="debug_device_log_real_time">实时日志</string>
 </resources>

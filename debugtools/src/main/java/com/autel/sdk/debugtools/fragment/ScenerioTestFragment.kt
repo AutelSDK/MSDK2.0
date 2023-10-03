@@ -31,7 +31,7 @@ import com.autel.sdk.debugtools.adapter.TestCaseResultAdapter
 import com.autel.sdk.debugtools.databinding.FragmentScenerioTestsBinding
 import com.autel.sdk.debugtools.helper.SdkFailureResultException
 import com.autel.sdk.debugtools.uploadMsg.CameraStatusUpMsgManager
-import com.autel.sdk.debugtools.uploadMsg.RemoteUploadMsgManager
+import com.autel.sdk.debugtools.uploadMsg.DebugToolUploadMsgManager
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -100,7 +100,7 @@ open class ScenerioTestFragment : AutelFragment(), IMTestClickListener,
     private fun listenData() {
 
         // Listening to paring status...
-        RemoteUploadMsgManager.airLinkMatchStatusData.observe(this, Observer { matchStatusEnum ->
+        DebugToolUploadMsgManager.airLinkMatchStatusData.observe(this, Observer { matchStatusEnum ->
             countDownTimer?.let { timer ->
                 timer.cancel()
                 isTimerRunning = false
@@ -131,7 +131,7 @@ open class ScenerioTestFragment : AutelFragment(), IMTestClickListener,
         })
 
         // Listening to remote control joysticks/rockers calibration...
-        RemoteUploadMsgManager.rockerCalibrationData.observe(this, Observer {
+        DebugToolUploadMsgManager.rockerCalibrationData.observe(this, Observer {
             countDownTimer?.let { timer ->
                 timer.cancel()
                 isTimerRunning = false

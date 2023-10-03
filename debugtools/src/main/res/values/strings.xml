@@ -21,6 +21,18 @@
     <string name="debug_item_livestreaming_title">LiveStreaming</string>
     <string name="debug_item_livestreaming_title_description">Demonstrate how to use the LiveStream</string>
 
+    <string name="debug_item_rtspclient_title">RtspClient</string>
+    <string name="debug_item_rtspclient_title_description">Demonstrate how to use the RtspClient</string>
+
+    <string name="debug_item_rtspserver_title">RtspServer</string>
+    <string name="debug_item_rtspserver_title_description">Demonstrate how to use the RtspServer</string>
+
+    <string name="debug_item_gb28181_title">GB28181Publisher</string>
+    <string name="debug_item_gb28181_title_description">Demonstrate how to use the GB28181Publisher</string>
+
+    <string name="debug_item_video_convert">ConvertVideo</string>
+    <string name="debug_item_video_convert_description">Demonstrate how to use the ConvertVideo</string>
+
     <string name="debug_item_multi_device_title">Multi-Device</string>
     <string name="debug_item_multi_device_title_description">Demonstrate how to use the MultiDevice</string>
 
@@ -136,6 +148,7 @@
     <string name="debug_single_test">Single Test</string>
     <string name="debug_batch_test">Batch Test</string>
     <string name="debug_autonomy">Autonomy</string>
+    <string name="debug_wifi">Wifi</string>
 
     <string name="debug_login_input_content_not_empty">The input user name or password cannot be empty</string>
     <string name="debug_login_pls_connect_network">Please check the network connection first</string>
@@ -635,6 +648,41 @@
     <string name="debug_key_list_camerapreviewresolution">CameraPreviewreSolution</string>
     <string name="debug_key_list_camerapasswordwrongtimes">CameraPasswordWrongTimes</string>
     <string name="debug_key_list_cameraircutswitch">CameraIrcutSwitch</string>
+    <string name="debug_key_list_cameramissionrecordenable">CameraMissionRecordEnable</string>
+    <string name="debug_key_list_cameramissionrecordpicturestorageset">CameraMissionRecordPictureStorageSet</string>
+    <string name="debug_key_list_cameramissionrecordpicturestorageget">CameraMissionRecordPictureStorageGet</string>
+    <string name="debug_key_list_cameraequivalentfocallength">35mm equivalent focal length</string>
+    <!--普通参数-->
+    <string name="debug_key_list_heartbeatphone">HeartBeatPhone</string>
+    <string name="debug_key_list_heartbeatapp">HeartBeatApp</string>
+    <string name="debug_key_list_setsystemdatatime">SetSystemDataTime</string>
+    <string name="debug_key_list_droneruntimentfy">DroneRuntimeNtfy</string>
+    <string name="debug_key_list_dronehfntfy">DroneHfNtfy</string>
+    <string name="debug_key_list_dronelfntfy">DroneLfNtfy</string>
+    <string name="debug_key_list_getsysteminitdata">GetSystemInitData</string>
+    <string name="debug_key_list_getdronedevicesinfo">GetDroneDevicesInfo</string>
+    <string name="debug_key_list_droneworkstatusinforeport">DroneWorkStatusInfoReport</string>
+    <string name="debug_key_list_dronewarningmfntfy">DroneWarningMFNtfy</string>
+    <string name="debug_key_list_controlled">ControlLed</string>
+    <string name="debug_key_list_queryledstatus">QueryLedStatus</string>
+    <string name="debug_key_list_dronecalibrationcommand">DroneCalibrationCommand</string>
+    <string name="debug_key_list_dronecalibrationeventntfy">DroneCalibrationEventNtfy</string>
+    <string name="debug_key_list_dronecalibrationschedulentfy">DroneCalibrationScheduleNtfy</string>
+    <string name="debug_key_list_dronesystemstatushfntfy">DroneSystemStatusHFNtfy</string>
+    <string name="debug_key_list_dronesystemstatuslfntfy">DroneSystemStatusLFNtfy</string>
+    <string name="debug_key_list_dronecontrolnightnavigationled">DroneControlNightNavigationLed</string>
+    <string name="debug_key_list_droneversionntfy">DroneVersionNtfy</string>
+    <string name="debug_key_list_droneeventntfy">DroneEventNtfy</string>
+    <string name="debug_key_list_dronetempconnectntfy">DroneTempConnectNtfy</string>
+    <string name="debug_key_list_droneutctimesyncntfy">DroneUtcTimeSyncNtfy</string>
+    <string name="debug_key_list_dronesetcountrycode">DroneSetCountryCode</string>
+    <string name="debug_key_list_dronecleannoflyzone">DroneCleanNoflyZone</string>
+    <string name="debug_key_list_dronewarning">DroneWarning</string>
+    <string name="debug_key_list_droneruntimewarning">DroneRuntimeWarning</string>
+    <string name="debug_key_list_dronedebuginfo">DroneDebugInfo</string>
+    <string name="debug_key_list_fileupload">FileUpload</string>
+
+
 
     <string name="debug_vision_track_background">Background</string>
     <string name="debug_vision_track_animal">Animal</string>
@@ -678,6 +726,9 @@
     <string name="debug_text_rtk_type">RTK Type</string>
     <string name="debug_text_rtk_coordinate_type">RTK Coordinate Type</string>
     <string name="debug_text_rtk_is_enable">Is Enable RTK</string>
+    <string name="debug_text_rtk_mode">RTK Single Mode</string>
+    <string name="debug_text_rtk_all_signal_mode">All Singles</string>
+    <string name="debug_text_rtk_bds_signal_mode">BDS Mode</string>
     <string name="debug_text_rtk_calibration_mode">calibration mode</string>
     <string name="debug_text_rtk_self_positioning_mode">self positioning mode</string>
     <string name="debug_device_log">Device log</string>
@@ -693,6 +744,10 @@
     <string name="debug_accurate_retake">Accurate retake</string>
     <string name="debug_rtmp">RTMP</string>
     <string name="debug_command_center">Command Center</string>
+    <string name="debug_device_log_real_time">real time</string>
+
+    <string name="debug_device_ota">Device OTA</string>
+    <string name="debug_device_ota_description">Demonstrate how to OTA upgrade</string>
 
 
     <string name="debug_channel_type_battery">BATTERY</string>
@@ -725,8 +780,10 @@
     <string name="debug_channel_type_systemmanager">SYSTEM_MANAGER</string>
     <string name="debug_channel_type_missionmanager">MISSION_MANAGER</string>
     <string name="debug_channel_type_accessoriesproxy">ACCESSORIES_PROXY</string>
-    <string name="debug_channel_type_commonupload">COMMON UPLOAD</string>
+    <string name="debug_channel_type_commonupload">COMMON Key</string>
     <string name="debug_channel_type_autonomy">Autonomy</string>
     <string name="debug_channel_type_accurateretake">Accurate retake</string>
     <string name="debug_channel_type_rtmp">RTMP</string>
+    <string name="debug_channel_type_commandcenter">Command Center</string>
+    <string name="debug_channel_type_wifi">Wifi</string>
 </resources>

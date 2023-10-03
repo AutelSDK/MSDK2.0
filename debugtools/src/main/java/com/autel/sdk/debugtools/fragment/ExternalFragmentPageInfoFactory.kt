@@ -68,13 +68,6 @@ class ExternalFragmentPageInfoFactory : IFragmentPageInfoFactory {
                 )
             )
 
-            items.add(
-                FragmentPageInfoItem(
-                    R.id.mqtt_page,
-                    R.string.debug_mqtt,
-                    R.string.debug_mqtt_title_description
-                )
-            )
         }
     }
 }

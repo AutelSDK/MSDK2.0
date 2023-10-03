@@ -37,6 +37,28 @@
                 android:paddingRight="@dimen/debug_dimen_dp_15"
                 android:paddingLeft="@dimen/debug_dimen_dp_15"
                 />
+
+            <TextView
+                android:id="@+id/rtk_tv_mode_name"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="@string/debug_text_rtk_mode"
+                android:textColor="@color/debug_white"
+                android:layout_marginRight="@dimen/debug_dimen_dp_15"
+                android:layout_marginLeft="@dimen/debug_dimen_dp_15"
+                app:layout_constraintStart_toEndOf="@id/tv_re_autor"
+                app:layout_constraintTop_toTopOf="parent" />
+            <com.autel.sdk.debugtools.view.spinnerview.DebugSpinnerView
+                android:id="@+id/rtk_tv_mode"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:paddingTop="@dimen/debug_dimen_dp_15"
+                android:layout_marginRight="@dimen/debug_dimen_dp_15"
+                android:layout_marginLeft="@dimen/debug_dimen_dp_15"
+                app:layout_constraintStart_toEndOf="@id/rtk_tv_mode_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switch_net_rtk"
                 android:layout_width="wrap_content"

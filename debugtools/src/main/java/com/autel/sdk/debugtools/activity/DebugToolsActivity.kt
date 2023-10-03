@@ -15,7 +15,7 @@ import com.autel.drone.sdk.vmodelx.utils.ToastUtils
 import com.autel.sdk.debugtools.*
 import com.autel.sdk.debugtools.fragment.ExternalMSDKInfoFragment
 import com.autel.sdk.debugtools.uploadMsg.AircraftUpMsgManager
-import com.autel.sdk.debugtools.uploadMsg.RemoteUploadMsgManager
+import com.autel.sdk.debugtools.uploadMsg.DebugToolUploadMsgManager
 
 /**
  * testing tools activity class for debug tools
@@ -35,7 +35,7 @@ abstract class DebugToolsActivity : AppCompatActivity(), IAutelDroneListener {
         SDKManager.get().init(applicationContext, true)
         SDKManager.get().getDeviceManager().addDroneListener(this)
         DeviceManager.getDeviceManager().getFirstRemoteDevice()
-            ?.let { RemoteUploadMsgManager.listenMsg(it) }
+            ?.let { DebugToolUploadMsgManager.listenMsg(it) }
         isDebugPage = true
         supportFragmentManager.commit {
             replace(R.id.main_info_fragment_container, ExternalMSDKInfoFragment())

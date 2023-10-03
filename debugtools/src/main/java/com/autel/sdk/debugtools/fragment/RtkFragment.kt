@@ -26,11 +26,11 @@ import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.nest.bean.rtk.NestRtkS
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.rtk.bean.RtkReportBean
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.rtk.enums.RTKPositionTypeEnum
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.rtk.enums.RTKSignalEnum
+import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.rtk.enums.RTKSignalModeEnum
 import com.autel.drone.sdk.vmodelx.utils.ToastUtils
 import com.autel.sdk.debugtools.R
 import com.autel.sdk.debugtools.databinding.FragmentRtkBinding
 import com.autel.sdk.debugtools.dialog.RtkAuthorDialog
-//import com.autel.utils.AutelSharedPreferencesUtils
 import kotlinx.coroutines.launch
 import java.math.RoundingMode
 import java.text.DecimalFormat
@@ -55,7 +55,10 @@ class RtkFragment : AutelFragment(),IRTKManager.RTKReportInfoCallback ,
     private lateinit var binding: FragmentRtkBinding
     var signalIndex = ""
     val rtkSignalEnumsList = mutableListOf<String>()
-    var handler: Handler = Handler(Looper.getMainLooper())
+
+
+    var signalModeIndex = ""
+    val rtkSignalModeList = mutableListOf<String>()
 
     var refreshTime = 0L
     var uslHost = RTKConstans.NTRIP_RTK_HOST
@@ -197,41 +200,10 @@ class RtkFragment : AutelFragment(),IRTKManager.RTKReportInfoCallback ,
     }
 
     private fun initView() {
-        rtkSignalEnumsList.clear()
-        rtkSignalEnumsList.addAll(
-            listOf(
-                getString(R.string.debug_text_rtk_self_net_tag),
-                getString(R.string.debug_text_rtk_net_tag),
-                getString(R.string.debug_text_rtk_mobile_tag),
-            )
-        )
-        binding.rtkTvService.dataList = rtkSignalEnumsList
-        /**
-         * 用户根据需要设置网络RTK类型，国内建议采用千寻SDK账号体系，否则网络RTK采用Ntrip方式实现
-         */
-        binding.switchNetRtk.setOnCheckedChangeListener { _, p1 ->
-            run {
-                SDKStorage.setStringValue(SP_NTRIP_RTK_HOST, uslHost)
-                SDKStorage.setIntValue(SP_NTRIP_RTK_PORT, post)
-                DeviceManager.getFirstDroneDevice()?.getRtkManager()
-                    ?.updateNetRtkType(p1, uslHost, post, object :IRTKManager.ChangeRTKConfigCallback{
-                        override fun onNeedAuterInfo(singnalEnum: RTKSignalEnum, isQianxun: Boolean) {
-                           autorNetRtk(singnalEnum,isQianxun)
-                        }
 
-                        override fun onUpdateConfigSuccess() {
-                            onUpdateConfigFininsh()
-                        }
+        iniRtkSingleMode()
 
-                        override fun onUpdateConfigFailure(error: IAutelCode, msg: String?) {
-                            onUpdateConfigFininsh()
-                            binding.rtkReportInfo.text = appendLogMessageRecord("\nonUpdateConfigFailure,error:$error,msg:$msg\n")
-
-                        }
-
-                    })
-            }
-        }
+        initSingleType()
         /**
          * 是否启用RTK精确定位开关
          */
@@ -355,6 +327,82 @@ class RtkFragment : AutelFragment(),IRTKManager.RTKReportInfoCallback ,
                 0.0, 0.0, 0.0
             )
         }
+    }
+
+    private fun initSingleType() {
+        rtkSignalEnumsList.clear()
+        rtkSignalEnumsList.addAll(
+            listOf(
+                getString(R.string.debug_text_rtk_self_net_tag),
+                getString(R.string.debug_text_rtk_net_tag),
+                getString(R.string.debug_text_rtk_mobile_tag),
+            )
+        )
+        binding.rtkTvService.dataList = rtkSignalEnumsList
+        /**
+         * 用户根据需要设置网络RTK类型，国内建议采用千寻SDK账号体系，否则网络RTK采用Ntrip方式实现
+         */
+        binding.switchNetRtk.setOnCheckedChangeListener { _, p1 ->
+            run {
+                SDKStorage.setStringValue(SP_NTRIP_RTK_HOST, uslHost)
+                SDKStorage.setIntValue( SP_NTRIP_RTK_PORT, post)
+                DeviceManager.getFirstDroneDevice()?.getRtkManager()
+                    ?.updateNetRtkType(p1, uslHost, post, object : IRTKManager.ChangeRTKConfigCallback {
+                        override fun onNeedAuterInfo(singnalEnum: RTKSignalEnum, isQianxun: Boolean) {
+                            autorNetRtk(singnalEnum, isQianxun)
+                        }
+
+                        override fun onUpdateConfigSuccess() {
+                            onUpdateConfigFininsh()
+                        }
+
+                        override fun onUpdateConfigFailure(error: IAutelCode, msg: String?) {
+                            onUpdateConfigFininsh()
+                            binding.rtkReportInfo.text = appendLogMessageRecord("\nonUpdateConfigFailure,error:$error,msg:$msg\n")
+
+                        }
+
+                    })
+            }
+        }
+    }
+
+    private fun iniRtkSingleMode() {
+        rtkSignalModeList.clear()
+        rtkSignalModeList.addAll(
+            listOf(
+                getString(R.string.debug_text_rtk_all_signal_mode),
+                getString(R.string.debug_text_rtk_bds_signal_mode),
+            )
+        )
+        binding.rtkTvMode.dataList = rtkSignalModeList
+
+        binding.rtkTvMode.setSpinnerViewListener { position ->
+            signalModeIndex = rtkSignalModeList[position]
+            binding.rtkTvService.setDefaultText(signalModeIndex)
+            DeviceManager.getFirstDroneDevice()?.getRtkManager()
+                ?.switchRTKSignalMode(RTKSignalModeEnum.findEnum(position), object : IRTKManager.ChangeRTKConfigCallback {
+                    override fun onNeedAuterInfo(singnalEnum: RTKSignalEnum, isQianxun: Boolean) {
+                        autorNetRtk(singnalEnum, isQianxun)
+                    }
+
+                    override fun onUpdateConfigSuccess() {
+                        onUpdateConfigFininsh()
+                    }
+
+                    override fun onUpdateConfigFailure(error: IAutelCode, msg: String?) {
+                        onUpdateConfigFininsh()
+                        binding.rtkReportInfo.text = appendLogMessageRecord("\nonUpdateConfigFailure,error:$error,msg:$msg\n")
+
+                    }
+
+                })
+        }
+
+      var  rtkSignalModeEnum= DeviceManager.getFirstDroneDevice()?.getRtkManager()?.rtkSwitchModeEnum?:RTKSignalModeEnum.ALL_SINGLE_MODE
+        signalModeIndex  = rtkSignalModeList[rtkSignalModeEnum.value]
+        binding.rtkTvService.setDefaultText(signalModeIndex)
+
     }
 
     private fun initData() {

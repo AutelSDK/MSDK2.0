@@ -1,0 +1,65 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/debug_gray">
+
+    <Button
+        android:id="@+id/start_upgrade"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp"
+        android:text="start upgrade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/upgrade_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="25dp"
+        android:text="upgrade state: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/check"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="175dp"
+        android:text="check"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/downLoad"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="325dp"
+        android:text="downLoad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="485dp"
+        android:text="Cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

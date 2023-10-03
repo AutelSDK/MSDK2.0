@@ -34,7 +34,7 @@ object UploadMsgKeyTools {
      * 飞控高频消息
      */
     val KeyFlightControlSystemHFState: AutelKey<DroneSystemStateHFNtfyBean> = KeyTools.createKey(
-        CommonKey.keyDroneSystemStatusHFNtfy
+        CommonKey.KeyDroneSystemStatusHFNtfy
     )
 
     /**

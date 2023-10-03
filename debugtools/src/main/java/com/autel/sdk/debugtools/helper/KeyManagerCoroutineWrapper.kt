@@ -7,7 +7,6 @@ import com.autel.drone.sdk.vmodelx.manager.keyvalue.callback.CommonCallbacks
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.base.AutelKey
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
 
 /**
  * 协程包装类
@@ -52,7 +51,7 @@ object KeyManagerCoroutineWrapper {
                         TAG,
                         "getValue ${key.keyInfo.keyName} -> onFailure,code = $code, msg =  ${msg.orEmpty()}"
                     )
-                    it.resumeWithException(SdkFailureResultException(code, msg))
+//                    it.resumeWithException(SdkFailureResultException(code, msg))
                 }
             })
         }
@@ -83,7 +82,7 @@ object KeyManagerCoroutineWrapper {
                             TAG,
                             "getValueList $keyNameList -> onFailure,code = $error, msg =  ${msg.orEmpty()}"
                         )
-                        it.resumeWithException(SdkFailureResultException(error, msg))
+//                        it.resumeWithException(SdkFailureResultException(error, msg))
                     }
                 })
         }
@@ -107,7 +106,7 @@ object KeyManagerCoroutineWrapper {
                         TAG,
                         "setValue ${key.keyInfo.keyName} -> onFailure,code = $code, msg =  ${msg.orEmpty()}"
                     )
-                    it.resumeWithException(SdkFailureResultException(code, msg))
+//                    it.resumeWithException(SdkFailureResultException(code, msg))
                 }
             })
         }
@@ -138,7 +137,7 @@ object KeyManagerCoroutineWrapper {
                             TAG,
                             "setValueList $keyNameList -> onFailure,code = $error, msg =  ${msg.orEmpty()}"
                         )
-                        it.resumeWithException(SdkFailureResultException(error, msg))
+//                        it.resumeWithException(SdkFailureResultException(error, msg))
                     }
 
                 })
@@ -168,12 +167,12 @@ object KeyManagerCoroutineWrapper {
                             TAG,
                             "performAction ${key.keyInfo.keyName} -> onFailure,code = $error, msg =  ${msg.orEmpty()}"
                         )
-                        it.resumeWithException(
-                            SdkFailureResultException(
-                                error,
-                                "\"performAction ${key.keyInfo.keyName}-> onFailure,code = $error\""
-                            )
-                        )
+//                        it.resumeWithException(
+//                            SdkFailureResultException(
+//                                error,
+//                                "\"performAction ${key.keyInfo.keyName}-> onFailure,code = $error\""
+//                            )
+//                        )
                     }
                 })
         }
@@ -203,7 +202,7 @@ object KeyManagerCoroutineWrapper {
                             TAG,
                             "performAction ${key.keyInfo.keyName} -> onFailure,code = $error, msg =  ${msg.orEmpty()}"
                         )
-                        it.resumeWithException(SdkFailureResultException(error, msg))
+//                        it.resumeWithException(SdkFailureResultException(error, msg))
                     }
                 })
         }
