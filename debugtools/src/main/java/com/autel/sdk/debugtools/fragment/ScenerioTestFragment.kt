@@ -127,6 +127,9 @@ open class ScenerioTestFragment : AutelFragment(), IMTestClickListener,
                         ScenarioTestResultStatusEnum.FAILED
                     )
                 }
+                else -> {
+
+                }
             }
         })
 

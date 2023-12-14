@@ -93,7 +93,7 @@ class OTAFirmwareUpgradeFragment : AutelFragment(), OTAFirmwareUpgradeProcessSta
             val modex = map.get("ModelX")
             modex?.let {
                 if (it.isNeed_upgrade) {
-                    s3DownloadInterceptor = OTAFirmwareUpgradeManager.getInstance().downLoadProductFile(it, object :
+                    s3DownloadInterceptor = OTAFirmwareUpgradeManager.getInstance().downLoadProductFile(it.pkg_url, object :
                         FileTransmitListener<File>{
                         override fun onSuccess(result: File?) {
                             SDKLog.d("OTAFirmwareUpgradeFragment","downLoad success: ")

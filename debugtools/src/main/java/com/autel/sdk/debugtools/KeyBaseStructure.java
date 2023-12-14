@@ -268,7 +268,7 @@ public class KeyBaseStructure<P, R extends GeneratedMessageV3> {
         if (getKeyManager(key) == null) {
             ToastUtils.INSTANCE.showToast(SDKManager.get().getSContext().getString(com.autel.sdk.debugtools.R.string.debug_keymanager_null));
         } else {
-            getKeyManager(key).performAction(key, null, actonCallback, 0, 3);
+            getKeyManager(key).performAction(key, null, actonCallback, 0, "3");
         }
     }
 
@@ -284,7 +284,7 @@ public class KeyBaseStructure<P, R extends GeneratedMessageV3> {
         if (getKeyManager(key) == null) {
             ToastUtils.INSTANCE.showToast(SDKManager.get().getSContext().getString(com.autel.sdk.debugtools.R.string.debug_keymanager_null));
         } else {
-            getKeyManager(key).performAction(key, param, actonCallback,0, 3);
+            getKeyManager(key).performAction(key, param, actonCallback,0, "3");
         }
     }
 

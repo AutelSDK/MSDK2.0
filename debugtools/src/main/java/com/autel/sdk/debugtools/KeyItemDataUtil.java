@@ -8,7 +8,6 @@ import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.AccessoriesProxyKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.AccurateRetakeKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.AirLinkKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.AutonomyKey;
-import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.BatteryKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.CameraKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.CommandCenterKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.CommonKey;
@@ -55,7 +54,6 @@ public class KeyItemDataUtil {
 
     public static void initBatteryKeyList(List<KeyItem<?, ?>> keyList) {
 
-        initList(keyList, BatteryKey.class);
 
     }
 

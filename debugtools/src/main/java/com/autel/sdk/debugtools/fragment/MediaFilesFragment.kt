@@ -24,6 +24,7 @@ import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.camera.enums.OrderType
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.camera.enums.StorageTypeEnum
 import com.autel.drone.sdk.vmodelx.module.fileservice.AutelDroneFile
 import com.autel.drone.sdk.vmodelx.module.fileservice.AutelFileUtil
+import com.autel.drone.sdk.vmodelx.module.fileservice.FileTransmissionListener
 import com.autel.drone.sdk.vmodelx.utils.MicroFtpUtil
 import com.autel.drone.sdk.vmodelx.utils.S3DownloadInterceptor
 import com.autel.sdk.debugtools.KeyValueDialogUtil
@@ -31,8 +32,10 @@ import com.autel.sdk.debugtools.R
 import com.autel.sdk.debugtools.databinding.FragmentMideaFilesBinding
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.io.File
+import okhttp3.internal.notify
+import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -69,40 +72,56 @@ class MediaFilesFragment : AutelFragment() {
 
         binding.tvUpload.setOnClickListener {//上传文件
             Log.e(TAG, "点击了上传文件")
-            "".also { binding.tvResult.text = it }
-            var file = File("/sdcard/fise/1665107840")
-            if (!file.exists()) {
-                Toast.makeText(
-                    context,
-                    getString(R.string.debug_file_does_not_exist),
-                    Toast.LENGTH_SHORT
-                ).show()
-                return@setOnClickListener
+            binding.tvUpload.isClickable = false
+            binding.tvResult.text = "start upload"
+            lifecycleScope.launch(Dispatchers.IO){
+                var path = copyToSdcard()
+                delay(500)
+                with(Dispatchers.Main){
+                    var file = File(path)
+                    if (!file.exists()) {
+                        lifecycleScope.launch(Dispatchers.Main) {
+                            Toast.makeText(
+                                context,
+                                getString(R.string.debug_file_does_not_exist),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            binding.tvUpload.isClickable = true
+                        }
+                        return@launch
+                    }
+
+                    MicroFtpUtil.uploadMissionFile(file,  object :
+                        FileTransmissionListener<String> {
+                        override fun onSuccess(result: String?) {
+                            Log.e(TAG, "onSuccess")
+                            lifecycleScope.launch(Dispatchers.Main) {
+                                result.also { binding.tvResult.text = "$it, upload success" }
+                                binding.tvUpload.isClickable = true
+                            }
+                        }
+
+                        override fun onProgress(sendLength: Long, totalLength: Long) {
+                            lifecycleScope.launch(Dispatchers.Main) {
+                                (String.format(
+                                    getString(R.string.debug_current_upload_size_bytes),
+                                    sendLength
+                                )).also { binding.tvResult.text = it }
+                                binding.tvUpload.isClickable = true
+                            }
+                        }
+
+
+                        override fun onFailed(statusCodeNew: AutelStatusCode?) {
+                            Log.e(TAG, "onFailed $statusCodeNew")
+                            lifecycleScope.launch(Dispatchers.Main) {
+                                statusCodeNew.also { binding.tvResult.text = it.toString() }
+                                binding.tvUpload.isClickable = true
+                            }
+                        }
+                    })
+                }
             }
-
-            AutelFileUtil.uploadFile(file, "/mission/", object :
-                FileListener<String> {
-                override fun onSuccess(result: String?) {
-                    lifecycleScope.launch(Dispatchers.Main) {
-                        result.also { binding.tvResult.text = it }
-                    }
-                }
-
-                override fun onProgress(sendLength: Long, totalLength: Long) {
-                    lifecycleScope.launch(Dispatchers.Main) {
-                        (String.format(
-                            getString(R.string.debug_current_upload_size_bytes),
-                            sendLength
-                        )).also { binding.tvResult.text = it }
-                    }
-                }
-
-                override fun onFailed(msg: String) {
-                    lifecycleScope.launch(Dispatchers.Main) {
-                        msg.also { binding.tvResult.text = it }
-                    }
-                }
-            })
         }
         binding.tvDownload.setOnClickListener {
             Log.e(TAG, "点击了下载文件")
@@ -242,17 +261,21 @@ class MediaFilesFragment : AutelFragment() {
         binding.tvHealthCheck.setOnClickListener {
             binding.tvResult.text =
                 appendLogMessageRecord(getString(R.string.debug_health_check_request))
-            MicroFtpUtil.healthCheck(object : CommonCallbacks.CompletionCallbackWithParam<String> {
+            /*MicroFtpUtil.healthCheck(object : CommonCallbacks.CompletionCallbackWithParam<String> {
                 override fun onSuccess(t: String?) {
-                    binding.tvResult.text = appendLogMessageRecord(t)
+                    activity?.runOnUiThread {
+                        binding.tvResult.text = appendLogMessageRecord(t)
+                    }
                 }
 
                 override fun onFailure(error: IAutelCode, msg: String?) {
                     val str =
                         getString(R.string.debug_code) + error.code + ", " + getString(R.string.debug_message) + msg
-                    binding.tvResult.text = appendLogMessageRecord(str)
+                    activity?.runOnUiThread {
+                        binding.tvResult.text = appendLogMessageRecord(str)
+                    }
                 }
-            })
+            })*/
         }
 
     }
@@ -267,42 +290,45 @@ class MediaFilesFragment : AutelFragment() {
     }
 
     private fun requestDownloadAlbumFile(request: FileRequest) {
+        if (!fileList.isNullOrEmpty() && fileList!!.isNotEmpty()) {
+            var sourceFile = fileList!![pos].getOriginPath()
 
-        var sourceFile = fileList!![pos].getOriginPath()
+            var destFile = requireActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
 
-        var destFile = requireActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            var saveFile = destFile!!.absolutePath + "/" + fileList!![pos].name
 
-        var saveFile = destFile!!.absolutePath + "/" + fileList!![pos].name
+            Log.e(TAG, "sourceFile $sourceFile")
+            Log.e(TAG, "destFile $saveFile")
 
-        Log.e(TAG, "sourceFile $sourceFile")
-        Log.e(TAG, "destFile $saveFile")
+            s3DownloadInterceptor = AlbumManager.getAlbumManager().downloadMediaFileNew(
+                sourceFile,
+                saveFile,
+                object : CommonCallbacks.DownLoadCallbackWithProgress<Double> {
 
-        s3DownloadInterceptor = AlbumManager.getAlbumManager().downloadMediaFileNew(
-            sourceFile,
-            saveFile,
-            object : CommonCallbacks.DownLoadCallbackWithProgress<Double> {
-
-                override fun onSuccess(file: File?) {
-                    lifecycleScope.launch(Dispatchers.Main) {
-                        binding.tvResult.text =
-                            getString(R.string.debug_success) + " ${file!!.absolutePath}"
+                    override fun onSuccess(file: File?) {
+                        lifecycleScope.launch(Dispatchers.Main) {
+                            binding.tvResult.text =
+                                getString(R.string.debug_success) + " ${file!!.absolutePath}"
+                        }
                     }
-                }
 
-                override fun onProgressUpdate(progress: Double, speed: Double) {
-                    lifecycleScope.launch(Dispatchers.Main) {
-                        binding.tvResult.text =  getString(R.string.debug_progress) + progress + ", " + getString(R.string.debug_speed) + speed
+                    override fun onProgressUpdate(progress: Double, speed: Double) {
+                        lifecycleScope.launch(Dispatchers.Main) {
+                            if (isAdded) {
+                                binding.tvResult.text =  getString(R.string.debug_progress) + progress + ", " + getString(R.string.debug_speed) + speed
+                            }
+                        }
                     }
-                }
 
-                override fun onFailure(error: IAutelCode) {
-                    lifecycleScope.launch(Dispatchers.Main) {
-                        val acode: AutelStatusCode = error as AutelStatusCode;
-                        ("" + acode.code + " " + acode.msg).also { binding.tvResult.text = it }
+                    override fun onFailure(error: IAutelCode) {
+                        lifecycleScope.launch(Dispatchers.Main) {
+                            val acode: AutelStatusCode = error as AutelStatusCode;
+                            ("" + acode.code + " " + acode.msg).also { binding.tvResult.text = it }
+                        }
+                        Log.e(TAG, "onFailure ${error.code}, ${error.toString()}")
                     }
-                    Log.e(TAG, "onFailure ${error.code}, ${error.toString()}")
-                }
-            })
+                })
+        }
     }
 
     private fun requestDelAlbumFile(request: DelRequest) {
@@ -450,5 +476,32 @@ class MediaFilesFragment : AutelFragment() {
     data class FileRequest(
         var fileName: String,
     )
+
+
+    private fun copyToSdcard(): String {
+        val sourceFilePath = "1698822367"
+        val targetDir =  "${context?.filesDir}/mission_test/"
+        val dir = File(targetDir)
+        if (!dir.exists()) {
+            dir.mkdirs()
+        }
+
+        val targetFilePath = targetDir + "1698822367"
+
+        try {
+            val inputStream: InputStream = requireActivity().assets.open(sourceFilePath)
+            val outputStream: OutputStream = FileOutputStream(targetFilePath)
+            val buffer = ByteArray(1024)
+            var length: Int
+            while (inputStream.read(buffer).also { length = it } > 0) {
+                outputStream.write(buffer, 0, length)
+            }
+            inputStream.close()
+            outputStream.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return targetFilePath
+    }
 
 }

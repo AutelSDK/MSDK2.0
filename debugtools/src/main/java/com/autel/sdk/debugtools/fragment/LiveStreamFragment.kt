@@ -22,6 +22,7 @@ import com.autel.sdk.debugtools.databinding.FragmentLivestreamBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.webrtc.VideoFrame
 import java.nio.ByteBuffer
 
 /**
@@ -56,7 +57,7 @@ class LiveStreamFragment : AutelFragment() , OnRenderFrameInfoListener {
     //"rtmp://183.6.112.146:17072/live/YD202220530_flight"; // 南网外网环境
     // "rtmp://183.6.112.146:1935/live/NEST202203038_flight_zoom" // 南网内网推流地址
     //"rtmp://116.205.231.28/live/livestream/zoom77" // 公司内网推流地址
-    private var rtmpUrl:String  = "rtmp://183.6.112.146:1935/live/NEST202203038_flight_zoom_test" //"rtmp://a.rtmp.youtube.com/live2/5hh6-xas1-btk7-2cmc-2rz9"
+    private var rtmpUrl:String  = "rtmp://test-mediacenter.autelrobotics.cn:1935/live/123" //"rtmp://a.rtmp.youtube.com/live2/5hh6-xas1-btk7-2cmc-2rz9"
 
     private val coroutineScope = CoroutineScope(Dispatchers.Default)
     private var connectStatus = -1;
@@ -277,7 +278,8 @@ class LiveStreamFragment : AutelFragment() , OnRenderFrameInfoListener {
        //todo:264码流回调到此处
     }
 
-    override fun onFrameStream(videoBuffer: ByteBuffer?, mInfo: MediaCodec.BufferInfo?, isIFrame: Boolean, width: Int, height: Int, formatType: Int) {
+    override fun onFrameStream(p0: VideoFrame?, p1: Int) {
     }
+
 
 }
