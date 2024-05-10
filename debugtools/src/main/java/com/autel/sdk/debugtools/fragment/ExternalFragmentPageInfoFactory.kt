@@ -22,6 +22,13 @@ class ExternalFragmentPageInfoFactory : IFragmentPageInfoFactory {
             )
             items.add(
                 FragmentPageInfoItem(
+                    R.id.virtual_stick_page,
+                    R.string.debug_item_virtual_stick_title,
+                    R.string.debug_item__virtual_stick_description
+                )
+            )
+            items.add(
+                FragmentPageInfoItem(
                     R.id.media_page,
                     R.string.debug_item_media_file_title,
                     R.string.debug_item_media_file_description
@@ -39,6 +46,30 @@ class ExternalFragmentPageInfoFactory : IFragmentPageInfoFactory {
                     R.id.livestream_page,
                     R.string.debug_item_livestreaming_title,
                     R.string.debug_item_livestreaming_title_description
+                )
+            )
+
+            items.add(
+                FragmentPageInfoItem(
+                    R.id.rtspserver_page,
+                    R.string.debug_item_rtspserver_title,
+                    R.string.debug_item_rtspserver_title_description
+                )
+            )
+
+            items.add(
+                FragmentPageInfoItem(
+                    R.id.gb28181_page,
+                    R.string.debug_item_gb28181_title,
+                    R.string.debug_item_gb28181_title_description
+                )
+            )
+
+            items.add(
+                FragmentPageInfoItem(
+                    R.id.videoconvert_page,
+                    R.string.debug_item_video_convert,
+                    R.string.debug_item_video_convert_description
                 )
             )
 
@@ -67,6 +98,17 @@ class ExternalFragmentPageInfoFactory : IFragmentPageInfoFactory {
                     R.string.debug_device_log_description
                 )
             )
+
+
+
+            items.add(
+                FragmentPageInfoItem(
+                    R.id.ota_page,
+                    R.string.debug_device_ota,
+                    R.string.debug_device_ota_description
+                )
+            )
+
 
         }
     }

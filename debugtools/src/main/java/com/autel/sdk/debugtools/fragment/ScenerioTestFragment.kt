@@ -106,6 +106,11 @@ open class ScenerioTestFragment : AutelFragment(), IMTestClickListener,
                 isTimerRunning = false
             }
             when (matchStatusEnum) {
+
+                AirLinkMatchStatusEnum.STATUS_FINISH -> {
+                    SDKLog.i(TAG, AirLinkMatchStatusEnum.STATUS_FINISH.name)
+                }
+
                 AirLinkMatchStatusEnum.STATUS_UNKNOWN -> {
                     SDKLog.d(
                         "Remote control paring",

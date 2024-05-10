@@ -7,10 +7,10 @@ package com.autel.sdk.debugtools
  * @author maowei on 2022/10/29.
  */
 enum class ChannelType( name: String) {
-    /**
-     * 电池
-     */
-    CHANNEL_TYPE_BATTERY("BATTERY"),
+//    /**
+//     * 电池
+//     */
+//    CHANNEL_TYPE_BATTERY("BATTERY"),
 
     /**
      * 云台
@@ -137,6 +137,7 @@ enum class ChannelType( name: String) {
 
     MISSION_MANAGER("MISSION_MANAGER"),
     ACCESSORIES_PROXY("ACCESSORIES_PROXY"),
+    CLOUD_API("CLOUD_API"),
 
     /**
      * common upload
@@ -154,7 +155,33 @@ enum class ChannelType( name: String) {
     /**
      * RTMP
      */
-    CHANNEL_TYPE_RTMP("RTMP");
+    CHANNEL_TYPE_RTMP("RTMP"),
+    /**
+     * Command Center
+     */
+    CHANNEL_TYPE_COMMAND_CENTER("COMMAND_CENTER"),
+
+    /**
+     * RTC
+     */
+    CHANNEL_TYPE_RTC("RTC"),
+
+    /**
+     * WIFI
+     */
+    CHANNEL_TYPE_WIFI("WIFI"),
+
+    /**
+     * Hardware data security
+     */
+    HARDWARE_DATA_SECURITY("HARDWARE_DATA_SECURITY"),
+
+    /**
+     * Payload_Key
+     */
+    PAYLOAD_KEY("PAYLOAD_KEY")
+
+    ;
 
     private val value: String
     override fun toString(): String {

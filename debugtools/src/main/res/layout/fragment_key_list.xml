@@ -128,7 +128,6 @@
                     android:layout_marginEnd="4dp"
                     android:layout_toStartOf="@+id/sw_batch_test"
                     android:text="@string/debug_single_test"
-                    android:visibility="gone"
                     android:textColor="@color/debug_white" />
 
                 <androidx.appcompat.widget.SwitchCompat
@@ -138,7 +137,6 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:layout_marginRight="20dp"
-                    android:visibility="gone"
                     android:enabled="true" />
 
             </RelativeLayout>

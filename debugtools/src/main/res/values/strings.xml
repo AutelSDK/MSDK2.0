@@ -65,13 +65,13 @@
 
     <string name="debug_vision_params_title">Visual DAT capture</string>
     <string name="debug_vision_params_title1">Visual MP4 capture</string>
-    <string name="debug_vision_params_title2" >Visual YUV capture</string>
+    <string name="debug_vision_params_title2">Visual YUV capture</string>
     <string name="debug_vision_params_title_description">Demonstrate how to use DAT capture</string>
     <string name="debug_vision_params_title1_description">Demonstrate how to use MP4 capture</string>
     <string name="debug_vision_params_title2_description">Demonstrate how to use YUV capture</string>
     <string name="debug_vision_track_title">VISION_TRACK</string>
     <string name="debug_vision_track_title_description">Demonstrate how to use the VISION_TRACK</string>
-    <string name="debug_vision_original_track_title_description" >Demonstrate how to use the VISION_PARAMS</string>
+    <string name="debug_vision_original_track_title_description">Demonstrate how to use the VISION_PARAMS</string>
     <string name="debug_sky_link_title">SKY_LINK</string>
     <string name="debug_sky_link_title_description">Demonstrate how to use the SKY_LINK</string>
     <string name="debug_report_control_title">REPORT_CONTROL</string>
@@ -119,7 +119,7 @@
     <string name="debug_camera">Camera</string>
     <string name="debug_ble">BLE</string>
     <string name="debug_airlink">AIRLINK</string>
-    <string name="debug_ai_service">AIService</string>
+    <string name="debug_ai_service">AI Service</string>
     <string name="debug_flight_control">FlightController</string>
     <string name="debug_flight_params">FlightParams</string>
     <string name="debug_product">Product</string>
@@ -143,13 +143,16 @@
     <string name="debug_nest">Nest</string>
     <string name="debug_mission_manager">MISSION MANAGER</string>
     <string name="debug_accessories_proxy">ACCESSORIES PROXY</string>
+    <string name="debug_cloud_api">CLOUD API </string>
     <string name="debug_radary_proxy">RADARY PROXY</string>
     <string name="debug_common">Common Key</string>
     <string name="debug_single_test">Single Test</string>
     <string name="debug_batch_test">Batch Test</string>
     <string name="debug_autonomy">Autonomy</string>
     <string name="debug_wifi">Wifi</string>
+    <string name="debug_data_security">Data Security</string>
 
+    <string name="debug_rtc">RTC</string>
     <string name="debug_login_input_content_not_empty">The input user name or password cannot be empty</string>
     <string name="debug_login_pls_connect_network">Please check the network connection first</string>
     <string name="debug_remote_controller">Remote Controller Only</string>
@@ -475,8 +478,8 @@
     <string name="debug_hanging_point_cross_arm_end">Hanging point at the cross-arm end</string>
     <string name="debug_data_record">Data record</string>
     <string name="debug_add_as_command">Add As Command</string>
-    <string name="debug_subtype">Subtype</string>
-    <string name="debug_subindex">SubIndex</string>
+    <string name="debug_subtype">srcNodeId</string>
+    <string name="debug_subindex">dstNodeId</string>
     <string name="debug_results_will_be_printed_here">Results will be printed here.</string>
     <string name="debug_operate_listen_record_tips">Operate listen record tips</string>
     <string name="debug_component_index">Componentindex</string>
@@ -681,7 +684,8 @@
     <string name="debug_key_list_droneruntimewarning">DroneRuntimeWarning</string>
     <string name="debug_key_list_dronedebuginfo">DroneDebugInfo</string>
     <string name="debug_key_list_fileupload">FileUpload</string>
-
+    <string name="debug_key_list_dronesetflyzonecommand">设置可飞区区域编码</string>
+    <string name="debug_key_list_dronesetflyregioncommand">设置可飞区及附近国家地区码</string>
 
 
     <string name="debug_vision_track_background">Background</string>
@@ -708,7 +712,6 @@
     <string name="debug_vision_track_smoke">Smoke</string>
     <string name="debug_vision_track_firesource">Fire source</string>
     <string name="debug_vision_track_unknown">Unknown</string>
-
 
 
     <string name="debug_parameter">Parameter</string>
@@ -753,9 +756,9 @@
     <string name="debug_channel_type_battery">BATTERY</string>
     <string name="debug_channel_type_gimbal">GIMBAL</string>
     <string name="debug_channel_type_camera">CAMERA</string>
-    <string name="debug_channel_type_flightmission">FLIGHT_MISSION</string>
+    <string name="debug_channel_type_flightmission">FLIGHT MISSION</string>
     <string name="debug_channel_type_airlink">AIRLINK</string>
-    <string name="debug_channel_type_aiservice">AI_SERVICE</string>
+    <string name="debug_channel_type_aiservice">AI SERVICE</string>
     <string name="debug_channel_type_flightparams">FLIGHT PARAMS</string>
     <string name="debug_channel_type_flightcontrol">FLIGHT CONTROL</string>
     <string name="debug_channel_type_remotecontroller">REMOTE CONTROLLER</string>
@@ -784,6 +787,9 @@
     <string name="debug_channel_type_autonomy">Autonomy</string>
     <string name="debug_channel_type_accurateretake">Accurate retake</string>
     <string name="debug_channel_type_rtmp">RTMP</string>
+    <string name="debug_channel_type_rtc">RTC</string>
     <string name="debug_channel_type_commandcenter">Command Center</string>
     <string name="debug_channel_type_wifi">Wifi</string>
+    <string name="debug_item_virtual_stick_title">Virtual Stick</string>
+    <string name="debug_item__virtual_stick_description">Virtual Stick Demo</string>
 </resources>

@@ -9,24 +9,29 @@ import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.AccurateRetakeKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.AirLinkKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.AutonomyKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.CameraKey;
+import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.CloudApiKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.CommandCenterKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.CommonKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.FlightControlKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.FlightMissionKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.FlightPropertyKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.GimbalKey;
+import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.HardwareDataSecurityKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.LteModuleKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.MissionManagerKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.MqttPropertyKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.NestKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.NtripAccountKey;
+import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.PayloadKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.RadarPropertyKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.RemoteControllerKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.RemoteIDKey;
+import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.RtcKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.RtkPropertKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.RtmpKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.SystemManagerKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.VisionKey;
+import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.WifiKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.base.AutelActionKeyInfo;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.base.AutelKeyInfo;
 
@@ -52,10 +57,7 @@ public class KeyItemDataUtil {
         //dosomething
     }
 
-    public static void initBatteryKeyList(List<KeyItem<?, ?>> keyList) {
 
-
-    }
 
     public static void initAirlinkKeyList(List<KeyItem<?, ?>> keylist) {
 
@@ -126,6 +128,10 @@ public class KeyItemDataUtil {
         initList(keyList, RtkPropertKey.class);
     }
 
+
+    public static void initWifiKeyList(List<KeyItem<?, ?>> keyList) {
+        initList(keyList, WifiKey.class);
+    }
     public static void initRadarKeyList(List<KeyItem<?, ?>> keyList) {
         initList(keyList, RadarPropertyKey.class);
     }
@@ -186,11 +192,27 @@ public class KeyItemDataUtil {
         initList(keyList, AccessoriesProxyKey.class);
     }
 
+    public static void initCloudAPiKeyListList(List<KeyItem<?, ?>> keyList) {
+        initList(keyList, CloudApiKey.class);
+    }
+
+    public static void initHardwareDataSecurityListList(List<KeyItem<?, ?>> keyList) {
+        initList(keyList, HardwareDataSecurityKey.class);
+    }
+
     public static void initRtmpKeyList(List<KeyItem<?, ?>> keyList) {
         initList(keyList, RtmpKey.class);
     }
     public static void initCommandCenterKeyList(List<KeyItem<?, ?>> keyList) {
         initList(keyList, CommandCenterKey.class);
+    }
+
+    public static void initRtcKeyList(List<KeyItem<?, ?>> keyList) {
+        initList(keyList, RtcKey.class);
+    }
+
+    public static void initPayloadKeyKeyList(List<KeyItem<?, ?>> keyList) {
+        initList(keyList, PayloadKey.class);
     }
 
     /**

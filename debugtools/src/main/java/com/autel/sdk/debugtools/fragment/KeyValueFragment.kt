@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.autel.drone.sdk.pbprotocol.constants.MessageTypeConstant
 import com.autel.drone.sdk.vmodelx.extensions.test
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.CameraKey
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.base.KeyTools
@@ -78,11 +80,18 @@ class KeyValueFragment : AutelFragment(), View.OnClickListener {
     private val waypointKeyList: MutableList<KeyItem<*, *>> = ArrayList()
     private val nestKeyList: MutableList<KeyItem<*, *>> = ArrayList()
     private val AccessoriesKeyList: MutableList<KeyItem<*, *>> = ArrayList()
+    private val cloudAPiKeyList: MutableList<KeyItem<*, *>> = ArrayList()
     private val missionManagerKeyList: MutableList<KeyItem<*, *>> = ArrayList()
     private val autonomyKeyList: MutableList<KeyItem<*, *>> = ArrayList()
     private val accurateRetakeKeyList : MutableList<KeyItem<*, *>> = ArrayList()
     private val rtmpKeyList : MutableList<KeyItem<*, *>> = ArrayList()
+    private val rtcKeyList: MutableList<KeyItem<*, *>> = ArrayList()
     private val commandCenterKeyList: MutableList<KeyItem<*, *>> = ArrayList()
+    private val hardwareDataSecurityKeyList: MutableList<KeyItem<*, *>> = ArrayList()
+    private val payLoadKeyList: MutableList<KeyItem<*, *>> = ArrayList()
+    private val dragonFishFCKeyList: MutableList<KeyItem<*, *>> = ArrayList()
+    private val dragonFishCmdList: MutableList<KeyItem<*, *>> = ArrayList()
+
 
     private var keyValueSharedPreferences: SharedPreferences? = null
     private val selectMode = false
@@ -325,11 +334,11 @@ class KeyValueFragment : AutelFragment(), View.OnClickListener {
         currentKeyItemList.clear()
         var tips: String? = ""
         when (currentChannelType) {
-            ChannelType.CHANNEL_TYPE_BATTERY -> {
-                KeyItemDataUtil.initBatteryKeyList(batteryKeyList)
-                tips = getString(R.string.debug_battery)
-                currentKeyItemList.addAll(batteryKeyList)
-            }
+//            ChannelType.CHANNEL_TYPE_BATTERY -> {
+//                KeyItemDataUtil.initBatteryKeyList(batteryKeyList)
+//                tips = getString(R.string.debug_battery)
+//                currentKeyItemList.addAll(batteryKeyList)
+//            }
             ChannelType.CHANNEL_TYPE_GIMBAL -> {
                 KeyItemDataUtil.initGimbalKeyList(gimbalKeyList)
                 tips = getString(R.string.debug_gimbal)
@@ -436,7 +445,7 @@ class KeyValueFragment : AutelFragment(), View.OnClickListener {
                 currentKeyItemList.addAll(lidarKeyList)
             }
             ChannelType.CHANNEL_TYPE_FLIGHT_MISSION -> {
-                tips = getString(R.string.debug_waypoint)
+                tips = getString(R.string.debug_channel_type_flightmission)
                 KeyItemDataUtil.initMissionKeyList(waypointKeyList)
                 currentKeyItemList.addAll(waypointKeyList)
             }
@@ -475,6 +484,11 @@ class KeyValueFragment : AutelFragment(), View.OnClickListener {
                 KeyItemDataUtil.initAccessoriesKeyListList(AccessoriesKeyList)
                 currentKeyItemList.addAll(AccessoriesKeyList)
             }
+            ChannelType.CLOUD_API -> {
+                tips = getString(R.string.debug_cloud_api)
+                KeyItemDataUtil.initCloudAPiKeyListList(cloudAPiKeyList)
+                currentKeyItemList.addAll(cloudAPiKeyList)
+            }
             ChannelType.CHANNEL_TYPE_AUTONOMY -> {
                 tips = getString(R.string.debug_autonomy)
                 KeyItemDataUtil.initAutonomyKeyList(autonomyKeyList)
@@ -490,7 +504,31 @@ class KeyValueFragment : AutelFragment(), View.OnClickListener {
                 KeyItemDataUtil.initRtmpKeyList(rtmpKeyList)
                 currentKeyItemList.addAll(rtmpKeyList)
             }
-
+            ChannelType.CHANNEL_TYPE_COMMAND_CENTER -> {
+                tips = getString(R.string.debug_command_center)
+                KeyItemDataUtil.initCommandCenterKeyList(commandCenterKeyList)
+                currentKeyItemList.addAll(commandCenterKeyList)
+            }
+            ChannelType.CHANNEL_TYPE_WIFI -> {
+                tips = getString(R.string.debug_wifi)
+                KeyItemDataUtil.initWifiKeyList(wifiKeyList)
+                currentKeyItemList.addAll(wifiKeyList)
+            }
+            ChannelType.CHANNEL_TYPE_RTC -> {
+                tips = getString(R.string.debug_rtc)
+                KeyItemDataUtil.initRtcKeyList(rtcKeyList)
+                currentKeyItemList.addAll(rtcKeyList)
+            }
+            ChannelType.HARDWARE_DATA_SECURITY -> {
+                tips = getString(R.string.debug_data_security)
+                KeyItemDataUtil.initHardwareDataSecurityListList(hardwareDataSecurityKeyList)
+                currentKeyItemList.addAll(hardwareDataSecurityKeyList)
+            }
+            ChannelType.PAYLOAD_KEY -> {
+                tips = getString(R.string.debug_payload)
+                KeyItemDataUtil.initPayloadKeyKeyList(payLoadKeyList)
+                currentKeyItemList.addAll(payLoadKeyList)
+            }
             else -> {}
         }
         for (item in currentKeyItemList) {
@@ -700,7 +738,6 @@ class KeyValueFragment : AutelFragment(), View.OnClickListener {
             ChannelType.CHANNEL_TYPE_CAMERA,
             ChannelType.CHANNEL_TYPE_FLIGHT_MISSION,
             ChannelType.CHANNEL_TYPE_FLIGHT_CONTROL,
-            ChannelType.CHANNEL_TYPE_BATTERY,
             ChannelType.CHANNEL_TYPE_GIMBAL,
             ChannelType.CHANNEL_TYPE_AIRLINK,
             ChannelType.CHANNEL_TYPE_AISERVICE,
@@ -714,14 +751,19 @@ class KeyValueFragment : AutelFragment(), View.OnClickListener {
             ChannelType.SYSTEM_MANAGER,
             ChannelType.MISSION_MANAGER,
             ChannelType.ACCESSORIES_PROXY,
+            ChannelType.CLOUD_API,
             ChannelType.CHANNEL_TYPE_AUTONOMY,
             ChannelType.CHANNEL_TYPE_RADAR,
             ChannelType.CHANNEL_TYPE_RTK,
             ChannelType.CHANNEL_TYPE_NTRIP,
             ChannelType.CHANNEL_TYPE_LTEMODULE,
-            ChannelType.CHANNEL_TYPE_MQTT,
             ChannelType.CHANNEL_TYPE_ACCURATE_RETAKE,
             ChannelType.CHANNEL_TYPE_RTMP,
+            ChannelType.CHANNEL_TYPE_COMMAND_CENTER,
+            ChannelType.CHANNEL_TYPE_WIFI,
+            ChannelType.HARDWARE_DATA_SECURITY,
+            ChannelType.PAYLOAD_KEY,
+            ChannelType.CHANNEL_TYPE_RTC,
         )
         showChannelList = capabilityChannelList.toMutableList()
         KeyValueDialogUtil.showChannelFilterListWindow(
@@ -889,6 +931,15 @@ class KeyValueFragment : AutelFragment(), View.OnClickListener {
         }
     }
 
+    private fun String.toIntOrUseDefault(defaultValue: Int): Int {
+        return try {
+            toInt()
+        } catch (e: NumberFormatException) {
+            defaultValue
+        }
+    }
+
+
     /**
      * 上报操作
      */
@@ -898,27 +949,56 @@ class KeyValueFragment : AutelFragment(), View.OnClickListener {
             return
         }
         currentKeyItem!!.setKeyOperateCallBack(keyItemOperateCallBack)
-        if (currentKeyItem?.subItemMap!!.isNotEmpty()) {
-            processSubListLogic(
-                binding.layoutKey.btSet,
-                currentKeyItem?.param,
-                currentKeyItem?.subItemMap as Map<String?, List<EnumItem>>,
-                object :
-                    KeyItemActionListener<String?> {
-                    override fun actionChange(paramJsonStr: String?) {
-                        if (Util.isBlank(paramJsonStr)) {
-                            return
+
+        val spSubtypeValue = binding.layoutKey.spSubtype.text.toString()
+        val srcNodeId = spSubtypeValue.toIntOrUseDefault(1)
+
+        val spSubIndexValue = binding.layoutKey.spSubindex.text.toString()
+        val dstNodeId = spSubIndexValue.toIntOrUseDefault(0)
+
+        currentKeyItem?.keyInfo?.setSrcNodeId(srcNodeId)
+        currentKeyItem?.keyInfo?.setDestNodeId(dstNodeId)
+
+
+        if(currentKeyItem?.keyInfo?.keyName == MessageTypeConstant.PAYLOAD_LIGHT_SPEAKER_RUNTIME_MESSAGE){
+            showToast("开始执行喊话")
+
+            var index = 0
+            while(currentKeyItem?.isStop == false){
+                if (!TextUtils.isEmpty(currentKeyItem?.paramJsonStr)) {
+                    currentKeyItem!!.doReport(currentKeyItem?.paramJsonStr)
+                    Thread.sleep(100L)
+                    index++
+                }
+            }
+
+            currentKeyItem?.isStop = false
+
+            showToast("执行喊话结束  $index 次")
+
+        } else{
+            if (currentKeyItem?.subItemMap!!.isNotEmpty()) {
+                processSubListLogic(
+                    binding.layoutKey.btSet,
+                    currentKeyItem?.param,
+                    currentKeyItem?.subItemMap as Map<String?, List<EnumItem>>,
+                    object :
+                        KeyItemActionListener<String?> {
+                        override fun actionChange(paramJsonStr: String?) {
+                            if (Util.isBlank(paramJsonStr)) {
+                                return
+                            }
+                            currentKeyItem!!.doReport(paramJsonStr)
                         }
-                        currentKeyItem!!.doReport(paramJsonStr)
-                    }
-                })
-        } else if (currentKeyItem!!.paramJsonStr == null) {
-            currentKeyItem!!.doReport(null)
-        } else {
-            KeyValueDialogUtil.showInputDialog(
-                activity,
-                currentKeyItem
-            ) { s -> currentKeyItem!!.doReport(s) }
+                    })
+            } else if (currentKeyItem!!.paramJsonStr == null) {
+                currentKeyItem!!.doReport(null)
+            } else {
+                KeyValueDialogUtil.showInputDialog(
+                    activity,
+                    currentKeyItem
+                ) { s -> currentKeyItem!!.doReport(s) }
+            }
         }
     }
 
@@ -954,6 +1034,9 @@ class KeyValueFragment : AutelFragment(), View.OnClickListener {
         releaseKeyInfo(radarKeyList)
         releaseKeyInfo(appKeyList)
         releaseKeyInfo(accurateRetakeKeyList)
+        releaseKeyInfo(payLoadKeyList)
+        releaseKeyInfo(cloudAPiKeyList)
+        releaseKeyInfo(rtcKeyList)
     }
 
     override fun onDestroy() {

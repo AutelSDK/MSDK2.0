@@ -3,6 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_common"
     app:startDestination="@id/key_value_page">
+    <fragment
+        android:id="@+id/virtual_stick_page"
+        android:name="com.autel.sdk.debugtools.fragment.VirtualStickFragment"
+        android:label="virtual_stick_page" />
 
     <fragment
         android:id="@+id/key_value_page"
@@ -23,6 +27,27 @@
         android:id="@+id/livestream_page"
         android:name="com.autel.sdk.debugtools.fragment.LiveStreamFragment"
         android:label="livestream_page" />
+
+    <fragment
+        android:id="@+id/rtspclient_page"
+        android:name="com.autel.sdk.debugtools.fragment.RtspClientFragment"
+        android:label="rtspclient_page" />
+
+    <fragment
+        android:id="@+id/rtspserver_page"
+        android:name="com.autel.sdk.debugtools.fragment.RtspServerFragment"
+        android:label="rtspserver_page" />
+
+    <fragment
+        android:id="@+id/gb28181_page"
+        android:name="com.autel.sdk.debugtools.fragment.GB28181Fragment"
+        android:label="gb28181_page" />
+
+
+    <fragment
+        android:id="@+id/videoconvert_page"
+        android:name="com.autel.sdk.debugtools.fragment.VideoConvertFragment"
+        android:label="videoconvert_page" />
 
     <fragment
         android:id="@+id/scenerio_testing_page"

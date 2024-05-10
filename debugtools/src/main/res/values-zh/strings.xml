@@ -63,7 +63,7 @@
     <string name="debug_vision_original_track_title_description">演示如何使用 VISION_PARAMS</string>
     <string name="debug_sky_link_title">天空_LINK</string>
     <string name="debug_sky_link_title_description">演示如何使用 SKY_LINK</string>
-    <string name="debug_report_control_title">报告控制</string>
+    <string name="debug_report_control_title">上报管理</string>
     <string name="debug_report_control_title_description">演示如何使用 REPORT_CONTROL</string>
 
     <string name="debug_scenario_testing_title">场景测试</string>
@@ -127,19 +127,24 @@
     <string name="debug_lidar">激光雷达</string>
     <string name="debug_waypoint">航点</string>
     <string name="debug_ai_track">人工智能追踪</string>
-    <string name="debug_remote_id">远程ID</string>
+    <string name="debug_remote_id">Remote ID</string>
     <string name="debug_system_manager">系统管理器</string>
     <string name="debug_nest">机巢</string>
     <string name="debug_mission_manager">任务管理器</string>
     <string name="debug_accessories_proxy">配件代理</string>
+    <string name="debug_cloud_api">上云API </string>
+    <string name="debug_radary_proxy">雷达代理</string>
     <string name="debug_common">通用属性</string>
     <string name="debug_single_test">单项测试</string>
     <string name="debug_batch_test">批量测试</string>
     <string name="debug_autonomy">autonomy</string>
     <string name="debug_wifi">Wifi</string>
+    <string name="debug_data_security">Data Security</string>
+
+    <string name="debug_rtc">RTC</string>
     <string name="debug_login_input_content_not_empty">输入的用户名或密码不能为空</string>
     <string name="debug_login_pls_connect_network">请先检查网络连接</string>
-    <string name="debug_remote_controller">仅遥控器</string>
+    <string name="debug_remote_controller">遥控器</string>
     <string name="debug_login_box_tvSn">当前序列号：</string>
     <string name="debug_setting_account_exit">登出</string>
     <string name="debug_login_nest">指挥中心登录</string>
@@ -266,7 +271,7 @@
     <string name="debug_text_video_failed">录像场景失败！！主控有问题</string>
     <string name="debug_text_no_gps">没有 GPS 信号</string>
 
-    
+
     <string name="personal_check_upgrade">查询更新</string>
     <string name="update_u_disk_error_title">未检测到 U 盘。请插入U盘重试</string>
     <string name="update_u_disk_button">选择升级包</string>
@@ -418,7 +423,7 @@
     <string name="debug_fixed_frequency_band">固定频段</string>
     <string name="debug_compliant_frequency_band_adaptation">兼容频段适配</string>
     <string name="debug_full_band_adaptive">全频段自适应</string>
-    <string name="debug_fluent">流利</string>
+    <string name="debug_fluent">流畅</string>
     <string name="debug_hd">高清</string>
     <string name="debug_ultra_hd">超高清</string>
     <string name="debug_url">网址：</string>
@@ -457,8 +462,8 @@
     <string name="debug_hanging_point_cross_arm_end">横臂端挂点</string>
     <string name="debug_data_record">数据记录</string>
     <string name="debug_add_as_command">添加为命令</string>
-    <string name="debug_subtype">亚型</string>
-    <string name="debug_subindex">子索引</string>
+    <string name="debug_subtype">srcNodeId</string>
+    <string name="debug_subindex">dstNodeId</string>
     <string name="debug_results_will_be_printed_here">结果将打印在这里。</string>
     <string name="debug_operate_listen_record_tips">操作听录音提示</string>
     <string name="debug_component_index">成分索引</string>
@@ -666,6 +671,8 @@
     <string name="debug_key_list_droneruntimewarning">飞机实时告警通知</string>
     <string name="debug_key_list_dronedebuginfo">飞机调试信息通知</string>
     <string name="debug_key_list_fileupload">文件上传</string>
+    <string name="debug_key_list_dronesetflyzonecommand">设置可飞区区域编码</string>
+    <string name="debug_key_list_dronesetflyregioncommand">设置可飞区及附近国家地区码</string>
 
     <string name="debug_vision_track_background">背景</string>
     <string name="debug_vision_track_animal">动物</string>
@@ -696,11 +703,11 @@
     <string name="debug_channel_type_gimbal">云台</string>
     <string name="debug_channel_type_camera">相机</string>
     <string name="debug_channel_type_flightmission">飞行任务</string>
-    <string name="debug_channel_type_airlink">空联</string>
-    <string name="debug_channel_type_aiservice">人工智能服务</string>
+    <string name="debug_channel_type_airlink">AirLink</string>
+    <string name="debug_channel_type_aiservice">AI服务</string>
     <string name="debug_channel_type_flightparams">飞行参数</string>
     <string name="debug_channel_type_flightcontrol">飞行控制</string>
-    <string name="debug_channel_type_remotecontroller">远程控制器</string>
+    <string name="debug_channel_type_remotecontroller">遥控器</string>
     <string name="debug_channel_type_ble">蓝牙</string>
     <string name="debug_channel_type_rtkbasestation">RTK 基站</string>
     <string name="debug_channel_type_rtkmobilestation">RTK 移动站</string>
@@ -716,13 +723,13 @@
     <string name="debug_channel_type_board">板</string>
     <string name="debug_channel_type_payload">有效载荷</string>
     <string name="debug_channel_type_lidar">激光雷达</string>
-    <string name="debug_channel_type_aitrack">人工智能追踪</string>
-    <string name="debug_channel_type_remoteid">远程 ID</string>
+    <string name="debug_channel_type_aitrack">AI 追踪</string>
+    <string name="debug_channel_type_remoteid">Remote ID</string>
     <string name="debug_channel_type_nest">NEST</string>
     <string name="debug_channel_type_systemmanager">系统管理器</string>
     <string name="debug_channel_type_missionmanager">任务管理器</string>
     <string name="debug_channel_type_accessoriesproxy">配件代理</string>
-    <string name="debug_channel_type_commonupload">普通参数</string>
+    <string name="debug_channel_type_commonupload">通用参数</string>
     <string name="debug_channel_type_autonomy">autonomy</string>
     <string name="debug_channel_type_accurateretake">精准复拍管理器</string>
     <string name="debug_channel_type_rtmp">RTMP管理器</string>
@@ -764,4 +771,6 @@
     <string name="debug_rtmp">RTMP</string>
     <string name="debug_command_center">指挥中心</string>
     <string name="debug_device_log_real_time">实时日志</string>
+    <string name="debug_item_virtual_stick_title">虚拟摇杆</string>
+    <string name="debug_item__virtual_stick_description">演示如何使用虚拟摇杆</string>
 </resources>

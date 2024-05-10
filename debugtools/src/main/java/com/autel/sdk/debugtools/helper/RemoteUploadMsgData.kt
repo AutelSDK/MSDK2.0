@@ -58,7 +58,16 @@ class RemoteUploadMsgData<T : Any> {
      */
     fun observeForever(observer: Observer<T>) {
         val wrapper = AlwaysActiveObserver(observer)
-        val existing = mObservers.putIfAbsent(observer, wrapper)
+        val existing =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                mObservers.putIfAbsent(observer, wrapper)
+            } else {
+                var isExist = mObservers[observer]
+                if (isExist == null) {
+                    isExist = mObservers.put(observer, wrapper)
+                }
+                isExist
+            }
         require((existing is AlwaysActiveObserver)) {
             ("Cannot add the same observer"
                     + " with different lifecycles")

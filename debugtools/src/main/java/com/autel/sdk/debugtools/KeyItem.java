@@ -505,9 +505,14 @@ public class KeyItem<P, R> extends KeyBaseStructure implements Comparable<KeyIte
             return null;
         }
         P p = null;
-        Object o = keyInfo.getTypeConverter().fromJsonStr(jsonStr);
-        if (o != null) {
-            p = (P) o;
+        try {
+            Object o;
+            o = keyInfo.getTypeConverter().fromJsonStr(jsonStr);
+            if (o != null) {
+                p = (P) o;
+            }
+        } catch (Exception e) {
+            SDKLog.e(TAG, e.getMessage());
         }
         return p;
     }
@@ -555,6 +560,14 @@ public class KeyItem<P, R> extends KeyBaseStructure implements Comparable<KeyIte
         } else {
             return 0;
         }
+    }
+
+    public Boolean isStop() {
+        return keyInfo.getTypeConverter().isStop();
+    }
+
+    public void  setStop(Boolean stop) {
+        keyInfo.getTypeConverter().setStop(stop);
     }
 
 }

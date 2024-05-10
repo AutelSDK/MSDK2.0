@@ -191,17 +191,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="48dp"
         android:layout_centerInParent="true"
-        android:layout_weight="2"
-        android:gravity="center"
+        android:gravity="left|center_vertical"
         android:orientation="horizontal"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:visibility="gone"
             android:gravity="center_vertical">
 
             <TextView
@@ -212,7 +211,7 @@
 
             <Spinner
                 android:id="@+id/sp_index"
-                android:layout_width="@dimen/debug_keyvalue_list_spinner_width"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:dropDownWidth="@dimen/debug_keyvalue_list_spinner_width"
                 android:entries="@array/debug_index_arrays"
@@ -220,11 +219,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="3"
-            android:gravity="center">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tv_subtype"
@@ -233,20 +229,20 @@
                 android:text="@string/debug_subtype"
                 android:textColor="@color/debug_white" />
 
-            <Spinner
+            <EditText
                 android:id="@+id/sp_subtype"
-                android:layout_width="wrap_content"
+                android:layout_width="32dp"
                 android:layout_height="wrap_content"
-                android:dropDownWidth="@dimen/debug_keyvalue_list_spinner_width"
-
-                android:entries="@array/debug_sub_type_arrays"
-                android:textColor="@color/debug_white" />
+                android:text="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/debug_white"
+                android:inputType="number"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -254,13 +250,15 @@
                 android:text="@string/debug_subindex"
                 android:textColor="@color/debug_white" />
 
-            <Spinner
+            <EditText
                 android:id="@+id/sp_subindex"
-                android:layout_width="@dimen/debug_keyvalue_list_spinner_width"
+                android:layout_width="32dp"
                 android:layout_height="wrap_content"
-                android:dropDownWidth="@dimen/debug_keyvalue_list_spinner_width"
-                android:entries="@array/debug_sub_index_arrays"
-                android:textColor="@color/debug_white" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="2"
+                android:textColor="@color/debug_white"
+                android:inputType="number"/>
 
         </LinearLayout>
 

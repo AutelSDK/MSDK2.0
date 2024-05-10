@@ -20,8 +20,6 @@ object AircraftUpMsgManager : IAircraftUpMsgHandler {
     }
 
     override fun cancelListenMsg(aircraftDevice: IBaseDevice) {
-        //移除mock数据对应的监听
-        aircraftDevice.getKeyManager().removeAllListen()
         FlightControlUploadMsgManager.cancelListenMsg(aircraftDevice)
         MissionWaypointStatusUpMsgManager.cancelListenMsg(aircraftDevice)
         AIServiceDetectTargetMsgManager.cancelListenMsg(aircraftDevice)

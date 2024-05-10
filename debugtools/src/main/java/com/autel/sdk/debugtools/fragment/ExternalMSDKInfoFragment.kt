@@ -59,7 +59,7 @@ class ExternalMSDKInfoFragment : AutelFragment() {
 
     private fun initLanguageSettings() {
         csvLanguageSetting =
-            binging.mainTitleLayout.findViewById(R.id.csv_language_setting)
+            binging.mainTitleLayout.findViewById<DebugSpinnerView>(R.id.csv_language_setting)
 
          languageIndex = SDKStorage.getIntValue(MmkvConstants.IS_ENGLISH, 0)
 

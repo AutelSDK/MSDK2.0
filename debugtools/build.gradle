@@ -60,15 +60,13 @@ dependencies {
     // 只添加最大版本的aar文件作为依赖
     implementation files(sortedAarFiles.last())
 
-    implementation 'com.google.protobuf:protobuf-java:3.21.5'
+   
     implementation rootProject.ext.deps.external.android.core_ktx
     implementation rootProject.ext.deps.external.android.appcompat
     implementation rootProject.ext.deps.external.android.design
     implementation rootProject.ext.deps.external.android.navi_fragment_ktx
     implementation rootProject.ext.deps.external.android.fragment_ktx
     implementation rootProject.ext.deps.external.protobuf_java
-//    implementation 'com.github.Petterpx:FloatingX:1.0.4'
-    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
     implementation rootProject.ext.deps.external.gson
     implementation rootProject.ext.deps.external.okhttp.core
     //room数据库

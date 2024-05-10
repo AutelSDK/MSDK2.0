@@ -12,8 +12,6 @@ import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.base.AutelKey;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.base.AutelKeyInfo;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.base.KeyTools;
 import com.autel.drone.sdk.vmodelx.utils.ToastUtils;
-import com.google.protobuf.GeneratedMessageV3;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +24,7 @@ import java.util.Objects;
  *
  * @author huangsihua on 2022/10/29.
  */
-public class KeyBaseStructure<P, R extends GeneratedMessageV3> {
+public class KeyBaseStructure<P, R> {
 
     private static final String TAG = KeyBaseStructure.class.getSimpleName();
 
@@ -156,6 +154,12 @@ public class KeyBaseStructure<P, R extends GeneratedMessageV3> {
             } else {
                 return null;
             }
+        } else if (SDKConstants.INSTANCE.isRCHiddenMode(key.mComponentIndex)) {
+            if (DeviceManager.Companion.getDeviceManager().getFirstRCHiddenDevice() != null) {
+                return DeviceManager.Companion.getDeviceManager().getFirstRCHiddenDevice().getKeyManager();
+            } else {
+                return null;
+            }
         } else {
             if (getDefaultDrone() != null) {
                 return getDefaultDrone().getKeyManager();
@@ -268,7 +272,7 @@ public class KeyBaseStructure<P, R extends GeneratedMessageV3> {
         if (getKeyManager(key) == null) {
             ToastUtils.INSTANCE.showToast(SDKManager.get().getSContext().getString(com.autel.sdk.debugtools.R.string.debug_keymanager_null));
         } else {
-            getKeyManager(key).performAction(key, null, actonCallback, 0, "3");
+            getKeyManager(key).performAction(key, null, actonCallback, 3, "0");
         }
     }
 
@@ -284,7 +288,7 @@ public class KeyBaseStructure<P, R extends GeneratedMessageV3> {
         if (getKeyManager(key) == null) {
             ToastUtils.INSTANCE.showToast(SDKManager.get().getSContext().getString(com.autel.sdk.debugtools.R.string.debug_keymanager_null));
         } else {
-            getKeyManager(key).performAction(key, param, actonCallback,0, "3");
+            getKeyManager(key).performAction(key, param, actonCallback,3, "0");
         }
     }
 
