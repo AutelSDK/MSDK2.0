@@ -1,14 +1,10 @@
 package com.autel.sdk.debugtools.fragment;
 
 import android.content.Context;
-import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.autel.module_player.player.autelplayer.AutelPlayerSurfaceView;
 
 public class TestSurface extends SurfaceView implements SurfaceHolder.Callback{
 

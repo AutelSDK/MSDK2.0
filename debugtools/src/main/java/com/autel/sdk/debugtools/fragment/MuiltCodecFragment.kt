@@ -2,9 +2,11 @@ package com.autel.sdk.debugtools.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.SurfaceHolder
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.autel.drone.sdk.log.SDKLog
 import com.autel.drone.sdk.vmodelx.constants.SDKConstants
 import com.autel.module_player.player.AutelPlayerManager
 import com.autel.module_player.player.autelplayer.AutelPlayer
@@ -22,6 +24,8 @@ class MuiltCodecFragment : AutelFragment() {
     var right_view: LinearLayout? = null
     private var mAutelPlayer: AutelPlayer? = null
     var codecView: AutelPlayerView? = null
+
+    var surfaceView: TestSurface? = null
 
     var left_view: LinearLayout? = null
     private var mAutelPlayer2: AutelPlayer? = null
@@ -48,14 +52,16 @@ class MuiltCodecFragment : AutelFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         left_view = uiBinding.root.findViewById(R.id.layout_left_view)
-        codecView = createAutelCodecView()
-        with(left_view) { this?.addView(codecView) }
+        //codecView = createAutelCodecView()
+        //with(left_view) { this?.addView(codecView) }
 
         mAutelPlayer = AutelPlayer(SDKConstants.STREAM_CHANNEL_16110)
-        mAutelPlayer!!.addVideoView(codecView)
+        //mAutelPlayer!!.addVideoView(codecView)
+
+        surfaceView = createTestView()
+        with(left_view) {this?.addView(surfaceView)}
 
         AutelPlayerManager.getInstance().addAutelPlayer(mAutelPlayer);
-
 
         right_view = uiBinding.root.findViewById(R.id.layout_right_view)
         codecView2 = createAutelCodecView2()
@@ -67,8 +73,9 @@ class MuiltCodecFragment : AutelFragment() {
 
         AutelPlayerManager.getInstance().addAutelPlayer(mAutelPlayer2);
 
-        mAutelPlayer!!.startPlayer()
+        //mAutelPlayer!!.startPlayer()
         mAutelPlayer2!!.startPlayer()
+
     }
 
     /**
@@ -81,6 +88,34 @@ class MuiltCodecFragment : AutelFragment() {
         )
         codecView.layoutParams = params
         return codecView
+    }
+
+    private fun createTestView(): TestSurface?{
+        val callback = object : SurfaceHolder.Callback {
+            override fun surfaceCreated(holder: SurfaceHolder) {
+                // Surface 被创建时的操作
+                SDKLog.i("Noiled", "surfaceCreated")
+                mAutelPlayer?.startPlayer(holder.surface);
+            }
+
+            override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {
+                // Surface 改变时的操作
+                SDKLog.i("Noiled", "surfaceChanged" + width +"x" +height)
+                mAutelPlayer?.setSurfaceChange(width, height);
+            }
+
+            override fun surfaceDestroyed(holder: SurfaceHolder) {
+                SDKLog.i("Noiled", "surfaceDestroyed")
+                // Surface 被销毁时的操作
+                mAutelPlayer?.setSurfaceDestoryed()
+            }
+        }
+        val v = TestSurface(activity, callback)
+        val params = LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+        v.layoutParams = params
+        return v
     }
 
     /**
@@ -111,8 +146,8 @@ class MuiltCodecFragment : AutelFragment() {
             mAutelPlayer2!!.removeVideoView()
             mAutelPlayer2!!.releasePlayer()
         }
-	  
-	   //for new home
+
+        //for new home
 
         //AutelPlayerManager.getInstance().unregistStreamDataListener();
         //AutelPlayerManager.getInstance().release();
