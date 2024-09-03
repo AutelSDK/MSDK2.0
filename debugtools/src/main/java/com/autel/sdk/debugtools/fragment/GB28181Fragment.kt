@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.autel.drone.sdk.log.SDKLog
 import com.autel.drone.sdk.vmodelx.constants.SDKConstants
 import com.autel.drone.sdk.vmodelx.manager.GB28181ServiceManager
+import com.autel.drone.sdk.vmodelx.manager.OTAUpgradeManger
 import com.autel.gb28181.IGB28181PublishListener
 import com.autel.module_player.player.AutelPlayerManager
 import com.autel.module_player.player.autelplayer.AutelPlayer
@@ -179,7 +180,8 @@ class GB28181Fragment : AutelFragment()  {
                 "34020000001320000003",
                 "12345678",
                 "34020000001320000003",
-                "34020000001320000003"
+                "34020000001320000003",
+                OTAUpgradeManger.getInstance().mDroneType
             );
         }
 
