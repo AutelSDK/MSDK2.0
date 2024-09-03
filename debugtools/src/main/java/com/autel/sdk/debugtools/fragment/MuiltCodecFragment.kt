@@ -56,7 +56,6 @@ class MuiltCodecFragment : AutelFragment() {
         //with(left_view) { this?.addView(codecView) }
 
         mAutelPlayer = AutelPlayer(SDKConstants.STREAM_CHANNEL_16110)
-        //mAutelPlayer!!.addVideoView(codecView)
 
         surfaceView = createTestView()
         with(left_view) {this?.addView(surfaceView)}

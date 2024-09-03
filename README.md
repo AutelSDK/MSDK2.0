@@ -42,6 +42,20 @@ private fun createTestView(): TestSurface? {
     v.layoutParams = params
     return v
 }
+
+mAutelPlayer = AutelPlayer(SDKConstants.STREAM_CHANNEL_16110)
+
+surfaceView = createTestView()
+with(left_view) {this?.addView(surfaceView)}
+```
+
+```javascript
+//Notice:
+public synchronized void startPlayer(Surface var1) {
+    if (this.mAutelPlayerView != null && var1 != null) {
+        throw new IllegalArgumentException("surface and view can only choose one");
+    }
+}
 ```
 
 ## Version: V2.0.66
