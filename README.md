@@ -11,9 +11,12 @@ retrieve YUV data from a video stream, using the MultiCodecFragment as a referen
 AutelPlayerManager.getInstance().init(activity, true)
 AutelPlayerManager.getInstance().registStremDataListener();
 
-AutelPlayerManager.getInstance().startStreamChannel(SDKConstants.STREAM_CHANNEL_16110);
-mAutelPlayer = AutelPlayer(SDKConstants.STREAM_CHANNEL_16110)
+left_view = uiBinding.root.findViewById(R.id.layout_left_view)
+codecView = createAutelCodecView()
+with(left_view) { this?.addView(codecView) }
 
+mAutelPlayer = AutelPlayer(SDKConstants.STREAM_CHANNEL_16110)
+mAutelPlayer!!.addVideoView(codecView)
 mAutelPlayer?.setVideoInfoListener( object : IVideoStreamListener {
     override fun onVideoInfoCallback(playerId: Int, x: Int, y: Int, w: Int, h: Int) {
         SDKLog.e("mAutelPlayer", "playerId $playerId is x $x y $y w $w h  $h")
