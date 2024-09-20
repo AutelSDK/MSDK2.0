@@ -792,4 +792,5 @@
     <string name="debug_channel_type_wifi">Wifi</string>
     <string name="debug_item_virtual_stick_title">Virtual Stick</string>
     <string name="debug_item__virtual_stick_description">Virtual Stick Demo</string>
+    <string name="debug_flight_data_title">Real-time Flight Data:</string>
 </resources>

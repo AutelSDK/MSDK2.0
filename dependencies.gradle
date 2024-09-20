@@ -91,6 +91,7 @@ rootProject.ext {
                     'debugdb'       : 'com.amitshekhar.android:debug-db:1.0.6',
                     'swipelayout'   : "com.daimajia.swipelayout:library:1.2.0@aar",
                     'protobuf_java' : "com.google.protobuf:protobuf-javalite:3.21.12",
+                    'webrtc_sdk' : "io.github.webrtc-sdk:android:114.5735.02",
             ],
     ]
 }

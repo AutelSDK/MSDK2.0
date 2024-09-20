@@ -73,6 +73,8 @@ dependencies {
     implementation(rootProject.ext.deps.external.database.room_ktx)
     //kapt(rootProject.ext.deps.external.database.room_compiler)
 
+    implementation rootProject.ext.deps.external.webrtc_sdk
+
     // FOR TEST
     testImplementation rootProject.ext.deps.external.test.junit
     androidTestImplementation rootProject.ext.deps.external.test.ext_junit

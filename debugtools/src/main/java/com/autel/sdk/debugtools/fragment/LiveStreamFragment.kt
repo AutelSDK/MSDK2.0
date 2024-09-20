@@ -278,7 +278,7 @@ class LiveStreamFragment : AutelFragment() , OnRenderFrameInfoListener {
        //todo:264码流回调到此处
     }
 
-    override fun onFrameStream(frame: VideoFrame?, mAutelPlayerID: Int) {
-    }
+    override fun onFrameStream(frame: org.webrtc.autel.VideoFrame?, mAutelPlayerID: Int) {
 
+    }
 }

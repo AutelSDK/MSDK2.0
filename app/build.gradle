@@ -9,7 +9,9 @@ apply from: '../mavenConfig.gradle'
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdk
-
+    packagingOptions {
+        pickFirst 'lib/arm64-v8a/libjingle_peerconnection_so.so'
+    }
     defaultConfig {
         minSdk rootProject.ext.versions.minSdk
         targetSdkVersion rootProject.ext.versions.targetSdk

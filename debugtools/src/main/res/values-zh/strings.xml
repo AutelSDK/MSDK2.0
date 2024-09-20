@@ -1,6 +1,6 @@
 <resources>
-    
-	<string name="debug_testing_tools">调试工具</string>
+
+    <string name="debug_testing_tools">调试工具</string>
 
     <string name="debug_btn_init_msdk">init MSDK</string>
     <string name="debug_btn_unInit_msdk">UnInit MSDK</string>
@@ -39,7 +39,6 @@
     <string name="debug_compass_calibration_title_description">演示指南针校准</string>
 
 
-
     <string name="debug_common_text_imu_calibration">IMU校准</string>
     <string name="debug_common_text_calibration_tip_1">请将飞行器放置在水平面上</string>
     <string name="debug_common_text_calibration_tip_2">校准过程中请勿移动、关机或重启飞行器</string>
@@ -51,6 +50,9 @@
 
     <string name="debug_fight_params_title">FIGHT_PARAMS</string>
     <string name="debug_fight_params_title_description">演示如何使用 FIGHT_PARAMS</string>
+
+    <string name="debug_dragon_fight_params_title">Dragon FIGHT_PARAMS</string>
+    <string name="debug_dragon_fight_params_title_description">演示如何使用 >Dragon FIGHT_PARAMS</string>
 
     <string name="debug_vision_params_title">视觉DAT采集</string>
     <string name="debug_vision_params_title1">视觉MP4采集</string>
@@ -108,7 +110,7 @@
     <string name="debug_camera">相机</string>
     <string name="debug_ble">低功耗蓝牙</string>
     <string name="debug_airlink">airlink</string>
-    <string name="debug_ai_service">AI服务</string>
+    <string name="debug_ai_service">AI 服务</string>
     <string name="debug_flight_control">飞行控制器</string>
     <string name="debug_flight_params">飞行参数</string>
     <string name="debug_product">产品</string>
@@ -124,12 +126,16 @@
     <string name="debug_mobile_network">移动网络</string>
     <string name="debug_on_board">on board</string>
     <string name="debug_payload">payload</string>
+    <string name="debug_df_flight_control">龙鱼飞行控制</string>
+    <string name="debug_df_common_cmd">龙鱼通用指令</string>
+    <string name="debug_df_wifi_station_cmd">WiFi基站</string>
     <string name="debug_lidar">激光雷达</string>
     <string name="debug_waypoint">航点</string>
     <string name="debug_ai_track">人工智能追踪</string>
     <string name="debug_remote_id">Remote ID</string>
     <string name="debug_system_manager">系统管理器</string>
     <string name="debug_nest">机巢</string>
+    <string name="debug_mesh">组网</string>
     <string name="debug_mission_manager">任务管理器</string>
     <string name="debug_accessories_proxy">配件代理</string>
     <string name="debug_cloud_api">上云API </string>
@@ -139,8 +145,7 @@
     <string name="debug_batch_test">批量测试</string>
     <string name="debug_autonomy">autonomy</string>
     <string name="debug_wifi">Wifi</string>
-    <string name="debug_data_security">Data Security</string>
-
+    <string name="debug_data_security">数据安全</string>
     <string name="debug_rtc">RTC</string>
     <string name="debug_login_input_content_not_empty">输入的用户名或密码不能为空</string>
     <string name="debug_login_pls_connect_network">请先检查网络连接</string>
@@ -632,16 +637,16 @@
     <string name="debug_key_list_cameraeisntfy">EIS参数上报事件</string>
     <string name="debug_key_list_camerairnightfusionenable">红外夜视融合开关</string>
     <string name="debug_key_list_cameramechanicalshutterenable">机械快门开关</string>
-     <string name="debug_key_list_camerapreviewresolution">照片预览图尺寸</string>
-     <string name="debug_key_list_camerapasswordwrongtimes">解密连续输错次数</string>
-     <string name="debug_key_list_cameraircutswitch">变焦IRCut切换</string>
+    <string name="debug_key_list_camerapreviewresolution">照片预览图尺寸</string>
+    <string name="debug_key_list_camerapasswordwrongtimes">解密连续输错次数</string>
+    <string name="debug_key_list_cameraircutswitch">变焦IRCut切换</string>
     <string name="debug_key_list_cameraequivalentfocallength">35mm等效焦距</string>
 
     <string name="debug_key_list_cameramissionrecordenable">任务录制开关</string>
     <string name="debug_key_list_cameramissionrecordpicturestorageset">任务录制照片存储开关设置</string>
     <string name="debug_key_list_cameramissionrecordpicturestorageget">任务录制照片存储开关查询</string>
 
-     <!--普通参数-->
+    <!--普通参数-->
     <string name="debug_key_list_heartbeatphone">飞机保活心跳</string>
     <string name="debug_key_list_heartbeatapp">APP保活心跳</string>
     <string name="debug_key_list_setsystemdatatime">设置系统时间</string>
@@ -651,7 +656,7 @@
     <string name="debug_key_list_getsysteminitdata">获取系统初始化数据</string>
     <string name="debug_key_list_getdronedevicesinfo">获取飞机设备信息</string>
     <string name="debug_key_list_droneworkstatusinforeport">飞机工作状态信息上报</string>
-    <string name="debug_key_list_DroneWarningMFNtfy">飞机告警上报</string>
+    <string name="debug_key_list_dronewarningmfntfy">飞机告警上报</string>
     <string name="debug_key_list_controlled">控制单个飞机led灯</string>
     <string name="debug_key_list_queryledstatus">查询飞机所有led灯状态</string>
 
@@ -768,9 +773,19 @@
     <string name="debug_accurate_retake">精准复拍</string>
     <string name="debug_device_ota">设备OTA</string>
     <string name="debug_device_ota_description">演示如何OTA升级</string>
+    <string name="debug_item_net_mesh_demo_title">组网演示</string>
+    <string name="debug_item_net_mesh_demo_description">组网相关流程演示</string>
+    <string name="debug_item_netmesh_devices_title">组网设置</string>
+    <string name="debug_item_netmesh_devices_description">组网相关设置</string>
     <string name="debug_rtmp">RTMP</string>
     <string name="debug_command_center">指挥中心</string>
     <string name="debug_device_log_real_time">实时日志</string>
+    <string name="debug_device_map_element">地图元素</string>
+    <string name="debug_device_map_element_description">地图元素接口调试</string>
+    <string name="debug_topology_device">拓扑设备列表</string>
+    <string name="debug_topology_device_description">拓扑设备接口调试</string>
     <string name="debug_item_virtual_stick_title">虚拟摇杆</string>
     <string name="debug_item__virtual_stick_description">演示如何使用虚拟摇杆</string>
+
+    <string name="debug_flight_data_title">实时飞行数据:</string>
 </resources>

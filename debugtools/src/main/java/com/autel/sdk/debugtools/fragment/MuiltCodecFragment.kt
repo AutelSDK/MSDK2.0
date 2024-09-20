@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.autel.drone.sdk.log.SDKLog
 import com.autel.drone.sdk.vmodelx.constants.SDKConstants
+import com.autel.drone.sdk.vmodelx.module.camera.bean.LensTypeEnum
 import com.autel.module_player.player.AutelPlayerManager
+import com.autel.module_player.player.IVideoStreamListener
 import com.autel.module_player.player.autelplayer.AutelPlayer
 import com.autel.module_player.player.autelplayer.AutelPlayerView
 import com.autel.sdk.debugtools.R
 import com.autel.sdk.debugtools.databinding.FragMuiltStreamBinding
+import java.nio.ByteBuffer
 
 /**
  * multiple type of codec for video streaming
@@ -35,7 +39,7 @@ class MuiltCodecFragment : AutelFragment() {
     ): View? {
         uiBinding = FragMuiltStreamBinding.inflate(inflater, container, false)
 
-        AutelPlayerManager.getInstance().init(activity, false);
+        AutelPlayerManager.getInstance().init(activity, true)
         AutelPlayerManager.getInstance().registStremDataListener();
 
         AutelPlayerManager.getInstance().startStreamChannel(SDKConstants.STREAM_CHANNEL_16110);
@@ -53,6 +57,15 @@ class MuiltCodecFragment : AutelFragment() {
 
         mAutelPlayer = AutelPlayer(SDKConstants.STREAM_CHANNEL_16110)
         mAutelPlayer!!.addVideoView(codecView)
+        mAutelPlayer?.setVideoInfoListener( object : IVideoStreamListener {
+            override fun onVideoInfoCallback(playerId: Int, x: Int, y: Int, w: Int, h: Int) {
+                SDKLog.e("mAutelPlayer", "playerId $playerId is x $x y $y w $w h  $h")
+            }
+
+            override fun onFrameYuv(yuv: ByteBuffer?, width: Int, height: Int, stride: Int) {
+                SDKLog.e("mAutelPlayer", "yuv is $yuv")
+            }
+        })
 
         AutelPlayerManager.getInstance().addAutelPlayer(mAutelPlayer);
 
@@ -111,8 +124,8 @@ class MuiltCodecFragment : AutelFragment() {
             mAutelPlayer2!!.removeVideoView()
             mAutelPlayer2!!.releasePlayer()
         }
-	  
-	   //for new home
+
+        //for new home
 
         //AutelPlayerManager.getInstance().unregistStreamDataListener();
         //AutelPlayerManager.getInstance().release();
