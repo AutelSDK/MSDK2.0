@@ -8,7 +8,6 @@
 'gson'  : "com.squareup.retrofit2:converter-gson:2.9.0",
 'retrofit_converter_moshi' : "com.squareup.retrofit2:converter-moshi:2.9.0",
 'retrofit_url_manager' :"me.jessyan:retrofit-url-manager:1.4.0"
-```
 
 implementation rootProject.ext.deps.external.okhttp.logging_interceptor
 api rootProject.ext.deps.external.retrofit.core
@@ -20,6 +19,7 @@ implementation 'com.squareup.okhttp3:okhttp-dnsoverhttps:4.9.3'
 
 SDKConstants changes to path com.autel.drone.sdk.SDKConstants
 
+```
 
 ## Version: V2.0.66
 
