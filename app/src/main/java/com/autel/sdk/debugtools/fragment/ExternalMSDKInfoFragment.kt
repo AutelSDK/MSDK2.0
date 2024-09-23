@@ -13,7 +13,6 @@ import com.autel.drone.demo.databinding.FragMainTitleBinding
 import com.autel.drone.sdk.libbase.error.IAutelCode
 import com.autel.drone.sdk.store.SDKStorage
 import com.autel.drone.sdk.vmodelx.SDKManager
-import com.autel.drone.sdk.vmodelx.constants.MmkvConstants
 import com.autel.drone.sdk.vmodelx.device.IAutelDroneListener
 import com.autel.drone.sdk.vmodelx.interfaces.IBaseDevice
 import com.autel.drone.sdk.vmodelx.interfaces.IKeyManager
@@ -61,7 +60,7 @@ class ExternalMSDKInfoFragment : AutelFragment() {
         csvLanguageSetting =
             binging.mainTitleLayout.findViewById<DebugSpinnerView>(R.id.csv_language_setting)
 
-         languageIndex = SDKStorage.getIntValue(MmkvConstants.IS_ENGLISH, 0)
+         languageIndex = SDKStorage.getIntValue(IS_ENGLISH, 0)
 
         val languageList = listOf(
             getString(R.string.debug_text_english_tag),
@@ -88,7 +87,7 @@ class ExternalMSDKInfoFragment : AutelFragment() {
             }
             setRightBtnListener {
                 languageIndex = index
-                SDKStorage.setIntValue(MmkvConstants.IS_ENGLISH, languageIndex)
+                SDKStorage.setIntValue(IS_ENGLISH, languageIndex)
                 isRevertSelection = true
                 when (index) {
                     0 -> changeAppLanguage(LanguageUtils.defaultLanguage)
@@ -117,7 +116,7 @@ class ExternalMSDKInfoFragment : AutelFragment() {
 
     private val iAutelDroneListener = object : IAutelDroneListener {
         override fun onDroneChangedListener(connected: Boolean, drone: IBaseDevice) {
-            SDKStorage.setBooleanValue(MmkvConstants.IS_CONNECTED, connected)
+            SDKStorage.setBooleanValue(IS_CONNECTED, connected)
             if (connected) {
                 binging.mainTitleLayout.findViewById<TextView>(R.id.msdk_info_text_main).text =
                     String.format(
@@ -160,11 +159,11 @@ class ExternalMSDKInfoFragment : AutelFragment() {
     private fun initMSDKInfo() {
         SDKManager.get().getDeviceManager().addDroneListener(iAutelDroneListener)
 
-        if (SDKStorage.getStringValue(MmkvConstants.DRONE_VERSION)?.isNotEmpty() == true) {
+        if (SDKStorage.getStringValue(DRONE_VERSION)?.isNotEmpty() == true) {
             binging.mainTitleLayout.findViewById<TextView>(R.id.msdk_info_text_second).text =
                 String.format(
                     getString(R.string.debug_drone_version),
-                    SDKStorage.getStringValue(MmkvConstants.DRONE_VERSION)
+                    SDKStorage.getStringValue(DRONE_VERSION)
                 )
         }
 
@@ -211,5 +210,23 @@ class ExternalMSDKInfoFragment : AutelFragment() {
     override fun onDestroy() {
         super.onDestroy()
         SDKManager.get().getDeviceManager().removeDroneListener(iAutelDroneListener)
+    }
+
+    companion object {
+        /**
+         * 显示中文
+         * -do display chinese
+         */
+        const val IS_ENGLISH = "is_english"
+
+        /**
+         * connected with internet
+         */
+        const val IS_CONNECTED = "is_connected"
+
+        /**
+         * drone version
+         */
+        const val DRONE_VERSION = "drone_version"
     }
 }

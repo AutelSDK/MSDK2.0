@@ -264,7 +264,7 @@ class ScenarioVM : AutelViewModel() {
             SDKLog.d(TAG, "step ========>$newValue")
             if (newValue.calibrationType == currentCalType) {
                 _calibrationStep.value =
-                    CalibrationScheduleBean(newValue.imcStep, newValue.compassStep, newValue.calibrationPercent, newValue.calibrationType)
+                    CalibrationScheduleBean(newValue.imcStep, newValue.compassStep, newValue.calibrationPercent)
             }
         }
     }

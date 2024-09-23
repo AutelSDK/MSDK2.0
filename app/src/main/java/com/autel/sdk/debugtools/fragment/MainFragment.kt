@@ -15,7 +15,6 @@ import com.autel.drone.demo.R
 import com.autel.drone.demo.databinding.FragMainPageBinding
 import com.autel.drone.sdk.store.SDKStorage
 import com.autel.drone.sdk.vmodelx.constants.MmkvConstants
-import com.autel.drone.sdk.vmodelx.constants.SDKConstants
 import com.autel.drone.sdk.vmodelx.utils.ToastUtils
 import com.autel.sdk.debugtools.*
 import com.autel.sdk.debugtools.activity.FragmentPageInfo
@@ -85,14 +84,14 @@ class MainFragment : AutelFragment() {
     private fun initBtnClickListener() {
         var ip = SDKStorage.getStringValue(MmkvConstants.IP)
         if (TextUtils.isEmpty(ip)) {
-            ip = SDKConstants.IP
+            ip = IP
         }
         binding.tvCurrentIp.text = getString(R.string.debug_current_ip) + "$ip"
         binding.updateIp.setOnClickListener {
             val inputIp = binding.ipEt.text.toString()
             if (TextUtils.isEmpty(inputIp)) {
                 ToastUtils.showToast(getString(R.string.debug_please_enter_ip))
-            } else if (inputIp == SDKConstants.IP) {
+            } else if (inputIp == IP) {
                 SDKSingleButtonDialog(requireContext()).apply {
                     setMessage(getString(R.string.debug_connect_real_machine_ip_click_button))
                     show()
@@ -110,13 +109,13 @@ class MainFragment : AutelFragment() {
             }
         }
         binding.tvConnectRemote.setOnClickListener {
-            if (ip == SDKConstants.IP) {
+            if (ip == IP) {
                 ToastUtils.showToast(getString(R.string.debug_current_connection_real_machine))
             } else {
                 SDKTwoButtonDialog(requireContext()).apply {
                     setMessage(getString(R.string.debug_sure_restart_app))
                     setRightBtnListener {
-                        SDKStorage.setStringValue(MmkvConstants.IP, SDKConstants.IP)
+                        SDKStorage.setStringValue(MmkvConstants.IP, IP)
                         SDKStorage.setBooleanValue(MmkvConstants.IS_MOCK_DEVICE, false)
                         restartApplication()
                     }
@@ -167,6 +166,10 @@ class MainFragment : AutelFragment() {
 
     private fun isUserDebugDataForApp(): Boolean {
         return SDKStorage.getBooleanValue(MmkvConstants.IS_USE_DEBUG_DATA_FOR_APP, false);
+    }
+
+    companion object {
+        const val IP = "127.0.0.1"
     }
 
 }

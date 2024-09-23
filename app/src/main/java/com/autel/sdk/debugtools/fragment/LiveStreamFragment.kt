@@ -11,8 +11,8 @@ import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.autel.drone.demo.R
 import com.autel.drone.demo.databinding.FragmentLivestreamBinding
+import com.autel.drone.sdk.SDKConstants
 import com.autel.drone.sdk.log.SDKLog
-import com.autel.drone.sdk.vmodelx.constants.SDKConstants
 import com.autel.module_player.codec.OnRenderFrameInfoListener
 import com.autel.module_player.player.AutelPlayerManager
 import com.autel.module_player.player.autelplayer.AutelPlayer

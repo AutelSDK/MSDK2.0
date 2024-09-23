@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import com.autel.drone.sdk.libbase.error.AutelStatusCode;
 import com.autel.drone.sdk.libbase.error.IAutelCode;
 import com.autel.drone.sdk.log.SDKLog;
+import com.autel.drone.sdk.pbprotocol.interaction.msg.payload.ChannelTopicMessageBean;
 import com.autel.drone.sdk.vmodelx.SDKManager;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.callback.CommonCallbacks;
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.CameraKey;
@@ -83,7 +84,23 @@ public class KeyItem<P, R> extends KeyBaseStructure implements Comparable<KeyIte
     /**
      * 推送回调
      */
+    /**
+     * 推送回调
+     */
     private CommonCallbacks.KeyListener<R> listenSDKCallback = new CommonCallbacks.KeyListener<R>() {
+        @Override
+        public void onChannelTopicMessageReceive(@Nullable ChannelTopicMessageBean value) {
+            StringBuilder sb = new StringBuilder("【LISTEN】");
+            sb.append(getName());
+            sb.append(" onChannelTopicMessageReceive:");
+            // sb.append("oldValue:").append(oldValue);
+            sb.append(" value:").append(value);
+
+            if (pushCallBack != null) {
+                pushCallBack.actionChange(sb.toString());
+            }
+        }
+
         @Override
         public void onValueRealChange(R value) {
         }
@@ -101,7 +118,6 @@ public class KeyItem<P, R> extends KeyBaseStructure implements Comparable<KeyIte
             }
         }
     };
-
 
     public KeyItem(AutelKeyInfo<?> keyInfo) {
         super();

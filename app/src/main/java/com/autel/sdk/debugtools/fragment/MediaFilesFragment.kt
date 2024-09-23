@@ -15,7 +15,6 @@ import com.autel.drone.sdk.http.BaseRequest
 import com.autel.drone.sdk.libbase.error.AutelStatusCode
 import com.autel.drone.sdk.libbase.error.IAutelCode
 import com.autel.drone.sdk.vmodelx.interfaces.file.FileListener
-import com.autel.drone.sdk.vmodelx.interfaces.file.FileQueryListener
 import com.autel.drone.sdk.vmodelx.manager.AlbumManager
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.callback.CommonCallbacks
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.camera.bean.AlbumFolderResultBean
@@ -26,7 +25,9 @@ import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.camera.enums.OrderType
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.camera.enums.StorageTypeEnum
 import com.autel.drone.sdk.vmodelx.module.fileservice.AutelDroneFile
 import com.autel.drone.sdk.vmodelx.module.fileservice.AutelFileUtil
-import com.autel.drone.sdk.vmodelx.module.fileservice.FileTransmissionListener
+import com.autel.drone.sdk.vmodelx.module.fileservice.FileTransmitListener
+import com.autel.drone.sdk.vmodelx.module.fileservice.FolderQueryListener
+import com.autel.drone.sdk.vmodelx.module.fileservice.QueryFileListBean
 import com.autel.drone.sdk.vmodelx.utils.MicroFtpUtil
 import com.autel.drone.sdk.vmodelx.utils.S3DownloadInterceptor
 import com.autel.sdk.debugtools.KeyValueDialogUtil
@@ -34,7 +35,6 @@ import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import okhttp3.internal.notify
 import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -92,7 +92,7 @@ class MediaFilesFragment : AutelFragment() {
                     }
 
                     MicroFtpUtil.uploadMissionFile(file,  object :
-                        FileTransmissionListener<String> {
+                        FileTransmitListener<String> {
                         override fun onSuccess(result: String?) {
                             Log.e(TAG, "onSuccess")
                             lifecycleScope.launch(Dispatchers.Main) {
@@ -101,7 +101,7 @@ class MediaFilesFragment : AutelFragment() {
                             }
                         }
 
-                        override fun onProgress(sendLength: Long, totalLength: Long) {
+                        override fun onProgress(sendLength: Long, totalLength: Long, speed: Long) {
                             lifecycleScope.launch(Dispatchers.Main) {
                                 (String.format(
                                     getString(R.string.debug_current_upload_size_bytes),
@@ -111,11 +111,10 @@ class MediaFilesFragment : AutelFragment() {
                             }
                         }
 
-
-                        override fun onFailed(statusCodeNew: AutelStatusCode?) {
-                            Log.e(TAG, "onFailed $statusCodeNew")
+                        override fun onFailed(code: IAutelCode?, msg: String?) {
+                            Log.e(TAG, "onFailed $code")
                             lifecycleScope.launch(Dispatchers.Main) {
-                                statusCodeNew.also { binding.tvResult.text = it.toString() }
+                                code.also { binding.tvResult.text = it.toString() }
                                 binding.tvUpload.isClickable = true
                             }
                         }
@@ -158,10 +157,11 @@ class MediaFilesFragment : AutelFragment() {
             Log.e(TAG, "点击了查询文件")
             "".also { binding.tvResult.text = it }
             var sourcePath = "/mission/1665107840"
-            AutelFileUtil.queryFile(sourcePath, object : FileQueryListener {
-                override fun onResponse(resultCode: Int, files: String?) {
+            AutelFileUtil.queryFile(sourcePath, object : FolderQueryListener {
+
+                override fun onResponse(beans: QueryFileListBean?) {
                     lifecycleScope.launch(Dispatchers.Main) {
-                        ("$resultCode $files").also { binding.tvResult.text = it }
+                        ("$beans").also { binding.tvResult.text = it }
                     }
                 }
 

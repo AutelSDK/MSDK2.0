@@ -23,8 +23,8 @@ import com.autel.drone.sdk.vmodelx.manager.keyvalue.callback.CommonCallbacks
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.CommonKey
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.key.base.KeyTools
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.flight.bean.DroneSystemStateLFNtfyBean
+import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.rtk.bean.NestRtkStatusNotifyBean
 import com.autel.sdk.debugtools.beans.RTKConstans
-import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.nest.bean.rtk.NestRtkStatusNotifyBean
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.rtk.bean.RtkReportBean
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.rtk.enums.RTKPositionTypeEnum
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.rtk.enums.RTKSignalEnum

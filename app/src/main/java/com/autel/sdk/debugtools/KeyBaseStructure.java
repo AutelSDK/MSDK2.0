@@ -2,7 +2,7 @@ package com.autel.sdk.debugtools;
 
 import com.autel.drone.sdk.log.SDKLog;
 import com.autel.drone.sdk.vmodelx.SDKManager;
-import com.autel.drone.sdk.vmodelx.constants.SDKConstants;
+import com.autel.drone.sdk.vmodelx.constants.SDKUtils;
 import com.autel.drone.sdk.vmodelx.interfaces.IBaseDevice;
 import com.autel.drone.sdk.vmodelx.interfaces.IKeyManager;
 import com.autel.drone.sdk.vmodelx.manager.DeviceManager;
@@ -149,13 +149,13 @@ public class KeyBaseStructure<P, R> {
     }
 
     protected IKeyManager getKeyManager(AutelKey key) {
-        if (SDKConstants.INSTANCE.isRemoteControlMode(key.mComponentIndex)) {
+        if (SDKUtils.INSTANCE.isRemoteControlMode(key.mComponentIndex)) {
             if (DeviceManager.Companion.getDeviceManager().getFirstRemoteDevice() != null) {
                 return DeviceManager.Companion.getDeviceManager().getFirstRemoteDevice().getKeyManager();
             } else {
                 return null;
             }
-        } else if (SDKConstants.INSTANCE.isRCHiddenMode(key.mComponentIndex)) {
+        } else if (SDKUtils.INSTANCE.isRCHiddenMode(key.mComponentIndex)) {
             if (DeviceManager.Companion.getDeviceManager().getFirstRCHiddenDevice() != null) {
                 return DeviceManager.Companion.getDeviceManager().getFirstRCHiddenDevice().getKeyManager();
             } else {

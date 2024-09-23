@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.autel.drone.demo.R
 import com.autel.drone.demo.databinding.FragmentVideoConvertBinding
-import com.autel.drone.sdk.vmodelx.constants.SDKConstants
+import com.autel.drone.sdk.SDKConstants
 import com.autel.drone.sdk.vmodelx.manager.VideoConvertManager
 import com.autel.ffmpeg.VideoConvert
 

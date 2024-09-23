@@ -11,27 +11,18 @@ import com.autel.drone.sdk.vmodelx.interfaces.IOTAFirmwareUpgradeManager
 import com.autel.drone.sdk.vmodelx.interfaces.OTAFirmwareUpgradeProcessStateListener
 import com.autel.drone.sdk.vmodelx.manager.OTAFirmwareUpgradeManager
 import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.upgrade.enums.UpgradeClientTypeEnum
-import com.autel.drone.sdk.vmodelx.module.droneLog.bean.DeviceLogPackResponseBean
-import com.autel.drone.sdk.vmodelx.module.droneLog.bean.DeviceLogQueryResponseBen
-import com.autel.drone.sdk.vmodelx.module.droneLog.data.DeviceSysLog
-import com.autel.drone.sdk.vmodelx.module.droneLog.db.DeviceLogDatabaseHelper
-import com.autel.drone.sdk.vmodelx.module.droneLog.enums.DeviceLogEnum
-import com.autel.drone.sdk.vmodelx.module.upgrade.enums.OTAFirmwareUpgradeProcessState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import java.io.File
 import android.Manifest
-import androidx.core.content.ContextCompat
-import android.content.pm.PackageManager
-import android.os.Environment
 import com.autel.drone.demo.databinding.FragmentOtaFirmwareUpgradeBinding
+import com.autel.drone.sdk.libbase.error.IAutelCode
 import com.autel.drone.sdk.log.SDKLog
 import com.autel.drone.sdk.vmodelx.module.fileservice.FileTransmitListener
-import com.autel.drone.sdk.vmodelx.module.fileservice.FileUtils
 import com.autel.drone.sdk.vmodelx.module.upgrade.bean.OTAUpgradeModel
 import com.autel.drone.sdk.vmodelx.module.upgrade.bean.ota.CheckResponseBean
 import com.autel.drone.sdk.vmodelx.module.upgrade.bean.ota.ObservableMap
+import com.autel.drone.sdk.vmodelx.module.upgrade.enums.OTAUpgradeProgressState
 import com.autel.drone.sdk.vmodelx.utils.S3DownloadInterceptor
 import java.io.FileInputStream
 import java.security.MessageDigest
@@ -97,13 +88,13 @@ class OTAFirmwareUpgradeFragment : AutelFragment(), OTAFirmwareUpgradeProcessSta
                             SDKLog.d("OTAFirmwareUpgradeFragment","downLoad success: ")
                         }
 
-                        override fun onProgress(sendLength: Long, totalLength: Long, speed: Long?) {
 
+                        override fun onProgress(sendLength: Long, totalLength: Long, speed: Long) {
                             SDKLog.d("OTAFirmwareUpgradeFragment","downLoad size: $sendLength")
                         }
 
-                        override fun onFailed(message: String?) {
-                            SDKLog.d("OTAFirmwareUpgradeFragment","downLoad failed: $message")
+                        override fun onFailed(code: IAutelCode?, msg: String?) {
+                            SDKLog.d("OTAFirmwareUpgradeFragment","downLoad failed: $msg")
                         }
                     })
                 }
@@ -138,16 +129,16 @@ class OTAFirmwareUpgradeFragment : AutelFragment(), OTAFirmwareUpgradeProcessSta
 
     override fun onOTAFirmwareUpgradeProcessState(
         model: OTAUpgradeModel,
-        status: OTAFirmwareUpgradeProcessState
+        status: OTAUpgradeProgressState
     ) {
 
         lifecycleScope.launch(Dispatchers.Main) {
             val typeEnum = model.clientType
-            if (status == OTAFirmwareUpgradeProcessState.UPGRADING || status == OTAFirmwareUpgradeProcessState.UPLOADING) {
+            if (status == OTAUpgradeProgressState.UPGRADING || status == OTAUpgradeProgressState.UPLOADING) {
                 binding.upgradeState.text = "upgrade state: " + (if(typeEnum == UpgradeClientTypeEnum.CLIENT_TYPE_GND) "gnd  " else "sky ") + "state: ${status.name}" + " progress: ${status.progress}"
-            } else if (status ==  OTAFirmwareUpgradeProcessState.OPERATION_FAILED) {
+            } else if (status ==  OTAUpgradeProgressState.OPERATION_FAILED) {
                 binding.upgradeState.text = "upgrade state: " + (if(typeEnum == UpgradeClientTypeEnum.CLIENT_TYPE_GND) "gnd  " else "sky  ") + "upgrade fair" + " error: ${status.errorMessage?.message}"
-            }else if (status ==  OTAFirmwareUpgradeProcessState.UPGRADE_COMPLETED) {
+            }else if (status ==  OTAUpgradeProgressState.UPGRADE_COMPLETE) {
                 binding.upgradeState.text = "upgrade state: success"
             }else {
                 binding.upgradeState.text = "upgrade state: " + (if(typeEnum == UpgradeClientTypeEnum.CLIENT_TYPE_GND) "gnd  " else "sky  ") + "state: ${status.name}"

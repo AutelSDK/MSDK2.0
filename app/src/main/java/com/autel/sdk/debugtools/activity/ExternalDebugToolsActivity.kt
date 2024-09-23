@@ -11,6 +11,7 @@ import com.autel.drone.sdk.store.SDKStorage
 import com.autel.drone.sdk.vmodelx.constants.MmkvConstants
 import com.autel.sdk.debugtools.LanguageUtils
 import com.autel.sdk.debugtools.fragment.ExternalFragmentPageInfoFactory
+import com.autel.sdk.debugtools.fragment.ExternalMSDKInfoFragment
 import java.util.*
 import kotlin.collections.LinkedHashSet
 
@@ -47,7 +48,7 @@ class ExternalDebugToolsActivity : DebugToolsActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        when (SDKStorage.getIntValue(MmkvConstants.IS_ENGLISH, 0)) {
+        when (SDKStorage.getIntValue(ExternalMSDKInfoFragment.IS_ENGLISH, 0)) {
             0 -> LanguageUtils.setLocale(this, LanguageUtils.defaultLanguage.language)
             1 -> LanguageUtils.setLocale(this, LanguageUtils.chinesLanguage.language)
             //2 -> LanguageUtils.setLocale(this, LanguageUtils.ukranianLanguage.language)
