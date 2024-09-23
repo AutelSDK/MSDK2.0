@@ -1,4 +1,797 @@
 <resources>
     <string name="_app_name">SDK Demo</string>
     <string name="action_settings">Settings</string>
+    <string name="debug_testing_tools">Debug Tools</string>
+
+    <string name="debug_btn_init_msdk">Init MSDK</string>
+    <string name="debug_btn_unInit_msdk">UnInit MSDK</string>
+    <string name="debug_btn_register_app">Register app</string>
+    <string name="debug_btn_enable_ldm">Enable LDM</string>
+    <string name="debug_btn_disable_ldm">Disable LDM</string>
+    <string name="debug_key">Key List</string>
+    <string name="debug_key_search">Search</string>
+
+    <string name="debug_item_key_value_title">Key/Value</string>
+    <string name="debug_item_key_value_description">Demonstrate how to use the Key/Value function</string>
+
+    <string name="debug_item_media_file_title">Media Files</string>
+    <string name="debug_item_media_file_description">Demonstrate how to use the Media Files function</string>
+
+    <string name="debug_item_multi_video_decoding_title">Multi-Video Decoding</string>
+    <string name="debug_item_multi_video_decoding_description">Demonstrate how to use the Multi-Video Decoding function</string>
+
+    <string name="debug_item_livestreaming_title">LiveStreaming</string>
+    <string name="debug_item_livestreaming_title_description">Demonstrate how to use the LiveStream</string>
+
+    <string name="debug_item_rtspclient_title">RtspClient</string>
+    <string name="debug_item_rtspclient_title_description">Demonstrate how to use the RtspClient</string>
+
+    <string name="debug_item_rtspserver_title">RtspServer</string>
+    <string name="debug_item_rtspserver_title_description">Demonstrate how to use the RtspServer</string>
+
+    <string name="debug_item_gb28181_title">GB28181Publisher</string>
+    <string name="debug_item_gb28181_title_description">Demonstrate how to use the GB28181Publisher</string>
+
+    <string name="debug_item_video_convert">ConvertVideo</string>
+    <string name="debug_item_video_convert_description">Demonstrate how to use the ConvertVideo</string>
+
+    <string name="debug_item_multi_device_title">Multi-Device</string>
+    <string name="debug_item_multi_device_title_description">Demonstrate how to use the MultiDevice</string>
+
+
+    <string name="debug_interaction_center_title">Interaction-Center</string>
+    <string name="debug_interaction_center_title_description">Demonstrate how to use the Interaction-Center</string>
+
+    <string name="debug_imu_calibration">Imu Calibration</string>
+    <string name="debug_imu_calibration_successful">IMU Calibration Successful</string>
+    <string name="debug_imu_calibration_title_description">Demonstrate Imu calibration</string>
+
+
+    <string name="debug_photograph">Photograph</string>
+    <string name="debug_compass_calibration">Compass Calibration</string>
+    <string name="debug_compass_calibration_title_description">Demonstrate Compass calibration</string>
+
+
+
+    <string name="debug_common_text_imu_calibration">IMU Calibration</string>
+    <string name="debug_common_text_calibration_tip_1">Please place the aircraft on a level surface</string>
+    <string name="debug_common_text_calibration_tip_2">Please do not move, power off, or reboot the aircraft during calibration</string>
+    <string name="debug_common_text_calibration_tip_3">Calibrating… Please wait</string>
+    <string name="debug_common_text_calibration_tip_4">Follow the instruction on the left to place the aircraft accordingly</string>
+
+    <string name="debug_common_text_calibration_faild">Calibration failed</string>
+    <string name="debug_text_calibration_sucess">Calibration successful</string>
+
+    <string name="debug_fight_params_title">FIGHT_PARAMS</string>
+    <string name="debug_fight_params_title_description">Demonstrate how to use the FIGHT_PARAMS</string>
+
+    <string name="debug_vision_params_title">Visual DAT capture</string>
+    <string name="debug_vision_params_title1">Visual MP4 capture</string>
+    <string name="debug_vision_params_title2">Visual YUV capture</string>
+    <string name="debug_vision_params_title_description">Demonstrate how to use DAT capture</string>
+    <string name="debug_vision_params_title1_description">Demonstrate how to use MP4 capture</string>
+    <string name="debug_vision_params_title2_description">Demonstrate how to use YUV capture</string>
+    <string name="debug_vision_track_title">VISION_TRACK</string>
+    <string name="debug_vision_track_title_description">Demonstrate how to use the VISION_TRACK</string>
+    <string name="debug_vision_original_track_title_description">Demonstrate how to use the VISION_PARAMS</string>
+    <string name="debug_sky_link_title">SKY_LINK</string>
+    <string name="debug_sky_link_title_description">Demonstrate how to use the SKY_LINK</string>
+    <string name="debug_report_control_title">REPORT_CONTROL</string>
+    <string name="debug_report_control_title_description">Demonstrate how to use the REPORT_CONTROL</string>
+
+    <string name="debug_scenario_testing_title">Scenario Testing</string>
+    <string name="debug_scenario_testing_description">Demonstrate how to use the Scenario Testing</string>
+
+    <string name="debug_switch_setting">SWITCH_SETTING</string>
+    <string name="debug_switch_setting_title_description">Demonstrate how to switch settings</string>
+
+    <string name="debug_system_update">SYSTEM_UPDATE</string>
+    <string name="debug_system_update_title_description">Demonstrate how to switch settings</string>
+    <string name="debug_image_transmission">IMAGE_TRANSMISSION</string>
+    <string name="debug_image_transmission_title_description">Demonstrate how to image_transmission</string>
+
+    <string name="debug_upload_download_test">UPLOAD_DOWNLOAD_TEST</string>
+    <string name="debug_upload_download_test_title_description">Demonstrate how to test upload or download</string>
+
+
+    <string name="video_decode_page">VIDEO_DECODE</string>
+    <string name="video_decode_page_title_description">Video stream decode format 264 and 265 switching</string>
+
+    <string name="debug_confirm">Sure</string>
+
+    <string name="debug_set_all">SET ALL</string>
+    <string name="debug_get_all">GET ALL</string>
+    <string name="debug_set_get_all">SET GET ALL</string>
+    <string name="debug_action_all">ACTION ALL</string>
+    <string name="debug_listen_all">LISTEN ALL</string>
+    <string name="debug_un_listen_all">UNLISTEN ALL</string>
+
+    <string name="debug_common_text_confirm">Confirm</string>
+    <string name="debug_pre_signed_get">Pre-signed get</string>
+    <string name="debug_upload_file">Upload file</string>
+    <string name="debug_upload_status_upgrade">Upload status update</string>
+    <string name="debug_upload_success_upgrade">Notification of successful upload</string>
+    <string name="debug_pre_signed_upgrade">Pre-signed URL refresh</string>
+    <string name="debug_camera_file_download">Capability set download test</string>
+    <string name="debug_sky_upgrade_test">Sky upgrade test</string>
+
+
+    <string name="debug_battery">Battery</string>
+    <string name="debug_gimbal">Dreadlocks</string>
+    <string name="debug_camera">Camera</string>
+    <string name="debug_ble">BLE</string>
+    <string name="debug_airlink">AIRLINK</string>
+    <string name="debug_ai_service">AI Service</string>
+    <string name="debug_flight_control">FlightController</string>
+    <string name="debug_flight_params">FlightParams</string>
+    <string name="debug_product">Product</string>
+    <string name="debug_rtkbase">RTK Base</string>
+    <string name="debug_rtkmobile">RTK mobile</string>
+    <string name="debug_ocusync">OcuSync</string>
+    <string name="debug_vision">Vision</string>
+    <string name="debug_rtk">Rtk</string>
+    <string name="debug_radar">Radar</string>
+    <string name="debug_ntrip">4G module Ntrip</string>
+    <string name="debug_mqtt">MQTT</string>
+    <string name="debug_lte_module">4G module</string>
+    <string name="debug_mobile_network">Mobile Network</string>
+    <string name="debug_on_board">OnBoard</string>
+    <string name="debug_payload">Payload</string>
+    <string name="debug_lidar">Lidar</string>
+    <string name="debug_waypoint">Waypoint</string>
+    <string name="debug_ai_track">AI Track</string>
+    <string name="debug_remote_id">RemoteId</string>
+    <string name="debug_system_manager">SystemManager</string>
+    <string name="debug_nest">Nest</string>
+    <string name="debug_mission_manager">MISSION MANAGER</string>
+    <string name="debug_accessories_proxy">ACCESSORIES PROXY</string>
+    <string name="debug_cloud_api">CLOUD API </string>
+    <string name="debug_radary_proxy">RADARY PROXY</string>
+    <string name="debug_common">Common Key</string>
+    <string name="debug_single_test">Single Test</string>
+    <string name="debug_batch_test">Batch Test</string>
+    <string name="debug_autonomy">Autonomy</string>
+    <string name="debug_wifi">Wifi</string>
+    <string name="debug_data_security">Data Security</string>
+
+    <string name="debug_rtc">RTC</string>
+    <string name="debug_login_input_content_not_empty">The input user name or password cannot be empty</string>
+    <string name="debug_login_pls_connect_network">Please check the network connection first</string>
+    <string name="debug_remote_controller">Remote Controller Only</string>
+    <string name="debug_login_box_tvSn">Current serial number:</string>
+    <string name="debug_setting_account_exit">Logout</string>
+    <string name="debug_login_nest">Command center login</string>
+    <string name="debug_login_command_center">Pilot login</string>
+    <string name="debug_setting_account_name">Account name</string>
+    <string name="debug_login_input_server_host">Please enter the server name</string>
+    <string name="debug_login_input_server_password">Please enter the password</string>
+    <string name="debug_login_serial_number">Current serial number</string>
+    <string name="debug_login_box_ok">OK</string>
+    <string name="debug_login_box_cancel">Cancel</string>
+
+
+    <string name="debug_remote_controller_pairing">Remote Controller Pairing</string>
+    <string name="debug_remote_controller_pairing_chinese">Remote control pairing</string>
+
+
+    <string name="debug_remote_controller_calibration">Remote Controller Calibration</string>
+    <string name="debug_remote_controller_calibration_chinese">Remote control calibration</string>
+    <string name="debug_start_pairing">Start Pairing</string>
+    <string name="debug_exit_pairing">Exit Pairing</string>
+    <string name="debug_start_calibration">Start Calibration</string>
+    <string name="debug_start_imu_calibration">Start IMU Calibration</string>
+    <string name="debug_start_compass_calibration">Start Compass Calibration</string>
+    <string name="debug_start_calibration_chinese">Start calibration</string>
+    <string name="debug_exit_calibration">Exit Calibration</string>
+    <string name="debug_exit_calibration_chinese">Exit calibration</string>
+    <string name="debug_listen">Listen</string>
+    <string name="debug_action">Action</string>
+    <string name="debug_unlistenall">UNLISTENALL</string>
+    <string name="debug_startgpstest">StartGpsTest</string>
+    <string name="debug_scenerios">Scenerios</string>
+    <string name="debug_pairing_status_unknown">Pairing status unknown</string>
+    <string name="debug_pairing">Pairing...</string>
+    <string name="debug_pairing_success">Pairing success</string>
+    <string name="debug_pairing_failed">Pairing failed</string>
+    <string name="debug_error">Error</string>
+
+    <string name="debug_drone_not_connected">Drone is not connected</string>
+    <string name="debug_test_initial_message">Result will be displayed here</string>
+
+    <string name="debug_compass_calibration_success">Compass calibration successful</string>
+    <string name="debug_compass_calibration_unknown">Unknown error, please recalibrate</string>
+    <string name="debug_compass_calibration_not">Compass not calibration！！！！</string>
+    <string name="debug_compass_calibration_fail">Calibration failed, please restart the device to calibrate</string>
+    <string name="debug_compass_calibration_step1">Step 1 /Rotate 1</string>
+    <string name="debug_compass_calibration_step2">Step 2 /Rotate 2</string>
+    <string name="debug_compass_calibration_step3">Step 3 /Rotate 3</string>
+
+    <string name="debug_btn_start_calibration">Start Calibration</string>
+    <string name="debug_btn_end_calibration">End Calibration</string>
+    <string name="debug_btn_take_picture">Start Taking Pictures</string>
+    <string name="debug_btn_record_video">Start Video Recording</string>
+
+    <string name="debug_gimbal_calibration">Gimbal Calibration</string>
+    <string name="debug_gimbal_calibration_chinese">Gimbal Calibration</string>
+    <string name="debug_videography">Videography</string>
+    <string name="debug_gimbal_calibration_started">Gimbal Calibration Started</string>
+    <string name="debug_gimbal_calibration_success">Gimbal Calibration Success</string>
+    <string name="debug_gimbal_calibration_failed">Gimbal Calibration Failed</string>
+    <string name="debug_gimbal_calibration_progress">Gimbal Calibration progress</string>
+
+
+    <string name="debug_left_stick">LEFT_STICK</string>
+    <string name="debug_right_stick">RIGHT_STICK</string>
+    <string name="debug_top">TOP</string>
+    <string name="debug_bottom">BOTTOM</string>
+    <string name="debug_left">LEFT</string>
+    <string name="debug_right">RIGHT</string>
+    <string name="debug_left_top">LEFT_TOP</string>
+    <string name="debug_right_top">RIGHT_TOP</string>
+    <string name="debug_left_bottom">LEFT_BOTTOM</string>
+    <string name="debug_right_bottom">RIGHT_BOTTOM</string>
+    <string name="debug_left_thumbwheel">LEFT_THUMBWHEEL</string>
+    <string name="debug_right_thumbwheel">RIGHT_THUMBWHEEL</string>
+    <string name="debug_roll_left">ROLL_LEFT</string>
+    <string name="debug_roll_right">ROLL_RIGHT</string>
+    <string name="debug_rockernormal">NORMAL</string>
+    <string name="debug_rockerunvalid">INVALID</string>
+    <string name="debug_rockerunknown">UNKNOWN</string>
+    <string name="debug_rockererror">ERROR</string>
+
+
+    <string name="debug_text_radar_front">Nose %s</string>
+    <string name="debug_text_radar_back">Tail %s</string>
+    <string name="debug_text_radar_left">%s</string>
+    <string name="debug_text_radar_right">%s</string>
+    <string name="debug_text_radar_top">Top %s</string>
+    <string name="debug_text_radar_bottom">Below %s</string>
+
+    <string name="debug_text_step_one">Step one</string>
+    <string name="debug_text_step_two">Step two</string>
+    <string name="debug_text_step_three">Step three</string>
+    <string name="debug_text_step_four">Step four</string>
+    <string name="debug_text_step_five">Step five</string>
+    <string name="debug_text_step_six">Step six</string>
+    <string name="debug_follow_instruction_below">Follow the instructions below</string>
+
+
+    <string name="debug_text_step_one_tips">Fold the arms in and lay the aircraft on a leveled surface</string>
+    <string name="debug_text_step_two_tips">Turn the aircraft 180°, gimble side up</string>
+    <string name="debug_text_step_three_tips">Place the aircraft flat on the ground, leftside down</string>
+    <string name="debug_text_step_four_tips">Place the aircraft flat on the ground, rightside down</string>
+    <string name="debug_text_step_five_tips">Unfold the front arms, nose down</string>
+    <string name="debug_text_step_six_tips">Fold the front arms, nose up</string>
+    <string name="debug_text_calibration_waiting">Calibrating… Please wait…</string>
+
+    <string name="debug_text_calibration_content">Keep away from metal or charged objects and keep the aircraft\n Off the ground %s\n\n· Do not turn off the aircraft power or starter motors</string>
+    <string name="debug_text_step_first_content">Rotate the aircraft horizontally 360 degrees as shown</string>
+    <string name="debug_text_step_seconde_content">Rotate the aircraft 360 degrees vertically as shown</string>
+    <string name="debug_text_step_third_content">As shown in the picture, rotate the aircraft sideways by 360 degrees</string>
+    <string name="debug_text_step_no_gps">Without a GPS signal, the compass cannot be calibrated</string>
+
+
+    <string name="debug_text_current_state">Current state :-</string>
+    <string name="debug_text_photo_type">Photo type :-</string>
+    <string name="debug_text_video_format">Video format :-</string>
+    <string name="debug_text_start_paring">Start paring</string>
+    <string name="debug_text_end_paring">End paring</string>
+    <string name="debug_text_end_record">End Record</string>
+    <string name="debug_text_paring_failed">Paring Failed !! Problem with the master control</string>
+    <string name="debug_text_calibration_failed">Remote calibration failed !! Problem with the master control</string>
+    <string name="debug_text_joystick_calibration_failed">Exit joysticks/rockers celebration failed !! !! Problem with the master control</string>
+    <string name="debug_text_photograph_failed">Photograph scenario failed !! Problem with the master control</string>
+    <string name="debug_text_video_failed">Video record scenario failed !! Problem with the master control</string>
+    <string name="debug_text_no_gps">No GPS Signals</string>
+
+    <!--upgrade fragment-->
+    <string name="personal_check_upgrade">Checking for Updates</string>
+    <string name="update_u_disk_error_title">No USB flash disk is detected. Please plug in the USB flash disk and try again</string>
+    <string name="update_u_disk_button">Choose upgrade package</string>
+    <string name="system_upgrade_title">Do not turn off the remote control</string>
+    <string name="system_upgrading">Upgrading…</string>
+    <string name="system_upgrade_title_2">The installation process takes about 15 minutes</string>
+    <string name="kml_file_root_path">File placement path: mobile phone storage/Android/data/com.autelrobotics.explorer/files/kml</string>
+    <string name="description">Description</string>
+    <string name="update_u_disk_title">Click the button to select the upgrade package</string>
+    <string name="select_file">Select File</string>
+    <string name="Update_for_disk">USB flash disk update</string>
+    <string name="update_online">Online update</string>
+
+    <string name="sdk_text_at_fly_follow">Follow</string>
+    <string name="sdk_text_cancel">Cancel</string>
+    <string name="debug_expand">Expand》</string>
+    <string name="debug_collapse">Collapse《</string>
+    <string name="debug_upgrade_manual">Manual upload verification</string>
+
+    <string name="video_record">Record video stream</string>
+    <string name="video_streaming_record">Image transmission</string>
+
+
+    <string name="debug_text_chines_tag" translatable="false">简体中文</string>
+    <string name="debug_text_english_tag" translatable="false">English</string>
+    <string name="debug_text_Ukraine_tag" translatable="false">Українська</string>
+
+    <string name="debug_text_confirm_language_change">Confirm to switch the language?</string>
+    <string name="debug_text_custom">Custom</string>
+    <string name="debug_setup_title">Set up</string>
+    <string name="debug_parameter_input_error">Parameter input error</string>
+    <string name="debug_aircraft_not_connected">Aircraft not connected</string>
+    <string name="debug_successfully_set">Successfully set</string>
+    <string name="debug_setup_failed">Setup failed</string>
+    <string name="debug_full_band">Full band</string>
+    <string name="debug_get">GET</string>
+    <string name="debug_set">SET</string>
+    <string name="debug_report">REPORT</string>
+    <string name="debug_param_test">PARAM_TEST</string>
+    <string name="debug_please_select_key_first">Please select key first</string>
+    <string name="debug_hint">Hint</string>
+    <string name="debug_analysis_and_antianalysis_normal">====》Analysis and anti-analysis are normal</string>
+    <string name="debug_parse_or_antiparse_exception">====》Parse or anti-parse exception</string>
+    <string name="debug_not_support_get">Not support get</string>
+    <string name="debug_not_support_listen">Not support listen</string>
+    <string name="debug_un_listen">Un-Listen</string>
+    <string name="debug_hide_float_log">Hide Float Log</string>
+    <string name="debug_show_float_log">Show Float Log</string>
+    <string name="debug_not_support_set">Not support set</string>
+    <string name="debug_not_support_action">Not support action</string>
+    <string name="debug_not_support_report">Not support report</string>
+    <string name="debug_start">Start</string>
+    <string name="debug_stop">Stop</string>
+    <string name="debug_current_ip">Current IP:</string>
+    <string name="debug_please_enter_ip">Please enter IP</string>
+    <string name="debug_connect_real_machine_ip_click_button">To connect to the real machine, please click the button "Connect to real machine IP, restart to take effect"</string>
+    <string name="debug_sure_restart_app">Are you sure to restart the APP?</string>
+    <string name="debug_current_connection_real_machine">The current connection is the real machine IP, no need to change</string>
+    <string name="debug_is_pin">Is ping</string>
+    <string name="debug_success">Success</string>
+    <string name="debug_failed">Failed</string>
+    <string name="debug_file_does_not_exist">File does not exist</string>
+    <string name="debug_current_upload_size_bytes">Current upload size %d byte</string>
+    <string name="debug_schedule">Progress %d</string>
+    <string name="debug_set_request_parameters">Set request parameters</string>
+    <string name="debug_result_code">Result code :</string>
+    <string name="debug_health_check_request">Health Check request :</string>
+    <string name="debug_code">Code=</string>
+    <string name="debug_message">Message=</string>
+    <string name="debug_progress">Progress=</string>
+    <string name="debug_speed">Speed=</string>
+    <string name="debug_ask">Ask:</string>
+    <string name="debug_language_change_successfully">Language change successfully</string>
+    <string name="debug_msdk_info">MSDK Info:[Ver:%s]</string>
+    <string name="debug_msdk_info_connected">MSDK Info:[Ver:%s] Drone is connected</string>
+    <string name="debug_msdk_info_disconnected">MSDK Info:[Ver:%s] Drone is disconnected</string>
+    <string name="debug_drone_version">Drone version is %s</string>
+    <string name="debug_connected">Connected</string>
+    <string name="debug_disconnected">Disconnected</string>
+    <string name="debug_msdk_info_with_status">MSDK Info:[Ver:%s] Drone is</string>
+    <string name="debug_logging_threshold_reached_clear">Logging threshold reached, clearing previous logs…</string>
+    <string name="debug_start_photo_fail">Start photo fail :</string>
+    <string name="debug_start_video_fail">Start video fail :</string>
+    <string name="debug_scenario_initiated">Initiated</string>
+    <string name="debug_frequency_band">Frequency band</string>
+    <string name="debug_frame_rate">Frame rate</string>
+    <string name="debug_video_trans_time_frame_rate">Video transmission real-time frame rate</string>
+    <string name="debug_image_transmission_reconnection_time">Image transmission reconnection time</string>
+    <string name="debug_image_transmission_interference_signal_strength">Image transmission interference signal strength</string>
+    <string name="debug_image_transmission_real_signal_strength">Image transmission real signal strength</string>
+    <string name="debug_binding_time">Binding time</string>
+    <string name="debug_mild_lag">Mild lag</string>
+    <string name="debug_moderate_caton">Moderate Caton</string>
+    <string name="debug_serious_lag">Serious lag</string>
+    <string name="debug_put_away">Collapse《</string>
+    <string name="debug_zoom_colan">Zoom:</string>
+    <string name="debug_american_test">American test</string>
+    <string name="debug_china_development">China Development</string>
+    <string name="debug_china_test">China test</string>
+    <string name="debug_made_china">Made in China</string>
+    <string name="debug_american_production">American production</string>
+    <string name="debug_file_path">FilePath:</string>
+    <string name="debug_video_transmission_setup_success">Video transmission setup is successful</string>
+    <string name="debug_image_transmission_setting_failed">Image transmission setting failed</string>
+    <string name="debug_stop_collection">Stop collection</string>
+    <string name="debug_one_click_collection">One-click collection</string>
+    <string name="debug_fetch_failed">Fetch failed</string>
+    <string name="debug_select_item_for_setting">Select item for setting</string>
+    <string name="debug_command_control">Command control</string>
+    <string name="debug_take_off_with_one_key">Take off with one key</string>
+    <string name="debug_return">Return</string>
+    <string name="debug_one_key_prepare_flight">One key to prepare for flight</string>
+    <string name="debug_one_key_alternate_landing">One-key alternate landing</string>
+    <string name="debug_start_charging">Start charging</string>
+    <string name="debug_stop_charging">Stop charging</string>
+    <string name="debug_z_lever_closed">Z lever closed</string>
+    <string name="debug_z_lever_open">Z lever open</string>
+    <string name="debug_z_rod_launched">X Rod Launched</string>
+    <string name="debug_x_rod_stowed">X rod stowed</string>
+    <string name="debug_y_bar_roll_out">Y bar rolls out</string>
+    <string name="debug_y_bar_stowed">Y bar stowed</string>
+    <string name="debug_input_agora_channel_id">Input agora channel id</string>
+    <string name="debug_input_agora_token">Input agora token</string>
+    <string name="debug_input_agora_uid">Input agora vid</string>
+    <string name="debug_input_28181_server_ip">Input 28181 server ip</string>
+    <string name="debug_input_28181_server_port">Input 28181 server port</string>
+    <string name="debug_input_28181_server_id">Input 28181 server id</string>
+    <string name="debug_input_28181_agent_id">Input 28181 agent id</string>
+    <string name="debug_input_28181_channel">Input 28181 channel</string>
+    <string name="debug_input_28181_local_port">Input 28181 local port</string>
+    <string name="debug_input_28181_password">Input 28181 password</string>
+    <string name="debug_input_rtmp_url">Input rtmp url</string>
+    <string name="debug_input_rtsp_username">Input rtsp userName</string>
+    <string name="debug_input_rtsp_password">Input rtsp password</string>
+    <string name="debug_input_rtsp_port">Input rtsp port</string>
+    <string name="debug_parameter_settings">Parameter settings</string>
+    <string name="debug_indicates_position_load">Index: indicates the position of the load, generally 0 \nsubType: indicates the lens 0 = zoom, 1 = wide, 2 = ir \nsubIndex: currently only the battery box is used to indicate the position of the next-level gadget</string>
+    <string name="debug_knew">Knew</string>
+    <string name="debug_type_message_here">Type message here</string>
+    <string name="debug_send">Send</string>
+    <string name="debug_no_file_yet">No file yet</string>
+    <string name="debug_show">Show</string>
+    <string name="debug_hide">Hide</string>
+    <string name="debug_connect_real_machine_ip_restart">Connect to the real machine IP, restart to take effect</string>
+    <string name="debug_ping_ip">Ping IP</string>
+    <string name="debug_connect_server_ip_restart_effect">Connect to the server IP, restart to take effect</string>
+    <string name="debug_inputbox_change_ip">The upper input box can change the server ip, the default is: 10.250.13.120</string>
+    <string name="debug_please_input_port">Please input port</string>
+    <string name="debug_no_mock_device">There is currently no mock device</string>
+    <string name="debug_mock_plane">Mock a plane</string>
+    <string name="debug_real_data">Real data</string>
+    <string name="debug_test_data">Test Data</string>
+    <string name="debug_real_data_mock_app">Real data: SDK will obtain the data returned by the master control;\nTest data: SDK mock data, returned to APP</string>
+    <string name="debug_fixed_frequency_band">Fixed frequency band</string>
+    <string name="debug_compliant_frequency_band_adaptation">Compliant frequency band adaptation</string>
+    <string name="debug_full_band_adaptive">Full-band adaptive</string>
+    <string name="debug_fluent">Fluent</string>
+    <string name="debug_hd">Hd</string>
+    <string name="debug_ultra_hd">Ultra hd</string>
+    <string name="debug_url">URL:</string>
+    <string name="debug_upload_mission_file">Upload Mission file</string>
+    <string name="debug_download_mission_file">Download Mission file</string>
+    <string name="debug_query_mission_file">Query Mission file</string>
+    <string name="debug_delete_mission_file">Delete Mission file</string>
+    <string name="debug_get_media_list">Get Media List</string>
+    <string name="debug_get_media_folder_list">Get Media Folder List</string>
+    <string name="debug_delete_media_file">Delete Media File</string>
+    <string name="debug_download_media_file">Download Media File</string>
+    <string name="debug_cancel_download_file">Cancel Download File</string>
+    <string name="debug_health_check">Health Check</string>
+    <string name="debug_clear_all">Clear All</string>
+    <string name="debug_select_device_to_communicate">Please select the device that needs to communicate:</string>
+    <string name="debug_add_device">Add device</string>
+    <string name="debug_delete_device">Delete device</string>
+    <string name="debug_all_modules">All modules</string>
+    <string name="debug_current_module">Current module</string>
+    <string name="debug_coordinate">Coordinate</string>
+    <string name="debug_please_select_option_need_set">Please select the switch option that needs to be set</string>
+    <string name="debug_hardware_info_display">Hardware Info display</string>
+    <string name="debug_drones_switch_display">Drones Switch Display</string>
+    <string name="debug_automatic_upload_verification">Automatic upload verification</string>
+    <string name="debug_visual_image_transmission_switch">Visual image transmission switch</string>
+    <string name="debug_distortion_map_switch">Distortion map switch</string>
+    <string name="debug_track_switch">Track switch</string>
+    <string name="debug_zoom_only">Zoom</string>
+    <string name="debug_infrared">Infrared</string>
+    <string name="debug_progress_status">Progress status …</string>
+    <string name="debug_capture_systrace">Capture SysTrace</string>
+    <string name="debug_add_shared_annotation">Add shared annotation</string>
+    <string name="debug_delete_shared_callout">Delete Shared Callout</string>
+    <string name="debug_edit_shared_callout">Edit Shared Callout</string>
+    <string name="debug_white_balance">White balance</string>
+    <string name="debug_hanging_point_cross_arm_end">Hanging point at the cross-arm end</string>
+    <string name="debug_data_record">Data record</string>
+    <string name="debug_add_as_command">Add As Command</string>
+    <string name="debug_subtype">srcNodeId</string>
+    <string name="debug_subindex">dstNodeId</string>
+    <string name="debug_results_will_be_printed_here">Results will be printed here.</string>
+    <string name="debug_operate_listen_record_tips">Operate listen record tips</string>
+    <string name="debug_component_index">Componentindex</string>
+    <string name="debug_check">Check</string>
+    <string name="debug_result_will_be_displayed_here">Result Will Be Displayed Here</string>
+    <string name="debug_beginning">Begin…</string>
+    <string name="debug_begin">BEGIN</string>
+    <string name="debug_keymanager_null">KeyManger is null</string>
+    <string name="debug_device_null">Device is null</string>
+    <string name="debug_update_success">Upgrade SUCCESS</string>
+    <string name="debug_error_code_is">ErrorCode is </string>
+    <string name="debug_error_desc_is">ErrorDesc is </string>
+    <string name="debug_error_code_is_unknown">ErrorCode is UNKNOWN</string>
+    <string name="debug_upload_mission_file_success">uploadMissionFile onSuccess </string>
+    <string name="debug_upload_mission_file_failed">uploadMissionFile onSuccess </string>
+
+    <string name="debug_key_list_cameradeviceinfo">CameraDeviceInfo</string>
+    <string name="debug_key_list_storagetype">StorageType</string>
+    <string name="debug_key_list_storagestatus">StorageStatus</string>
+    <string name="debug_key_list_mmcstatus">MMCStatus</string>
+    <string name="debug_key_list_videoencoderconfig">VideoEncoderConfig</string>
+    <string name="debug_key_list_videosourceconfig">VideoSourceConfig</string>
+    <string name="debug_key_list_cameragear">CameraGear</string>
+    <string name="debug_key_list_cameramode">CameraMode</string>
+    <string name="debug_key_list_displaymode">DisplayMode</string>
+    <string name="debug_key_list_takephotoparameters">TakePhotoParameters</string>
+    <string name="debug_key_list_recordparameters">RecordParameters</string>
+    <string name="debug_key_list_meteringpoint">MeteringPoint</string>
+    <string name="debug_key_list_imagestyle">ImageStyle</string>
+    <string name="debug_key_list_whitebalance">WhiteBalance</string>
+    <string name="debug_key_list_imagecolor">ImageColor</string>
+    <string name="debug_key_list_imageexposure">ImageExposure</string>
+    <string name="debug_key_list_imageiso">ImageIso</string>
+    <string name="debug_key_list_aelock">AELock</string>
+    <string name="debug_key_list_shutterspeed">ShutterSpeed</string>
+    <string name="debug_key_list_shuttermode">ShutterMode</string>
+    <string name="debug_key_list_focusinfomode">FocusInfoMode</string>
+    <string name="debug_key_list_afmetermode">AFMeterMode</string>
+    <string name="debug_key_list_camerafocusspotarea">CameraFocusSpotArea</string>
+    <string name="debug_key_list_cameramfobjectdistance">CameraMFObjectDistance</string>
+    <string name="debug_key_list_cameraafassistfocusenable">CameraAFAssistFocusEnable</string>
+    <string name="debug_key_list_cameramfassistfocusenable">CameraMFAssistFocusEnable</string>
+    <string name="debug_key_list_aperturesize">ApertureSize</string>
+    <string name="debug_key_list_aperturemode">ApertureMode</string>
+    <string name="debug_key_list_zoomfactor">ZoomFactor</string>
+    <string name="debug_key_list_patternmode">PatternMode</string>
+    <string name="debug_key_list_recordpiv">RecordPiv</string>
+    <string name="debug_key_list_hdr">HDR</string>
+    <string name="debug_key_list_defog">Defog</string>
+    <string name="debug_key_list_roi">ROI</string>
+    <string name="debug_key_list_isomode">ISOMode</string>
+    <string name="debug_key_list_recordpacket">RecordPacket</string>
+    <string name="debug_key_list_watermark">Watermark</string>
+    <string name="debug_key_list_thermalcolor">ThermalColor</string>
+    <string name="debug_key_list_thermalmode">ThermalMode</string>
+    <string name="debug_key_list_thermalenhance">ThermalEnhance</string>
+    <string name="debug_key_list_thermaldenoising">ThermalDenoising</string>
+    <string name="debug_key_list_thermalgain">ThermalGain</string>
+    <string name="debug_key_list_thermalisotherm">ThermalIsotherm</string>
+    <string name="debug_key_list_thermaltemperature">ThermalTemperature</string>
+    <string name="debug_key_list_thermaltemperaturealarm">ThermalTemperatureAlarm</string>
+    <string name="debug_key_list_thermalradiance">ThermalRadiance</string>
+    <string name="debug_key_list_takephotoresolution">TakePhotoResolution</string>
+    <string name="debug_key_list_recordresolution">RecordResolution</string>
+    <string name="debug_key_list_photofileformat">PhotoFileFormat</string>
+    <string name="debug_key_list_takephotoaebcount">TakePhotoAebCount</string>
+    <string name="debug_key_list_takephotobustcount">TakePhotoBustCount</string>
+    <string name="debug_key_list_takephototimelapse">TakePhotoTimeLapse</string>
+    <string name="debug_key_list_recordfileformat">RecordFileFormat</string>
+    <string name="debug_key_list_recordfileencodeformat">RecordFileEncodeFormat</string>
+    <string name="debug_key_list_camerasubtitlekey">CameraSubtitleKey</string>
+    <string name="debug_key_list_getbaseparam">GetBaseParamMsg</string>
+    <string name="debug_key_list_cameraantiflicker">CameraAntiflicker</string>
+    <string name="debug_key_list_cameraturnoffarmlight">CameraTurnOffArmLight</string>
+    <string name="debug_key_list_cameralinkagezoom">CameraLinkageZoom</string>
+    <string name="debug_key_list_smoothzoom">SmoothZoom</string>
+    <string name="debug_key_list_cameravisualtransfer">CameraVisualTransfer</string>
+    <string name="debug_key_list_cameraworkmode">CameraWorkModeNewMsg</string>
+    <string name="debug_key_list_cameraworkmodetakephoto">CameraWorkModeTakePhotoMsg</string>
+    <string name="debug_key_list_cameraworkmodevideo">CameraWorkModeVideoMsg</string>
+    <string name="debug_key_list_cameraimagestyletype">CameraImageStyleTypeMsg</string>
+    <string name="debug_key_list_cameraimagestylebrightness">CameraImageStyleBrightnessMsg</string>
+    <string name="debug_key_list_cameraimagestylecontrast">CameraImageStyleContrastMsg</string>
+    <string name="debug_key_list_cameraimagestylesaturation">CameraImageStyleSaturationMsg</string>
+    <string name="debug_key_list_cameraimagestylehue">CameraImageStyleHueMsg</string>
+    <string name="debug_key_list_cameraimagestylesharpness">CameraImageStyleSharpnessMsg</string>
+    <string name="debug_key_list_camerawhitebalancetype">CameraWhiteBalanceTypeMsg</string>
+    <string name="debug_key_list_camerawhitebalancecolortemp">CameraWhiteBalanceColorTempMsg</string>
+    <string name="debug_key_list_camerapivenable">CameraPivEnableMsg</string>
+    <string name="debug_key_list_camerapivinterval">CameraPivIntervalMsg</string>
+    <string name="debug_key_list_cameradehazeenable">CameraDehazeEnableMsg</string>
+    <string name="debug_key_list_cameradehazestrength">CameraDehazeStrengthMsg</string>
+    <string name="debug_key_list_camerairimagemodetype">CameraIrImageModeTypeMsg</string>
+    <string name="debug_key_list_camerairimagemodecontrast">CameraIrImageModeContrastMsg</string>
+    <string name="debug_key_list_camerairimagemodelum">CameraIrImageModeLumMsg</string>
+    <string name="debug_key_list_camerairenhanceenable">CameraIrEnhanceEnableMsg</string>
+    <string name="debug_key_list_camerairenhancestrength">CameraIrEnhanceStrengthMsg</string>
+    <string name="debug_key_list_camerairtempattrtype">CameraIrTempAttrTypeMsg</string>
+    <string name="debug_key_list_camerairtempattrtouch">CameraIrTempAttrTouchMsg</string>
+    <string name="debug_key_list_camerairtempattrregion">CameraIrTempAttrRegionMsg</string>
+    <string name="debug_key_list_camerairtempattrlimittemp">CameraIrTempAttrLimittempMsg</string>
+    <string name="debug_key_list_camerairtempalarmenable">CameraIrTempAlarmEnableMsg</string>
+    <string name="debug_key_list_camerairtempalarmhotthred">CameraIrTempAlarmHotthredMsg</string>
+    <string name="debug_key_list_camerairtempalarmcoldthred">CameraIrTempAlarmColdthredMsg</string>
+    <string name="debug_key_list_cameraelectronicantishaking">CameraElectronicAntiShakingMsg</string>
+    <string name="debug_key_list_camerasavemaptaskname">CameraSaveMapTaskName</string>
+    <string name="debug_key_list_camerasavemapuserdirname">CameraSaveMapUserDirName</string>
+    <string name="debug_key_list_cameratypezoomfixedfactor">CameraTypeZoomFixedFactorMsg</string>
+    <string name="debug_key_list_cameratypeencryptenable">CameraTypeEncryptEnable</string>
+    <string name="debug_key_list_cameradebugevent">CameraDebugEvent</string>
+    <string name="debug_key_list_camerarecordenable">CameraRecordEnable</string>
+    <string name="debug_key_list_camerarecordfps">CameraRecordFps</string>
+    <string name="debug_key_list_camerarecordduration">CameraRecordDuration</string>
+    <string name="debug_key_list_camerarecordnumber">CameraRecordNumber</string>
+    <string name="debug_key_list_cameracapabilityversion">CameraCapabilityVersion</string>
+    <string name="debug_key_list_cameraenable">CameraEnable</string>
+    <string name="debug_key_list_camerawatermarkgpsenable">CameraWatermarkGpsEnable</string>
+    <string name="debug_key_list_camerawatermarksnenable">CameraWatermarkSnEnable</string>
+    <string name="debug_key_list_cameravisualenable">CameraVisualEnable</string>
+    <string name="debug_key_list_cameraultrapixelenable">CameraUltraPixelEnable</string>
+    <string name="debug_key_list_cameratransferpayloadtype">CameraTransferPayloadType</string>
+    <string name="debug_key_list_camerareboot">CameraReboot</string>
+    <string name="debug_key_list_formatsdcard">FormatSdCard</string>
+    <string name="debug_key_list_formatmmc">FormatMmc</string>
+    <string name="debug_key_list_camerareset">CameraReset</string>
+    <string name="debug_key_list_starttakephoto">StartTakePhoto</string>
+    <string name="debug_key_list_stoptakephoto">StopTakePhoto</string>
+    <string name="debug_key_list_startrecord">StartRecord</string>
+    <string name="debug_key_list_stoprecord">StopRecord</string>
+    <string name="debug_key_list_cameraffc">CameraFfcMsg</string>
+    <string name="debug_key_list_cameravideopicturestoragetypeget">CameraVideoPictureStorageTypeGetMsg</string>
+    <string name="debug_key_list_cameravideopicturestoragetypeset">CameraVideoPictureStorageTypeSetMsg</string>
+    <string name="debug_key_list_cameratypeencryptset">CameraTypeEncryptSet</string>
+    <string name="debug_key_list_camerastatus">CameraStatus</string>
+    <string name="debug_key_list_professionalparaminfo">ProfessionalParamInfo</string>
+    <string name="debug_key_list_photofileinfo">PhotoFileInfo</string>
+    <string name="debug_key_list_takephotostatus">TakePhotoStatus</string>
+    <string name="debug_key_list_recordstatus">RecordStatus</string>
+    <string name="debug_key_list_recordfileinfo">RecordFileInfo</string>
+    <string name="debug_key_list_sdcardstatus">SdCardStatus</string>
+    <string name="debug_key_list_mmcstatusinfo">MmcStatusInfo</string>
+    <string name="debug_key_list_intervalshotstatus">IntervalShotStatus</string>
+    <string name="debug_key_list_panoramastatus">PanoramaStatus</string>
+    <string name="debug_key_list_delayshotstatus">DelayShotStatus</string>
+    <string name="debug_key_list_resetcamerastate">ResetCameraState</string>
+    <string name="debug_key_list_aeafstatuschange">AeAfStatusChange</string>
+    <string name="debug_key_list_tempalarm">TempAlarm</string>
+    <string name="debug_key_list_motiondelayshotstatus">MotionDelayShotStatus</string>
+    <string name="debug_key_list_photoexposure">PhotoExposure</string>
+    <string name="debug_key_list_missionrecordwaypoint">MissionRecordWaypoint</string>
+    <string name="debug_key_list_afstate">AfState</string>
+    <string name="debug_key_list_cameramodeswitch">CameraModeSwitch</string>
+    <string name="debug_key_list_displaymodeswitch">DisplayModeSwitch</string>
+    <string name="debug_key_list_infraredcameratempinfo">InfraredCameraTempInfo</string>
+    <string name="debug_key_list_storagestatusinfo">StorageStatusInfo</string>
+    <string name="debug_key_list_locationmeterinfo">LocationMeterInfo</string>
+    <string name="debug_key_list_whitebalancentfy">WhiteBalanceNtfy</string>
+    <string name="debug_key_list_aelockntfy">AeLockNtfy</string>
+    <string name="debug_key_list_focusntfy">FocusNtfy</string>
+    <string name="debug_key_list_hdrntfy">HdrNtfy</string>
+    <string name="debug_key_list_rointfy">RoiNtfy</string>
+    <string name="debug_key_list_photoresolutionntfy">PhotoResolutionNtfy</string>
+    <string name="debug_key_list_videoresolutionntfy">VideoResolutionNtfy</string>
+    <string name="debug_key_list_cameraencryptprogressreportntfy">CameraEncryptProgressReportNtfy</string>
+    <string name="debug_key_list_cameratransferinfontfy">CameraTransferInfoNtfy</string>
+    <string name="debug_key_list_cameraeisntfy">CameraEisNtfy</string>
+    <string name="debug_key_list_camerairnightfusionenable">CameraIrNightFusionEnable</string>
+    <string name="debug_key_list_cameramechanicalshutterenable">CameraMechanicalShutterEnable</string>
+    <string name="debug_key_list_camerapreviewresolution">CameraPreviewreSolution</string>
+    <string name="debug_key_list_camerapasswordwrongtimes">CameraPasswordWrongTimes</string>
+    <string name="debug_key_list_cameraircutswitch">CameraIrcutSwitch</string>
+    <string name="debug_key_list_cameramissionrecordenable">CameraMissionRecordEnable</string>
+    <string name="debug_key_list_cameramissionrecordpicturestorageset">CameraMissionRecordPictureStorageSet</string>
+    <string name="debug_key_list_cameramissionrecordpicturestorageget">CameraMissionRecordPictureStorageGet</string>
+    <string name="debug_key_list_cameraequivalentfocallength">35mm equivalent focal length</string>
+    <!--普通参数-->
+    <string name="debug_key_list_heartbeatphone">HeartBeatPhone</string>
+    <string name="debug_key_list_heartbeatapp">HeartBeatApp</string>
+    <string name="debug_key_list_setsystemdatatime">SetSystemDataTime</string>
+    <string name="debug_key_list_droneruntimentfy">DroneRuntimeNtfy</string>
+    <string name="debug_key_list_dronehfntfy">DroneHfNtfy</string>
+    <string name="debug_key_list_dronelfntfy">DroneLfNtfy</string>
+    <string name="debug_key_list_getsysteminitdata">GetSystemInitData</string>
+    <string name="debug_key_list_getdronedevicesinfo">GetDroneDevicesInfo</string>
+    <string name="debug_key_list_droneworkstatusinforeport">DroneWorkStatusInfoReport</string>
+    <string name="debug_key_list_dronewarningmfntfy">DroneWarningMFNtfy</string>
+    <string name="debug_key_list_controlled">ControlLed</string>
+    <string name="debug_key_list_queryledstatus">QueryLedStatus</string>
+    <string name="debug_key_list_dronecalibrationcommand">DroneCalibrationCommand</string>
+    <string name="debug_key_list_dronecalibrationeventntfy">DroneCalibrationEventNtfy</string>
+    <string name="debug_key_list_dronecalibrationschedulentfy">DroneCalibrationScheduleNtfy</string>
+    <string name="debug_key_list_dronesystemstatushfntfy">DroneSystemStatusHFNtfy</string>
+    <string name="debug_key_list_dronesystemstatuslfntfy">DroneSystemStatusLFNtfy</string>
+    <string name="debug_key_list_dronecontrolnightnavigationled">DroneControlNightNavigationLed</string>
+    <string name="debug_key_list_droneversionntfy">DroneVersionNtfy</string>
+    <string name="debug_key_list_droneeventntfy">DroneEventNtfy</string>
+    <string name="debug_key_list_dronetempconnectntfy">DroneTempConnectNtfy</string>
+    <string name="debug_key_list_droneutctimesyncntfy">DroneUtcTimeSyncNtfy</string>
+    <string name="debug_key_list_dronesetcountrycode">DroneSetCountryCode</string>
+    <string name="debug_key_list_dronecleannoflyzone">DroneCleanNoflyZone</string>
+    <string name="debug_key_list_dronewarning">DroneWarning</string>
+    <string name="debug_key_list_droneruntimewarning">DroneRuntimeWarning</string>
+    <string name="debug_key_list_dronedebuginfo">DroneDebugInfo</string>
+    <string name="debug_key_list_fileupload">FileUpload</string>
+    <string name="debug_key_list_dronesetflyzonecommand">设置可飞区区域编码</string>
+    <string name="debug_key_list_dronesetflyregioncommand">设置可飞区及附近国家地区码</string>
+
+
+    <string name="debug_vision_track_background">Background</string>
+    <string name="debug_vision_track_animal">Animal</string>
+    <string name="debug_vision_track_boat">Boat</string>
+    <string name="debug_vision_track_car">Car</string>
+    <string name="debug_vision_track_pedestrian">Pedestrian</string>
+    <string name="debug_vision_track_rider">Rider</string>
+    <string name="debug_vision_track_cart">Cart</string>
+    <string name="debug_vision_track_insulatedterminal">Insulated terminal</string>
+    <string name="debug_vision_track_crossarmendhangingpoint">Cross arm end hanging point</string>
+    <string name="debug_vision_track_wireendhangingpoint">Wire end hanging point</string>
+    <string name="debug_vision_track_groundwirehangingpoint">Ground wire hanging point</string>
+    <string name="debug_vision_track_vibrationhammer">Vibration hammer</string>
+    <string name="debug_vision_track_electricpole">Electric pole</string>
+    <string name="debug_vision_track_towerbody">Tower body</string>
+    <string name="debug_vision_track_towerhead">Tower head</string>
+    <string name="debug_vision_track_taki">Taki</string>
+    <string name="debug_vision_track_civilian">Civilian</string>
+    <string name="debug_vision_track_soldier">Soldier</string>
+    <string name="debug_vision_track_combatvehicle">Combat vehicle</string>
+    <string name="debug_vision_track_combatequipment">Combat equipment</string>
+    <string name="debug_vision_track_aircraft">Aircraft</string>
+    <string name="debug_vision_track_smoke">Smoke</string>
+    <string name="debug_vision_track_firesource">Fire source</string>
+    <string name="debug_vision_track_unknown">Unknown</string>
+
+
+    <string name="debug_parameter">Parameter</string>
+    <string name="debug_take_over">Take Over</string>
+    <string name="debug_error_message">Error Message</string>
+    <string name="debug_please_set_parameters_first">Please set the parameters first</string>
+    <string name="debug_installation_failed">Installation failed</string>
+
+    <string name="debug_rtk_title">RTK</string>
+    <string name="debug_rtk_title_description">RTK switching and authorization related testing page</string>
+    <string name="debug_text_rtk_net_tag">Net RTK</string>
+    <string name="debug_text_rtk_self_net_tag">Nest RTK</string>
+    <string name="debug_text_rtk_mobile_tag">4G/5G mobile RTK</string>
+    <string name="debug_text_rtk_is_native">Is the network RTK native to Qianxun</string>
+    <string name="debug_text_rtk_type">RTK Type</string>
+    <string name="debug_text_rtk_coordinate_type">RTK Coordinate Type</string>
+    <string name="debug_text_rtk_is_enable">Is Enable RTK</string>
+    <string name="debug_text_rtk_mode">RTK Single Mode</string>
+    <string name="debug_text_rtk_all_signal_mode">All Singles</string>
+    <string name="debug_text_rtk_bds_signal_mode">BDS Mode</string>
+    <string name="debug_text_rtk_calibration_mode">calibration mode</string>
+    <string name="debug_text_rtk_self_positioning_mode">self positioning mode</string>
+    <string name="debug_device_log">Device log</string>
+    <string name="debug_device_log_description">Demonstrate how to get device logs</string>
+    <string name="debug_device_log_query"> Log power-on query </string>
+    <string name="debug_device_log_info_query"> Log information query </string>
+    <string name="debug_device_log_pack"> Log packaging </string>
+    <string name="debug_device_log_downLoad"> Log download </string>
+    <string name="debug_device_log_delete"> Log deletion </string>
+
+    <string name="debug_mqtt_title_description">Mqtt Login Page</string>
+
+    <string name="debug_accurate_retake">Accurate retake</string>
+    <string name="debug_rtmp">RTMP</string>
+    <string name="debug_command_center">Command Center</string>
+    <string name="debug_device_log_real_time">real time</string>
+
+    <string name="debug_device_ota">Device OTA</string>
+    <string name="debug_device_ota_description">Demonstrate how to OTA upgrade</string>
+
+
+    <string name="debug_channel_type_battery">BATTERY</string>
+    <string name="debug_channel_type_gimbal">GIMBAL</string>
+    <string name="debug_channel_type_camera">CAMERA</string>
+    <string name="debug_channel_type_flightmission">FLIGHT MISSION</string>
+    <string name="debug_channel_type_airlink">AIRLINK</string>
+    <string name="debug_channel_type_aiservice">AI SERVICE</string>
+    <string name="debug_channel_type_flightparams">FLIGHT PARAMS</string>
+    <string name="debug_channel_type_flightcontrol">FLIGHT CONTROL</string>
+    <string name="debug_channel_type_remotecontroller">REMOTE CONTROLLER</string>
+    <string name="debug_channel_type_ble">BLE</string>
+    <string name="debug_channel_type_rtkbasestation">RTK BASE STATION</string>
+    <string name="debug_channel_type_rtkmobilestation">RTK MOBILE STATION</string>
+    <string name="debug_channel_type_product">PRODUCT</string>
+    <string name="debug_channel_type_ocusync">OCU SYNC</string>
+    <string name="debug_channel_type_vision">VISION</string>
+    <string name="debug_channel_type_radar">RADAR</string>
+    <string name="debug_channel_type_rtk">RTK </string>
+    <string name="debug_channel_type_ntrip">Ntrip</string>
+    <string name="debug_channel_type_mqtt">MQTT </string>
+    <string name="debug_channel_type_ltemodule">4G/5G</string>
+    <string name="debug_channel_type_mobilenetwork">MOBILE NETWORK</string>
+    <string name="debug_channel_type_board">BOARD</string>
+    <string name="debug_channel_type_payload">PAYLOAD</string>
+    <string name="debug_channel_type_lidar">LIDAR</string>
+    <string name="debug_channel_type_aitrack">AI_TRACK</string>
+    <string name="debug_channel_type_remoteid">REMOTE_ID</string>
+    <string name="debug_channel_type_nest">NEST</string>
+    <string name="debug_channel_type_systemmanager">SYSTEM_MANAGER</string>
+    <string name="debug_channel_type_missionmanager">MISSION_MANAGER</string>
+    <string name="debug_channel_type_accessoriesproxy">ACCESSORIES_PROXY</string>
+    <string name="debug_channel_type_commonupload">COMMON Key</string>
+    <string name="debug_channel_type_autonomy">Autonomy</string>
+    <string name="debug_channel_type_accurateretake">Accurate retake</string>
+    <string name="debug_channel_type_rtmp">RTMP</string>
+    <string name="debug_channel_type_rtc">RTC</string>
+    <string name="debug_channel_type_commandcenter">Command Center</string>
+    <string name="debug_channel_type_wifi">Wifi</string>
+    <string name="debug_item_virtual_stick_title">Virtual Stick</string>
+    <string name="debug_item__virtual_stick_description">Virtual Stick Demo</string>
 </resources>
