@@ -92,8 +92,9 @@ dependencies {
     androidTestImplementation rootProject.ext.deps.external.test.ext_junit
     androidTestImplementation rootProject.ext.deps.external.test.espresso
     implementation('com.tencent:mmkv-static:1.2.8')
-    implementation rootProject.ext.deps.external.okhttp.logging_interceptor
 
+
+    implementation rootProject.ext.deps.external.okhttp.logging_interceptor
     api rootProject.ext.deps.external.retrofit.core
     api rootProject.ext.deps.external.retrofit.rxjava
     api rootProject.ext.deps.external.retrofit.gson
